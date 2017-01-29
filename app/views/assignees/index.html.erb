@@ -1,0 +1,10 @@
+<div id="assignee-index">
+  <br>
+
+  <% if @type == "Recipient" %>
+    <%= render 'assignees/other_index' %>
+  <% else %>
+    <%= render 'assignees/core_index' %>
+  <% end %>
+
+</div>

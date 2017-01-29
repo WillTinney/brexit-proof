@@ -1,0 +1,14 @@
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/log
+/tmp
+
+# Ignore application configuration.
+/config/application.yml
+
+# /.bundle
+# config/database.yml
+# config/secrets.yml
+# config/google_analytics.yml
+# .DS_Store
+# /nbproject/

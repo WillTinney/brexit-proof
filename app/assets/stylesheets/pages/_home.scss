@@ -1,0 +1,207 @@
+/* -------------------------------------
+ * CSS code specific to home page
+ * (margin/padding adjustments)
+ * ------------------------------------- */
+.home-image {
+  position: relative;
+  img {
+    width: 100%;
+    max-height: 80%;
+  }
+  h2 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    span {
+      color: white;
+      font: bold 48px/90px Helvetica, Sans-Serif;
+      letter-spacing: -1px;
+      background: black;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      .spacer {
+        padding: 0 5px;
+      }
+    }
+  }
+}
+.banner-button {
+  position: absolute;
+  top: 70%;
+  right: 10px;
+}
+.home-section {
+  padding: 80px 0;
+
+  h2 {
+    color: #6B648A;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  p {
+    font-weight: 300;
+    font-size: 20px;
+  }
+}
+.call-to-action-text p {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.zero-text-margin p {
+  margin: 0;
+}
+#quotes {
+  background-color: #F8F8F9;
+}
+#media-quotes {
+  padding-top: 30px;
+}
+.review-box {
+  background: rgba(240, 240, 240, 0.4);
+  padding: 20px 10px 10px 10px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  p {
+    font-size: 16px;
+  }
+}
+#instructions {
+  width: 100%;
+  background-color: #EEE9E8;
+  h4 {
+    font-weight: bold;
+  }
+}
+.feature {
+  padding: 5px 40px;
+  h4 {
+    margin-bottom: 20px;
+  }
+}
+.feature-image {
+  height: 100px;
+  margin-bottom: 10px;
+}
+#feedback {
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+
+}
+#caroussel{
+  width: 100%;
+  height: 100vh;
+  padding: 20% 0;
+  background-color: #F8F8F9;
+}
+.comparison-box {
+  background: #F8F8F9;
+  border-radius: 5px;
+  border: 1px solid rgb(150,150,150);
+  padding: 20px;
+  position: relative;
+  p {
+    font-size: 16px;
+    text-align: left;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  h3 {
+    font-size: 50px;
+  }
+}
+.comparison-li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  max-height: 50px;
+  p {
+    flex: 0 0 90%;
+    word-wrap: break-word;
+  }
+  i {
+    flex: 0 0 auto;
+  }
+}
+.comparison-icon {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgb(150,150,150);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.comparison-icon.green, p.green {
+  color: #015249;
+}
+.my-will {
+  color: #015249;
+}
+.lawyer-will {
+  color: rgb(140,140,140);
+}
+.versus-circle{
+  position: absolute;
+  right: -65px;
+  top: 75px;
+  z-index: 2;
+  border-radius: 50%;
+  border: 2px solid rgb(150,150,150);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  p {
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 768px) {
+  .versus-circle{
+    top: 330px;
+    left: 140px;
+    height: 70px;
+    width: 70px;
+    p {
+      font-size: 30px;
+    }
+  }
+}
+#registration {
+  padding: 60px 0;
+  width: 100%;
+  max-height: 400px;
+  height: 50vh;
+  background-color: #EEE9E8;
+  h2 {
+    margin-bottom: 30px;
+  }
+  p {
+    margin-bottom: 30px;
+  }
+}
+.email-notice {
+  font-weight: 500;
+  color: white;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 20px auto 0 auto;
+  padding: 5px 50px
+}
+.email-error {
+  background-color: #E22D2D;
+}
+.email-success {
+  background-color: #40BA45;
+}

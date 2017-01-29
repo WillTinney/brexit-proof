@@ -1,0 +1,142 @@
+<div class="scrollmenu">
+  <div class="scrollbox text-center">
+    <h3>Me</h3>
+    <div class="scrollitem <%= 'active' if @guardian.nil? && @recipient.nil? %>">
+      <%= link_to user_path(current_user), class: 'scrollmenu-me' do %>
+      <%= current_user.profile_picture ? cl_image_tag(current_user.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
+        <h4><%= @user.first_name %></h4>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="scrollbox text-center">
+    <h3>Partner</h3>
+    <% @user.partner.each do |recipient| %>
+      <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
+        <%= link_to user_recipient_path(current_user, recipient), class: 'scrollmenu-partner' do %>
+          <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
+          <h4><%= recipient.first_name %></h4>
+          <h6><%= recipient.id %></h6>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="scrollbox">
+    <h3>Children</h3>
+    <% @user.children.each do |recipient| %>
+      <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
+        <%= link_to user_recipient_path(current_user, recipient),class: 'scrollmenu-children' do %>
+          <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
+          <h4><%= recipient.first_name %></h4>
+          <h6><%= recipient.id %></h6>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="scrollbox">
+    <h3>Guardians</h3>
+    <% @user.guardians.each do |guardian| %>
+      <div class="scrollitem <%= 'active' if @guardian && @guardian.id == guardian.id %>">
+        <%= link_to user_guardian_path(current_user, guardian), class: 'scrollmenu-guardians' do %>
+          <%= guardian.profile_picture ? cl_image_tag(guardian.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
+          <h4><%= guardian.first_name %></h4>
+          <h6><%= guardian.id %></h6>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="scrollbox">
+    <h3>Other Friends & Family</h3>
+    <% @user.show_other.each do |recipient| %>
+      <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
+        <%= link_to user_recipient_path(current_user, recipient), class: 'scrollmenu-recipients' do %>
+          <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
+          <h4><%= recipient.first_name %></h4>
+          <h6><%= recipient.id %></h6>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% content_for(:after_js) do %>
+  <script>
+    // // AJAX to load tab content without a refresh
+    // $('.scrollmenu-me').click(function(e){
+    //   e.preventDefault();
+    //   $('.sidebar-tabs').children().removeClass("active");
+    //   $('#profile-sidebar-tab').addClass("active");
+    //   $.ajax({
+    //       type: "GET",
+    //       url: <%= @user.id %> + "/profile",
+    //       data: { },
+    //       success: function(data){
+    //           $('#tab-content').html(data);
+    //       }
+    //   });
+    // });
+    // $('.scrollmenu-partner').click(function(e){
+    //   e.preventDefault();
+    //   var showId = $(this).find("h6").text();
+    //   $.ajax({
+    //       type: "GET",
+    //       url: <%= @user.id %> + "/recipients/" + showId,
+    //       data: { },
+    //       success: function(data){
+    //           $('#tab-content').html(data);
+    //       }
+    //   });
+    // });
+    // $('.scrollmenu-children').click(function(e){
+    //   e.preventDefault();
+    //   var showId = $(this).find("h6").text();
+    //   $.ajax({
+    //       type: "GET",
+    //       url: <%= @user.id %> + "/recipients/" + showId,
+    //       data: { },
+    //       success: function(data){
+    //           $('#tab-content').html(data);
+    //       }
+    //   });
+    // });
+    // $('.scrollmenu-guardians').click(function(e){
+    //   e.preventDefault();
+    //   var showId = $(this).find("h6").text();
+    //   $.ajax({
+    //       type: "GET",
+    //       url: <%= @user.id %> + "/guardians/" + showId,
+    //       data: { },
+    //       success: function(data){
+    //           $('#tab-content').html(data);
+    //       }
+    //   });
+    // });
+    // $('.scrollmenu-approvers').click(function(e){
+    //   e.preventDefault();
+    //   var showId = $(this).find("h6").text();
+    //   $.ajax({
+    //       type: "GET",
+    //     url: <%= @user.id %> + "/approvers/" + showId,
+    //       data: { },
+    //       success: function(data){
+    //           $('#tab-content').html(data);
+    //       }
+    //   });
+    // });
+    // $('.scrollmenu-recipients').click(function(e){
+    //   e.preventDefault();
+    //   var showId = $(this).find("h6").text();
+    //   $.ajax({
+    //       type: "GET",
+    //       url: <%= @user.id %> + "/recipients/" + showId,
+    //       data: { },
+    //       success: function(data){
+    //           $('#tab-content').html(data);
+    //       }
+    //   });
+    // });
+  </script>
+<% end %>

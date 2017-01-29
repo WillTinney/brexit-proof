@@ -1,0 +1,150 @@
+.card {
+  height: 175px;
+  margin: 20px 0;
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
+  border-radius: 2px;
+  background-size: cover !important;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.card h6 {
+  display: none;
+}
+.card-detail {
+  margin: 10px 0;
+}
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description p {
+  font-size: 13px;
+}
+.card-buttons {
+  display: flex;
+  flex-direction: row;
+  a {
+    margin: 0 3px;
+  }
+}
+.black-text {
+  color: black;
+}
+.black-links a {
+  color: black;
+  color: black;
+}
+// Profile Cards
+.profile-cards {
+
+}
+.assignee-card {
+  position: relative;
+  height: 50vh;
+  margin: 20px 0;
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
+  border-radius: 2px;
+  background-size: cover !important;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  hr {
+    border: 1px solid #EDE8E9;
+    width: 85%;
+    margin: 4px 0;
+  }
+}
+.alt-card {
+  position: relative;
+  height: 25vh;
+  margin: 20px 0;
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
+  border-radius: 2px;
+  background-size: cover !important;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  hr {
+    border: 1px solid #EDE8E9;
+    width: 85%;
+    margin: 4px 0;
+  }
+}
+.note-card {
+  position: relative;
+  height: 280px;
+  margin: 20px 0;
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
+  border-radius: 2px;
+  background-size: cover !important;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  hr {
+    border: 1px solid #EDE8E9;
+    width: 85%;
+    margin: 4px 0;
+  }
+}
+.card-content {
+  overflow-y: auto;
+  width: 80%;
+}
+.orange-border {
+  border: 4px solid $orange;
+}
+.warning-circle {
+  position: absolute;
+  font-size: 20px;
+  color: $orange;
+  top: 6px;
+  right: 6px;
+}
+// Asset Cards
+.asset-card {
+  height: 240px;
+  margin: 20px 0;
+  padding-top: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
+  border-radius: 2px;
+  background-size: cover !important;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.note-title {
+  text-align: center;
+  h5 {
+  margin-top: 6px;
+  }
+}
+.note-spacing {
+  height: 90%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.note-form {
+  width: 90%;
+  padding: 5px 5px 12px 5px;
+}
+.reference-card {
+  height: 280px;
+  margin: 20px 0;
+  padding-top: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
+  border-radius: 2px;
+  background-size: cover !important;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

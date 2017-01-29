@@ -1,0 +1,208 @@
+<% content_for(:navbar) do %>
+  <%= render 'shared/navbars/navbar_home' %>
+<% end %>
+
+<!-- Banner  -->
+<div class="home-image">
+  <%= image_tag('banner1.jpg') %>
+
+  <h2><span> Brexit Hedge:<span class='spacer'></span><br><span class='spacer'></span>Protect your residency</span></h2>
+
+  <div class="banner-button">
+    <%= link_to new_user_session_path, class: "white-text" do %>
+      <button class="btn btn-secondary white-button">Enroll now for our Beta Version</button>
+    <% end %>
+  </div>
+</div>
+
+<!-- Floating Arrow -->
+<div id="home-arrow">
+  <div class="floating">
+    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+  </div>
+</div>
+
+<!-- Caroussel - Medias -->
+<div class="wrapper">
+  <section id="media-quotes" class="container content-section text-center home-section">
+    <h2>Why?</h2>
+    <p>Theresa May has not defined new immigration control rules yet and the eligibility criteria remain very uncertain.<br>History and recent political events remind us we need to be prepared to protect us and our relatives.</p>
+    <div id="carousel-container">
+    <div class="cloud9-carousel" id="cloud9-carousel">
+
+      <div class="cloud9-item teal-border black-links">
+        <%= link_to "http://www.independent.co.uk/news/uk/home-news/immigration-eu-citizens-brexit-referendum-deportation-home-office-3-million-a7451476.html", target: "_blank" do %>
+          <p>“One million EU citizens in Britain 'at risk of deportation' amid surge in permanent residency applications since Brexit vote"</p>
+          <%= image_tag('Independent_logo.png', class: "carousel-image") %>
+        <% end %>
+      </div>
+
+      <div class="cloud9-item orange-border black-links">
+        <%= link_to "https://www.theguardian.com/politics/2016/dec/14/eu-citizens-collect-proof-of-living-in-uk-helena-kenney-qc-lords-brexit-reports", target: "_blank" do %>
+          <p>“EU citizens should collect proof of living in the UK"</p>
+          <%= image_tag('theguardian.png', class: "carousel-image") %>
+        <% end %>
+      </div>
+      <div class="cloud9-item purple-border black-links">
+        <%= link_to "https://www.gov.uk/eea-registration-certificate/overview", target: "_blank" do %>
+          <p>“Prove your right to live in the UK as an EU citizen"</p>
+          <%= image_tag('logo-govuk.png', class: "carousel-image") %>
+        <% end %>
+      </div>
+      <div class="cloud9-item brown-border black-links">
+        <%= link_to "http://www.independent.co.uk/news/uk/home-news/brexit-eu-citizens-nationals-europe-lords-committee-helena-kennedy-eu-documents-prove-uk-britain-a7475171.html", target: "_blank" do %>
+          <p>“EU citizens urged to collect evidence they lived in UK prior to Brexit vote"</p>
+          <%= image_tag('Independent_logo.png', class: "carousel-image") %>
+        <% end %>
+      </div>
+      <div class="cloud9-item green-border black-links">
+        <%= link_to "http://www.theweek.co.uk/brexit/73161/will-eu-citizens-be-allowed-to-stay-in-uk-after-brexit", target: "_blank" do %>
+          <p>“Will EU citizens be allowed to stay after brexit?"</p>
+          <%= image_tag('theweek.png', class: "carousel-image") %>
+        <% end %>
+      </div>
+    </div>
+    </div>
+  </section>
+</div>
+
+<!-- What do we do for you? -->
+<section class="container text-center home-section" id="instructions">
+  <h2>What does MyWill do for me?</h2>
+  <p>MyWill helps EU citizens living in the UK protect their right to stay post Brexit.<br>MyWill provide a unique infrastructure of authenticity and trust, and give people the ability to unlock data.<br>MyWill servers are based in Norway.</p>
+  <div class="col-xs-12 col-sm-4">
+    <div class="flexbox-vertical feature">
+      <%= image_tag('NotaUK.png', class: "feature-image") %>
+      <h4>Collect and Save</h4>
+      <p class="text-justify">We help you to collect your proof of residency. We also securely save them to keep your personal data confidential. <strong>We never distribute or sell your data to anyone.</strong></p>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-4">
+    <div class="flexbox-vertical feature">
+      <%= image_tag('Vault1.png', class: "feature-image") %>
+      <h4>Unlock</h4>
+      <p class="text-justify">We offer a unique and secure unlocking process of your data and send it <strong>only to the people individually designated by you.</strong> </p>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-4">
+    <div class="flexbox-vertical feature">
+      <%= image_tag('network1.png', class: "feature-image") %>
+      <h4>Authenticate</h4>
+      <p class="text-justify">We ensure the authenticity of data thanks to blockchain technology. We also use <strong>UK Guardians to confirm your information.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- Feedback -->
+<section class="home-section" id="feedback" style="background-image: linear-gradient(-225deg, rgba(0,101,128,0.4) 0%, rgba(0,36,51,0.4) 50%), url(<%= image_path('banner2.jpg') %>);">
+  <div class="container text-center" id="reviews">
+    <h2>Act now!</h2>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="review-box">
+          <p>“I did not have any family in the UK when my parents passed away. I was devastated by the news and completely lost. I stayed more than 20 weeks alone under British Authorities control before being allowed to join my grand-parents in Poland. My parents had not named guardians as it is something you are never asked.“</p>
+          <p>Imre</p>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+        <div class="review-box">
+          <p>“When my sister had a deadly accident, she was divorced from her husband with two sons and living in the UK. My nephews have been placed in an orphanage as there was no named guardian and UK authorithies judge their father was not eligible. I finally got custody after four months and a long and painful process for them. I have myself named guardians. It should be as natural as it is for an insurance policy.“</p>
+          <p>Iva</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+
+<section class="home-section" id="comparison">
+  <div class="container text-center">
+    <h2>Do I need to pay to use MyWill?</h2>
+    <p>To ensure the privacy of personal data MyWill pays for secure server storage.<br>MyWill does <strong>not</strong> redistribute or sell your data.</p>
+    <div class="row">
+        <div class="col-xs-12 col-sm-5 col-sm-offset-1">
+          <div class="comparison-box my-will">
+            <h3>Free</h3>
+            <h5>For the first users if you help us to propose<br>our services to your network</h5>
+            <hr>
+            <ul>
+              <li class="comparison-li text-left">
+                <%= icon('check', class: "comparison-icon green") %>
+                <p> Trust infrastructure: storage and authenticity</p>
+              </li>
+              <li class="comparison-li text-left">
+                <%= icon('check', class: "comparison-icon green") %>
+                <p> Update any time </p>
+              </li>
+              <li class="comparison-li text-left">
+                <%= icon('check', class: "comparison-icon green") %>
+                <p> Store personal data and designate your "guardians" </p>
+              </li>
+            </ul>
+            <div class="versus-circle">
+              <p>VS</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-5 ">
+          <div class="comparison-box lawyer-will">
+            <h3>£200</h3>
+            <h5>Average Lawyer <br> hourly fee</h5>
+            <hr>
+            <ul>
+              <li class="comparison-li text-left">
+                <%= icon('check', class: "comparison-icon green") %>
+                <p class="green"> Trust infrastructure: storage and authenticity </p>
+              </li>
+              <li class="comparison-li text-left">
+                <%= icon('times', class: "comparison-icon") %>
+                <p> Update any time </p>
+              </li>
+              <li class="comparison-li text-left">
+                <%= icon('times', class: "comparison-icon") %>
+                <p> Store personal data and designate your "guardians" </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Registration -->
+
+<section class="container text-center home-section" id="registration">
+  <h2> Sign up now </h3>
+  <span class="registration text">
+  <p>  MyWill is in early stage development.<p>
+  </span>
+  <span class="call-to-action-text">
+    <p>Leave us your email address to be notified when our service is live:</p>
+  </span>
+  <%= form_tag("/subscribe", method: "POST", class: "form form-inline", remote: true) do %>
+    <%= email_field_tag("subscriber[email]", nil,
+      placeholder: "Email address",
+      class: "form-control") %>
+    <%= submit_tag("Subscribe", class: "btn btn-primary") %>
+  <% end %>
+</section>
+
+<%= content_for(:after_js) do %>
+  <script>
+    // Navbar colour change on scroll
+    $(document).ready(function(){
+      $(window).scroll(function(){
+        if($(window).scrollTop()>400)
+          $(".navbar-wagon").css({"background-color": "#57BB90", "box-shadow": "0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03)"});
+        else
+          $(".navbar-wagon").css({"background-color": "rgba(255, 255, 255, 0.2)", "box-shadow": "none"});
+      });
+    });
+  </script>
+<% end %>

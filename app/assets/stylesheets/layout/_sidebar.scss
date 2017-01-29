@@ -1,0 +1,67 @@
+.include-sidebar {
+  padding-left: 250px;
+}
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $grey;
+  overflow-x: hidden;
+  margin-top: 50px;
+  transition: 0.5s;
+}
+.sidebar i {
+  font-size: 15px;
+  width: 20px;
+}
+.sidebar a {
+  padding: 3px 8px 3px 40px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #585A5C;
+  display: block;
+  transition: 0.3s
+}
+.sidebar hr {
+  margin: 2px 0;
+  border-color: #DBF0E7;
+}
+.sidebar h4 {
+  color: white;
+}
+.sidebar h5 {
+  margin: 5px 0;
+  padding-left: 8px;
+}
+.sidebar-header {
+  padding: 4px 0;
+  margin: 2px 0;
+  background-color: $orange;
+}
+// Sidebar Tabs
+.sidebar-item {
+
+  display: inline-block;
+}
+.sidebar-tab {
+
+}
+.sidebar a:hover {
+  color: #f1f1f1;
+  background-color: $light-teal;
+}
+.sidebar-tab.active {
+  background-color: $teal;
+  color: white;
+  text-decoration: none;
+  opacity: 1;
+}
+.profile-tab i {
+  color: #57BB90;
+}
+.digital-tab i {
+  color: #77C9D3;
+}
