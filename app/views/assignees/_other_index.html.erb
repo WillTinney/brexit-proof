@@ -18,7 +18,7 @@
           <div class="card">
             <%= link_to user_recipient_path(current_user, recipient.id), class: 'recipient-link profile-picture-inline' do %>
               <div class="card-avatar">
-                <%= image_tag(recipient.profile_picture || "user.png", class: "avatar-card") %>
+                <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 100, height: 100, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-card push-right") : image_tag('user3.png', class: "avatar-card") %>
               </div>
             <% end %>
 

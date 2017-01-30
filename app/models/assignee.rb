@@ -2,9 +2,8 @@ class Assignee < ApplicationRecord
   belongs_to :user
 
   has_many :notes, dependent: :destroy
-  has_many :photos, dependent: :destroy
-  has_many :references, dependent: :destroy
 
+  has_attachment :profile_picture
 
   def full_name
     middle_name ? first_name + " " + middle_name + " " + last_name : first_name + " " + last_name

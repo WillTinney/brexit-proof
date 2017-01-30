@@ -2,7 +2,7 @@
 
 <div class="container-box">
   <%= link_to '#', class: 'profile-picture-inline' do %>
-    <%= image_tag(@assignee.profile_picture || "user.png", class: "avatar-large") %>
+    <%= @assignee.profile_picture ? cl_image_tag(@assignee.profile_picture.path, transformation: [{width: 100, height: 100, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-card") : image_tag('user3.png', class: "avatar-card") %>
     <p class="black-text">Change Picture</p>
     <!-- Make this uploadable with attachinary -->
   <% end %>
