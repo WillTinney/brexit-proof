@@ -1,7 +1,7 @@
 <br><br>
 
 <div class="container-box profile-cards">
-  <div class="row">
+
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="alt-card black-links <%= 'orange-border' unless @user.details_completed? %>">
         <% unless @user.details_completed? %>
@@ -64,9 +64,9 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="row">
+
+
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="alt-card black-links">
         <h4><%= link_to "My Guardians", "#", id: "guardian-card" %></h4>
@@ -109,7 +109,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 </div>
 
 <% content_for(:after_js) do %>
