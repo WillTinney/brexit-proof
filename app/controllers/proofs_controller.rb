@@ -1,5 +1,6 @@
 class ProofsController < ApplicationController
   def index
+    @proof = Proof.new
   end
 
   def show

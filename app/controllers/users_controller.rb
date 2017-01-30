@@ -40,19 +40,6 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def references
-    authorize @user
-  end
-
-  def photos
-    authorize @user
-  end
-
-  def video
-    authorize @user
-    @video = Video.new
-  end
-
   private
 
   def set_user

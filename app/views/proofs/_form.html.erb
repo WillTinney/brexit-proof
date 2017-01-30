@@ -1,0 +1,6 @@
+<%= simple_form_for [current_user, @proof] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :document, as: :attachinary %>
+  <%= f.input :caption %>
+  <%= f.button :submit %>
+<% end %>
