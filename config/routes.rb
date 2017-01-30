@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       get 'references', to: 'assignees#references'
       get 'photos', to: 'assignees#photos'
       get 'video', to: 'assignees#video'
+      resources :proofs
       resources :notes, only: [:new, :create, :edit, :update, :destroy]
       resources :photos, only: [:show, :new, :create, :edit, :update, :destroy]
       resources :references, only: [:show, :new, :create, :edit, :update, :destroy]

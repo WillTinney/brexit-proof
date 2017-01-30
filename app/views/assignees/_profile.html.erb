@@ -176,7 +176,14 @@
           </div>
         </div>
         <br />
-        <a onclick="step_process(5, 3, 'desc')" class="butt">Prev</a>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="pull-right">
+              <a onclick="step_process(5, 3, 'desc')" class="butt">Prev</a>
+              <%= link_to "Finish", user_path(current_user), class: "btn btn-success" %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

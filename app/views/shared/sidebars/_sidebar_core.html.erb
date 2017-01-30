@@ -1,7 +1,11 @@
 <!-- Sidebar for Core User Dashboard -->
 <div class="sidebar">
   <div class="sidebar-header text-center">
-    <h4><strong>Me</strong></h4>
+    <% if params[:controller] == 'users' %>
+      <h4><strong>Me</strong></h4>
+    <% else %>
+      <h4><strong><%= @assignee.first_name %></strong></h4>
+    <% end %>
   </div>
   <div class="sidebar-tabs">
     <%= link_to '#',
