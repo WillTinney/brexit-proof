@@ -29,7 +29,8 @@ class NotesController < ApplicationController
   def update
     authorize @note
     if @note.update(note_params)
-      redirect_to user_assignee_path(current_user, @note.assignee_id)
+      # redirect_to user_assignee_path(current_user, @note.assignee_id)
+      redirect_to :back
     else
       render :edit
     end
@@ -38,7 +39,7 @@ class NotesController < ApplicationController
   def destroy
     authorize @note
     @note.destroy
-    redirect_to user_path(current_user)
+    redirect_to :back
   end
 
   private
