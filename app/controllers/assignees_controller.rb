@@ -43,7 +43,7 @@ class AssigneesController < ApplicationController
   def update
     authorize @assignee
     if @assignee.update(assignee_params)
-      redirect_to user_path(current_user)
+
     else
       render :edit
     end
