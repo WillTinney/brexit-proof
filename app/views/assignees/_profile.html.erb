@@ -35,7 +35,7 @@
                 <p>Phone Number: <%= @assignee.try(:phone_number) %></p>
                 <br>
                 <p><%= @assignee.try(:address_line_1) + ", " + @assignee.try(:address_line_2) %></p>
-                <p><%= @assignee.try(:town) + ", " + @assignee.try(:postcode) + ", " + @assignee.try(:country) %></p>
+                <p><%= @assignee.try(:town) + ", " + @assignee.try(:postcode) %><% ", " + @assignee.country if @assignee.country %></p>
                 <% unless @assignee.details_completed? %>
                   <i class="fa fa-exclamation-triangle" aria-hidden="true"> Details incomplete</i>
                 <% end %>

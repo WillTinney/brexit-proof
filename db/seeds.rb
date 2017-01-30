@@ -20,19 +20,19 @@ Assignee.create!(relationship: "Friend", first_name: "Rebecca", last_name: "Jone
 Assignee.create!(relationship: "Cousin", first_name: "Betty", last_name: "Hall",
   citizenship: "UK", date_of_birth: Faker::Date.between(25.years.ago, 50.years.ago), email: "betty@gmail.com", phone_number: mobile_string,
   address_line_1: "11 Test Road", address_line_2: "Test Cresent", town: "Testville",
-  postcode: "T3 5TT", user_id: "1", type: "Guardian")
+  postcode: "T3 5TT", country: "UK", user_id: "1", type: "Guardian")
 
 # Partner
 Assignee.create!(relationship: "Partner", first_name: "Edith", last_name: "Hartaway",
   citizenship: "UK", date_of_birth: Faker::Date.between(25.years.ago, 50.years.ago), email: "edith@gmail.com", phone_number: mobile_string,
   address_line_1: "11 Test Road", address_line_2: "Test Cresent", town: "Testville",
-  postcode: "T3 5TT", user_id: "1", type: "Recipient")
+  postcode: "T3 5TT", country: "UK", user_id: "1", type: "Recipient")
 
 # Children
 Assignee.create!(relationship: "Child", first_name: "Art", last_name: "Hartaway",
   citizenship: "UK", date_of_birth: Faker::Date.between(5.years.ago, 18.years.ago), email: "art@gmail.com", phone_number: mobile_string,
   address_line_1: "11 Test Road", address_line_2: "Test Cresent", town: "Testville",
-  postcode: "T3 5TT", user_id: "1", type: "Recipient")
+  postcode: "T3 5TT", country: "FR", user_id: "1", type: "Recipient")
 Assignee.create!(relationship: "Child", first_name: "Phillip", last_name: "Hartaway",
   citizenship: "UK", date_of_birth: Faker::Date.between(5.years.ago, 18.years.ago), email: "phillip@gmail.com", phone_number: mobile_string,
   address_line_1: "11 Test Road", address_line_2: "Test Cresent", town: "Testville",

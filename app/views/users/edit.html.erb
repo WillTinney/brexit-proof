@@ -3,7 +3,7 @@
 
   <div>
     <%= link_to '#', class: 'profile-picture-inline' do %>
-      <%= cl_image_tag(current_user.profile_picture.path || "user.png", class: "avatar-large") %>
+      <%= @user.profile_picture ? cl_image_tag(@user.profile_picture.path, transformation: [{width: 120, height: 120, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-large") : image_tag('user3.png') %>
       <p>Change Picture</p>
       <%= simple_form_for @user, html: {class: 'form-inline edit-profile-picture invisible'} do |f| %>
         <%= f.input :profile_picture, as: :attachinary, label: false, input_html: { class: 'profile-upload'} %>
