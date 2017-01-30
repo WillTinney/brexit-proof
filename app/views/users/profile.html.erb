@@ -3,13 +3,13 @@
 <div class="container-box profile-cards">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="alt-card card-overflow black-links <%= "orange-border" unless @user.details_completed? %>" id="details-card">
+      <div class="alt-card black-links <%= "orange-border" unless @user.details_completed? %>" id="details-card">
         <% unless @user.details_completed? %>
             <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
           <% end %>
         <h4><%= link_to "My Details", "#" %></h4>
         <hr>
-        <div class="card-content">
+        <div class="card-content card-overflow">
           <p><strong><%= @user.try(:name_surname) %></strong></p>
           <p><%= @user.citizenship ? @user.citizenship + " Citizen" : "Please enter your citizenship" %></p>
           <p><%= @user.try(:date_of_birth) %></p>
@@ -27,10 +27,10 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="alt-card card-overflow black-links" id="partner-card">
+      <div class="alt-card black-links" id="partner-card">
         <h4><%= link_to "My Partner", "#" %></h4>
         <hr>
-        <div class="card-content">
+        <div class="card-content card-overflow">
           <p><strong><%= link_to @user.partner.try(:name_surname), user_assignee_path(@user, @user.partner) %></strong></p>
           <p><%= @user.partner.try(:address_line_1) %></p>
           <p><%= @user.partner.try(:address_line_2) %></p>
@@ -42,10 +42,10 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="alt-card card-overflow black-links" id="children-card">
+      <div class="alt-card black-links" id="children-card">
         <h4><%= link_to "My Children", "#" %></h4>
         <hr>
-        <div class="card-content">
+        <div class="card-content card-overflow">
           <% @user.children.each do |child| %>
             <p><strong><%= link_to child.try(:name_surname), user_assignee_path(@user, child) %></strong></p>
             <p><%= child.try(:phone_number) %></p>
@@ -57,10 +57,10 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="alt-card card-overflow black-links" id="guardian-card">
+      <div class="alt-card black-links" id="guardian-card">
         <h4><%= link_to "My Guardians", "#" %></h4>
         <hr>
-        <div class="card-content">
+        <div class="card-content card-overflow">
           <% @user.guardians.each do |guardian| %>
             <p><strong><%= link_to guardian.name_surname, user_assignee_path(@user, guardian) %></strong></p>
             <p><%= guardian.try(:phone_number) %></p>
@@ -69,10 +69,10 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="alt-card card-overflow black-links" id="proof-card">
+      <div class="alt-card black-links" id="proof-card">
         <h4><%= link_to "Proof of Residency", "#" %></h4>
         <hr>
-        <div class="card-content">
+        <div class="card-content card-overflow">
           <% @user.proofs.each do |proof| %>
             <p><%= proof.title %></strong></p>
           <% end %>
@@ -80,10 +80,10 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="alt-card card-overflow black-links" id="notes-card">
+      <div class="alt-card black-links" id="notes-card">
         <h4><%= link_to "Notes", "#" %></h4>
         <hr>
-        <div class="card-content">
+        <div class="card-content card-overflow">
           <% @user.notes.each do |note| %>
             <p><%= note.title %> - <strong><%= Assignee.find(note.assignee_id).first_name %></strong></p>
           <% end %>

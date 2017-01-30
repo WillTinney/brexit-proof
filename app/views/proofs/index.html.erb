@@ -13,7 +13,7 @@
             <%= cl_image_tag(proof.document.path, transformation: [{width: 150, height: 200, crop: "fill"}]) %>
             <div class="details-box margin-left">
               <h4 class="text-center"><strong><%= proof.title %></strong></h4>
-              <div class="proof-comments">
+              <div class="proof-comments card-overflow">
                 <p><%= proof.comments %></p>
               </div>
               <div class="button-box text-center">

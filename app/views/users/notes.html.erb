@@ -16,7 +16,9 @@
 
             <h5><strong>For:</strong> <%= Assignee.find(note.assignee_id).first_name %></h5>
           </div>
-          <p><%= note.content %></p>
+          <div class="card-content card-overflow">
+            <p><%= note.content %></p>
+          </div>
           <div class="button-box">
             <%= link_to "Edit", edit_user_assignee_note_path(current_user, note.assignee_id, note.id), remote: true, class: "btn btn-success btn-default" %>
             <%= link_to "Delete", user_assignee_note_path(current_user, note.assignee_id, note.id), data: {confirm: 'Are you sure?'}, method: :delete, class: "btn btn-danger btn-default" %>
