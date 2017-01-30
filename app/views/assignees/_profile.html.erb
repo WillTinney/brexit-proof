@@ -33,9 +33,9 @@
                 <p>Date of Birth: <%= @assignee.try(:date_of_birth) %></p>
                 <p>Email: <%= @assignee.try(:email) %></p>
                 <p>Phone Number: <%= @assignee.try(:phone_number) %></p>
-                <p>Address: <%= @assignee.try(:address_line_1) + ", " + @assignee.try(:address_line_2) %></p>
-                <p><%= @assignee.try(:town) + ", " + @assignee.try(:postcode) %></p>
-                <p><%= @assignee.try(:country) %></p>
+                <br>
+                <p><%= @assignee.try(:address_line_1) + ", " + @assignee.try(:address_line_2) %></p>
+                <p><%= @assignee.try(:town) + ", " + @assignee.try(:postcode) + ", " + @assignee.try(:country) %></p>
                 <% unless @assignee.details_completed? %>
                   <i class="fa fa-exclamation-triangle" aria-hidden="true"> Details incomplete</i>
                 <% end %>

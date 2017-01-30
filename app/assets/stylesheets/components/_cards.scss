@@ -80,6 +80,9 @@
     width: 85%;
     margin: 4px 0;
   }
+  p {
+    margin: 3px;
+  }
 }
 .note-card {
   position: relative;
@@ -104,6 +107,10 @@
 }
 .orange-border {
   border: 4px solid $orange;
+}
+.small-orange-border {
+  border: 2px solid $orange;
+  margin: 2px 0;
 }
 .warning-circle {
   position: absolute;

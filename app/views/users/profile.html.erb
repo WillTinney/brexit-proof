@@ -12,14 +12,11 @@
         <div class="card-content card-overflow">
           <p><strong><%= @user.try(:name_surname) %></strong></p>
           <p><%= @user.citizenship ? @user.citizenship + " Citizen" : "Please enter your citizenship" %></p>
-          <p><%= @user.try(:date_of_birth) %></p>
-          <p><%= @user.try(:email) %></p>
-          <p><%= @user.try(:phone_number) %></p>
-          <p><%= @user.try(:address_line_1) %></p>
-          <p><%= @user.try(:address_line_2) %></p>
-          <p><%= @user.try(:town) %></p>
-          <p><%= @user.try(:postcode) %></p>
-          <p><%= @user.try(:country) %></p>
+          <p>Date of Birth: <%= @user.try(:date_of_birth) %></p>
+          <p>Email: <%= @user.try(:email) %></p>
+          <p>Phone Number: <%= @user.try(:phone_number) %></p>
+          <p>Address: <%= @user.try(:address_line_1) + ", " + @user.try(:address_line_2) %></p>
+          <p><%= @user.try(:town) + ", " + @user.try(:postcode) + (", " + @user.try(:country) if @user.country) %></p>
           <% unless @user.details_completed? %>
             <i class="fa fa-exclamation-triangle" aria-hidden="true"> Details incomplete</i>
           <% end %>
@@ -27,19 +24,20 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="alt-card black-links">
+      <div class="alt-card black-links <%= 'orange-border' unless @user.partner.details_completed? %>">
         <% if @user.assignees.where('relationship = ?', 'Partner') %>
           <% @user.assignees.where('relationship = ?', 'Partner').each do |partner| %>
+            <% unless partner.details_completed? %>
+              <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+            <% end %>
             <h4><%= link_to "My Partner", user_assignee_path(@user, partner) , id: "partner-card" %></h4>
             <hr>
             <div class="card-content card-overflow">
               <p><strong><%= link_to partner.name_surname, user_assignee_path(@user, partner) %></strong></p>
-              <p><%= partner.address_line_1 %></p>
-              <p><%= partner.address_line_2 %></p>
-              <p><%= partner.town %></p>
-              <p><%= partner.postcode %></p>
-              <p><%= partner.country %></p>
               <p><%= partner.phone_number %></p>
+              <br>
+              <p><%= @user.try(:address_line_1) + ", " + @user.try(:address_line_2) %></p>
+              <p><%= @user.try(:town) + ", " + @user.try(:postcode) %></p>
             </div>
           <% end %>
         <% else %>
@@ -55,8 +53,13 @@
         <hr>
         <div class="card-content card-overflow">
           <% @user.assignees.where('relationship = ?', 'Child').each do |child| %>
-            <p><strong><%= link_to child.try(:name_surname), user_assignee_path(@user, child) %></strong></p>
-            <p><%= child.try(:phone_number) %></p>
+            <div class="<%= 'small-orange-border' unless child.details_completed? %>">
+              <% unless child.details_completed? %>
+                <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+              <% end %>
+              <p><strong><%= link_to child.try(:name_surname), user_assignee_path(@user, child) %></strong></p>
+              <p><%= child.try(:phone_number) %></p>
+            </div>
           <% end %>
         </div>
       </div>
@@ -70,14 +73,22 @@
         <hr>
         <div class="card-content card-overflow">
           <% @user.guardians.each do |guardian| %>
-            <p><strong><%= link_to guardian.name_surname, user_assignee_path(@user, guardian) %></strong></p>
-            <p><%= guardian.try(:phone_number) %></p>
+            <div class="<%= 'small-orange-border' unless guardian.details_completed? %>">
+              <% unless guardian.details_completed? %>
+                <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+              <% end %>
+              <p><strong><%= link_to guardian.name_surname, user_assignee_path(@user, guardian) %></strong></p>
+              <p><%= guardian.try(:phone_number) %></p>
+            </div>
           <% end %>
         </div>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="alt-card black-links">
+      <div class="alt-card black-links <%= 'orange-border' if @user.proofs.all == [] %>">
+        <% if @user.proofs.all == [] %>
+          <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+        <% end %>
         <h4><%= link_to "Proof of Residency", "#", id: "proof-card" %></h4>
         <hr>
         <div class="card-content card-overflow">
