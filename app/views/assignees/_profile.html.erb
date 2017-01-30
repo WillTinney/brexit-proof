@@ -129,6 +129,8 @@
               </div>
             </div>
 
+            <%= f.hidden_field :type, value: @assignee.type %>
+
             <div class="row">
               <div class="col-xs-4 col-xs-offset-4">
                 <%= f.button :submit, "Save & Next", onclick: "step_process(3, 5)" %>

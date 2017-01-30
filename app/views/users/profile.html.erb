@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="alt-card black-links <%= 'orange-border' unless @user.partner.details_completed? %>">
+      <div class="alt-card black-links <%= 'orange-border' unless @user.assignees.where('relationship = ?', 'Partner').last.details_completed? %>">
         <% if @user.assignees.where('relationship = ?', 'Partner') %>
           <% @user.assignees.where('relationship = ?', 'Partner').each do |partner| %>
             <% unless partner.details_completed? %>
@@ -134,7 +134,7 @@
     //   $('#partner-sidebar-tab').addClass('active')
     //   $.ajax({
     //       type: "GET",
-    //       url: <%= @user.id %> + "/assignees/" + <%= @user.partner.id if @user.partner %>,
+    //       url: <%= @user.id %> + "/assignees/" + <%= @user.assignees.where('relationship = ?', 'Partner').last.id if @user.assignees.where('relationship = ?', 'Partner').last %>,
     //       data: { },
     //       success: function(data){
     //           $('#tab-content').empty().html(data);
