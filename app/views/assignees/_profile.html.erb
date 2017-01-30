@@ -19,25 +19,22 @@
     <div class="block" id="block1" style="left: 0%;">
       <div class="wrap">
         <%= link_to '#', class: 'profile-picture-inline' do %>
-          <%= @assignee.profile_picture ? cl_image_tag(@assignee.profile_picture.path, transformation: [{width: 120, height: 120, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-large") : image_tag('user3.png', class: "avatar-large") %>
+          <%= @assignee.profile_picture ? cl_image_tag(@assignee.profile_picture.path, transformation: [{width: 100, height: 100, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-card") : image_tag('user3.png', class: "avatar-card") %>
         <% end %>
         <h1 class="text-center"><%= @assignee.name_surname %></h1>
         <div class="row">
           <div class="col-xs-12 col-md-6">
-            <div class="assignee-card card-overflow" id="action-card">
+            <div class="assignee-card" id="action-card">
               <h4>Details</h4>
               <hr>
-              <div class="card-content">
-                <p><%= @assignee.try(:full_name) %></p>
+              <div class="card-content card-overflow">
+                <p><strong><%= @assignee.try(:full_name) %></strong>: <%= @assignee.try(:relationship) %></p>
                 <p><%= @assignee.citizenship ? @assignee.citizenship + " Citizen" : "Please enter your citizenship" %></p>
-                <p><%= @assignee.try(:relationship) %></p>
-                <p><%= @assignee.try(:date_of_birth) %></p>
-                <p><%= @assignee.try(:email) %></p>
-                <p><%= @assignee.try(:phone_number) %></p>
-                <p><%= @assignee.try(:address_line_1) %></p>
-                <p><%= @assignee.try(:address_line_2) %></p>
-                <p><%= @assignee.try(:town) %></p>
-                <p><%= @assignee.try(:postcode) %></p>
+                <p>Date of Birth: <%= @assignee.try(:date_of_birth) %></p>
+                <p>Email: <%= @assignee.try(:email) %></p>
+                <p>Phone Number: <%= @assignee.try(:phone_number) %></p>
+                <p>Address: <%= @assignee.try(:address_line_1) + ", " + @assignee.try(:address_line_2) %></p>
+                <p><%= @assignee.try(:town) + ", " + @assignee.try(:postcode) %></p>
                 <p><%= @assignee.try(:country) %></p>
                 <% unless @assignee.details_completed? %>
                   <i class="fa fa-exclamation-triangle" aria-hidden="true"> Details incomplete</i>
@@ -46,12 +43,12 @@
             </div>
           </div>
           <div class="col-xs-12 col-sm-6">
-            <div class="assignee-card card-overflow" id="note-card">
+            <div class="assignee-card" id="note-card">
               <h4>Notes</h4>
               <hr>
-              <div class="card-content">
+              <div class="card-content card-overflow">
                 <% @assignee.notes.each do |note| %>
-                  <p><%= note.title %></p>
+                  <p>- <%= note.title %></p>
                 <% end %>
               </div>
             </div>

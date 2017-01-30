@@ -42,7 +42,7 @@
 }
 .assignee-card {
   position: relative;
-  height: 50vh;
+  height: 340px;
   margin: 20px 0;
   box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
   border-radius: 2px;
@@ -55,6 +55,12 @@
     border: 1px solid #EDE8E9;
     width: 85%;
     margin: 4px 0;
+  }
+  h4 {
+    margin-top: 25px;
+  }
+  p {
+    margin: 3px;
   }
 }
 .alt-card {
