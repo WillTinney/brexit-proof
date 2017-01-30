@@ -33,12 +33,31 @@ h1 {text-align: center;margin: 20px 0 0;}
 .progress_bar {
     max-width: 820px;
     width: 80%;
-    margin: 115px auto 0;
+    margin: 60px auto 0;
     position: relative;
     height: 50px;
     z-index: 10;
+    .left-box {
+      height: 8px;
+      width: 7%;
+      background: #F8F8F9;
+      position: absolute;
+      left: 10%;
+      bottom: 17px;
+      z-index: 4;
+    }
+    .right-box {
+      height: 8px;
+      width: 8.2%;
+      background: #F8F8F9;
+      position: absolute;
+      right: 7.5%;
+      bottom: 17px;
+      z-index: 4;
+    }
     hr.all_steps {
-        width: 80%;
+        margin-left: 6%;
+        width: 67%;
         height: 7px;
         border: none;
         background: $grey;
