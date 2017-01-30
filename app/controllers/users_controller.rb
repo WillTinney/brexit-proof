@@ -26,10 +26,6 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def call_to_action
-    authorize @user
-  end
-
   def digital
     authorize @user
   end
@@ -39,6 +35,10 @@ class UsersController < ApplicationController
   end
 
   def notes
+    authorize @user
+  end
+
+  def children
     authorize @user
   end
 

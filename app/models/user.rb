@@ -28,7 +28,7 @@ class User < ApplicationRecord
 
   # Relationship Methods
   def partner
-    recipients.where('relationship = ?', 'Partner')
+    recipients.where('relationship = ?', 'Partner').first
   end
 
   def children

@@ -9,66 +9,8 @@
   </div>
 
   <div class="assignees">
-    <h3>My Partner</h3>
-    <div class="row">
-      <% @assignees.show_partner.each do |recipient| %>
-        <div class="col-xs-12 col-md-6">
-          <div class="card">
-            <%= link_to user_recipient_path(current_user, recipient.id), class: 'recipient-link profile-picture-inline' do %>
-              <div class="card-avatar">
-                <%= image_tag(recipient.profile_picture || "user.png", class: "avatar-card") %>
-              </div>
-            <% end %>
 
-            <div class="card-description">
-              <%= link_to user_recipient_path(current_user, recipient.id), class: 'recipient-link card-detail' do %>
-                <div class="black-text">
-                  <h5><strong><%= recipient.first_name + " " + recipient.last_name %></strong></h5>
-                  <h5><%= recipient.relationship %></h5>
-                </div>
-              <% end %>
-
-              <div class="card-detail">
-                <%= link_to "View", user_assignee_path(current_user, recipient.id), class: "btn btn-info btn-default btn-ice reference-link" %>
-                <%= link_to "Delete", user_recipient_path(current_user, recipient.id), data: {confirm: 'Are you sure?'}, method: :delete, class: "btn btn-danger btn-default" %>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
-    <h3>My Children</h3>
-
-    <div class="row">
-      <% @assignees.show_children.each do |recipient| %>
-        <div class="col-xs-12 col-md-6">
-          <div class="card">
-            <%= link_to user_recipient_path(current_user, recipient.id), class: 'recipient-link profile-picture-inline' do %>
-              <div class="card-avatar">
-                <%= image_tag(recipient.profile_picture || "user.png", class: "avatar-card") %>
-              </div>
-            <% end %>
-
-            <div class="card-description">
-              <%= link_to user_recipient_path(current_user, recipient.id), class: 'recipient-link card-detail' do %>
-                <div class="black-text">
-                  <h5><strong><%= recipient.first_name + " " + recipient.last_name %></strong></h5>
-                  <h5><%= recipient.relationship %></h5>
-                </div>
-              <% end %>
-
-              <div class="card-detail">
-                <%= link_to "View", user_assignee_path(current_user, recipient.id), class: "btn btn-info btn-default btn-ice reference-link" %>
-                <%= link_to "Delete", user_recipient_path(current_user, recipient.id), data: {confirm: 'Are you sure?'}, method: :delete, class: "btn btn-danger btn-default" %>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
-    <h3>Other Family Members</h3>
+    <h3>Family Members</h3>
 
     <div class="row">
       <% @assignees.show_other_family.each do |recipient| %>

@@ -31,15 +31,13 @@
         <h4>My Partner</h4>
         <hr>
         <div class="card-content">
-          <% @user.partner.each do |partner| %>
-            <p><strong><%= partner.try(:name_surname) %></strong></p>
-            <p><%= partner.try(:address_line_1) %></p>
-            <p><%= partner.try(:address_line_2) %></p>
-            <p><%= partner.try(:town) %></p>
-            <p><%= partner.try(:postcode) %></p>
-            <p><%= partner.try(:country) %></p>
-            <p><%= partner.try(:phone_number) %></p>
-          <% end %>
+          <p><strong><%= @user.partner.try(:name_surname) %></strong></p>
+          <p><%= @user.partner.try(:address_line_1) %></p>
+          <p><%= @user.partner.try(:address_line_2) %></p>
+          <p><%= @user.partner.try(:town) %></p>
+          <p><%= @user.partner.try(:postcode) %></p>
+          <p><%= @user.partner.try(:country) %></p>
+          <p><%= @user.partner.try(:phone_number) %></p>
         </div>
       </div>
     </div>

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get 'profile', to: 'users#profile'
     get 'digital', to: 'users#digital'
     get 'notes', to: 'users#notes'
+    get 'children', to: 'users#children'
     resources :proofs
 
     # Assignee Pages

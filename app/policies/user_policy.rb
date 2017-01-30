@@ -49,15 +49,7 @@ class UserPolicy < ApplicationPolicy
     user_is_user?
   end
 
-  def references?
-    user_is_user?
-  end
-
-  def photos?
-    user_is_user?
-  end
-
-  def video?
+  def children?
     user_is_user?
   end
 

@@ -11,7 +11,7 @@
 
   <div class="scrollbox text-center">
     <h3>Partner</h3>
-    <% @user.partner.each do |recipient| %>
+    <% @user.assignees.where('relationship = ?', 'Partner').each do |recipient| %>
       <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
         <%= link_to user_recipient_path(current_user, recipient), class: 'scrollmenu-partner' do %>
           <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
