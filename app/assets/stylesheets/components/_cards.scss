@@ -137,15 +137,22 @@
   width: 90%;
   padding: 5px 5px 12px 5px;
 }
-.reference-card {
-  height: 280px;
-  margin: 20px 0;
-  padding-top: 10px;
-  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
-  border-radius: 2px;
-  background-size: cover !important;
-  background: white;
+.proof-spacing {
+  height: 90%;
+  width: 90%;
+  padding: 0 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-around;
+}
+.submit-button {
+  margin: 10px auto;
+}
+.margin-left {
+  margin-left: 30px;
+}
+.proof-comments {
+  max-height: 150px;
+  overflow-y: auto;
 }

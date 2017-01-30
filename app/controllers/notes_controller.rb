@@ -29,7 +29,7 @@ class NotesController < ApplicationController
   def update
     authorize @note
     if @note.update(note_params)
-      render user_assignee_path(current_user, @note.assignee_id)
+      redirect_to user_assignee_path(current_user, @note.assignee_id)
     else
       render :edit
     end

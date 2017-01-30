@@ -1,1 +1,3 @@
-$('#edit-proof-form').html("<%= j (render 'proofs/form')%>");
+$('#proof-<%= @proof.id %>').empty()
+
+$('#edit-proof-form-<%= @proof.id %>').html("<%= j (render 'proofs/form')%>");

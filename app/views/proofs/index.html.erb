@@ -1,79 +1,59 @@
 <br>
 
-<div class="grey-box">
-  <h2>Proof of Residency</h2>
-
-  <div class="blue-box">
-    <p>In order to authenticate your...</p>
-  </div>
-
-  <div id="proof-of-residency">
-    <% if @proofs %>
-      <h3>Your proof of residency:</h3>
-
-      <% @proofs.each do |proof| %>
-        <div class="col-xs-12 col-sm-6">
-          <div class="note-card">
-            <div class="note-spacing" id="assignee-proof-<%= proof.id %>">
-              <div class="note-title">
-                <h4><strong><%= proof.title %></strong></h4>
-
-                <h5><strong>For:</strong> <%= Assignee.find(proof.assignee_id).first_name %></h5>
+<div class="container-box">
+  <% if @proofs != [] %>
+    <div class="header-box">
+      <h2>Your Proof of Residency</h2>
+      <%= link_to "Add Document", new_user_proof_path(current_user, @proof), remote: true, class: "btn btn-transparent btn-default button-height-default" %>
+    </div>
+    <% @proofs.each do |proof| %>
+      <div class="col-xs-12 col-lg-6">
+        <div class="note-card">
+          <div class="proof-spacing" id="proof-<%= proof.id %>">
+            <%= cl_image_tag(proof.document.path, transformation: [{width: 150, height: 200, crop: "fill"}]) %>
+            <div class="details-box margin-left">
+              <h4 class="text-center"><strong><%= proof.title %></strong></h4>
+              <div class="proof-comments">
+                <p><%= proof.comments %></p>
               </div>
-              <p><%= proof.content %></p>
-              <div class="button-box">
+              <div class="button-box text-center">
                 <%= link_to "Edit", edit_user_proof_path(current_user, proof.id), remote: true, class: "btn btn-success btn-default" %>
                 <%= link_to "Delete", user_proof_path(current_user, proof.id), data: {confirm: 'Are you sure?'}, method: :delete, class: "btn btn-danger btn-default" %>
               </div>
             </div>
-            <div class="proof-form" id="edit-proof-form-<%= proof.id %>"></div>
           </div>
+          <div class="note-form" id="edit-proof-form-<%= proof.id %>"></div>
         </div>
-      <% end %>
+      </div>
+    <% end %>
 
-    <% else %>
+    <div class="col-xs-12 col-md-6">
+      <div class="note-card invisible">
+        <div class="note-form" id="new-proof-form"></div>
+      </div>
+    </div>
 
-      <h5>You have not uploaded a proof of residency.</h5>
+  <% else %>
+
+    <h2>Proof of Residency</h2>
+
+    <div class="blue-box">
+      <p>In order to authenticate your...</p>
+    </div>
+
+    <div class="grey-box">
+      <h5><strong>You have not uploaded a proof of residency.</strong></h5>
       <p>Please use the form below to do so:</p>
       <%= simple_form_for([@user, @proof]) do |f| %>
         <%= f.input :title %>
         <%= f.input :document, as: :attachinary %>
         <%= f.input :comments %>
-        <%= f.button :submit, "Submit Proof of Residency" %>
+        <div class="submit-button text-center">
+          <%= f.button :submit, "Submit Proof of Residency", class: "btn btn-success" %>
+        </div>
       <% end %>
+    </div>
 
-    <% end %>
-  </div>
+  <% end %>
 
 </div>
-
-<% content_for(:after_js) do %>
-  <script>
-    // Show comment edit form
-    $('#proof-comment-edit').on('click', function(e) {
-      $('#proof-comment-content').addClass('invisible');
-      $('#proof-comment-edit').addClass('invisible');
-      $('#proof-comment-form').removeClass('invisible');
-    });
-
-    // Removing comment edit form after update
-    $('#proof-comment-form button').on('click', function(e) {
-      e.prevent_default;
-      $('#proof-comment-form').addClass('invisible');
-      $('#proof-comment-edit').removeClass('invisible');
-    });
-
-    // Show upload edit form
-    $('#proof-upload-edit').on('click', function(e) {
-      console.log('hello')
-      $('#proof-upload-form').removeClass('invisible');
-    });
-
-    // Removing upload edit form after update
-    $('#proof-upload-form button').on('click', function(e) {
-      e.prevent_default;
-      $('#proof-upload-form').addClass('invisible');
-      $('#proof-upload-edit').removeClass('invisible');
-    });
-  </script>
-<% end %>

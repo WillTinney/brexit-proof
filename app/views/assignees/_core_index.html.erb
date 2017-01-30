@@ -10,7 +10,7 @@
 
   <div class="assignees">
     <% @assignees.where('type = ?', @type).each do |assignee| %>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-md-6 col-lg-4">
         <div class="card">
           <%= link_to user_assignee_path(current_user, assignee.id) do %>
             <%= image_tag(assignee.profile_picture  || "user.png", class: "avatar-card push-right") %>

@@ -183,7 +183,7 @@
       e.preventDefault();
       $.ajax({
           type: "GET",
-          url: <%= @user.id %> + "/proof",
+          url: <%= @user.id %> + "/proofs",
           data: { },
           success: function(data){
               $('#tab-content').empty().html(data);

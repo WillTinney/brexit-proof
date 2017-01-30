@@ -14,7 +14,6 @@ Rails.application.routes.draw do
     # User Pages
     get 'profile', to: 'users#profile'
     get 'digital', to: 'users#digital'
-    get 'proof', to: 'users#proof'
     get 'notes', to: 'users#notes'
     resources :proofs
 

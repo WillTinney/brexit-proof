@@ -10,7 +10,7 @@
         <h4>My Details</h4>
         <hr>
         <div class="card-content">
-          <p><%= @user.try(:name_surname) %></p>
+          <p><strong><%= @user.try(:name_surname) %></strong></p>
           <p><%= @user.citizenship ? @user.citizenship + " Citizen" : "Please enter your citizenship" %></p>
           <p><%= @user.try(:date_of_birth) %></p>
           <p><%= @user.try(:email) %></p>
@@ -32,7 +32,7 @@
         <hr>
         <div class="card-content">
           <% @user.partner.each do |partner| %>
-            <p><%= partner.try(:name_surname) %></p>
+            <p><strong><%= partner.try(:name_surname) %></strong></p>
             <p><%= partner.try(:address_line_1) %></p>
             <p><%= partner.try(:address_line_2) %></p>
             <p><%= partner.try(:town) %></p>
@@ -49,7 +49,7 @@
         <hr>
         <div class="card-content">
           <% @user.children.each do |child| %>
-            <p><%= child.try(:name_surname) %></p>
+            <p><strong><%= child.try(:name_surname) %></strong></p>
             <p><%= child.try(:phone_number) %></p>
           <% end %>
         </div>
