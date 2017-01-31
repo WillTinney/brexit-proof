@@ -8,29 +8,33 @@
 
 <div class="dashboard-box">
   <div id="tab-content">
-    <div class="0" id="profile-content">
-      <%= render 'assignees/profile' %>
+    <div class="container-box">
+  <div class="progress_bar">
+    <div class="left-box"></div>
+    <div class="right-box"></div>
+    <hr class="all_steps">
+    <hr class="current_steps">
+    <div class="step current" id="step1" data-step="1">
+      Profile
     </div>
-
-    <div class="2 hidden" id="details-content">
-      <%= render file: 'assignees/edit' %>
+    <div class="step" id="step3" data-step="3">
+      Edit Details
     </div>
-
-    <div class="4 hidden" id="notes-content">
-      <%= render file: 'assignees/notes' %>
+    <div class="step" id="step5" data-step="5">
+      Notes
     </div>
+  </div>
 
-    <div class="6 hidden" id="admin-content">
+  <div id="blocks">
+    <%= render 'assignees/profile' %>
+    <%= render file: 'assignees/edit' %>
+    <%= render file: 'assignees/notes' %>
+  </div>
+  <br class="clear" />
+</div>
 
-    </div>
+<br>
 
-    <div class="8 hidden" id="photos-content">
-
-    </div>
-
-    <div class="10 hidden" id="videos-content">
-
-    </div>
   </div>
 </div>
 
@@ -44,6 +48,87 @@
     $('.scrollitem h6').filter(function () {
         return $(this).text() == assigneeId;
     }).parentsUntil('.scrollmenu').addClass('active');
+
+    // Progress bar
+    function step_process(from, to, dir) {
+        if (typeof(dir) === 'undefined') dir = 'asc';
+        var old_move = '';
+        var new_start = '';
+
+        var speed = 500;
+
+        if (dir == 'asc') {
+            old_move = '-';
+            new_start = '';
+        } else if (dir == 'desc') {
+            old_move = '';
+            new_start = '-';
+        }
+
+        $('#block'+from).animate({left: old_move+'100%'}, speed, function() {
+            $(this).css({left: '100%', 'background-color':'transparent', 'z-index':'2'});
+            $(this).addClass('invisible');
+        });
+        $('#block'+to).css({'z-index': '3', left:new_start+'100%'}).animate({left: '0%'}, speed, function() {
+            $(this).removeClass('invisible');
+            $(this).css({'z-index':'2'});
+        });
+
+        if (Math.abs(from-to) === 1) {
+            // Next Step
+            if (from < to) $("#step"+from).addClass('complete').removeClass('current');
+            else $("#step"+from).removeClass('complete').removeClass('current');
+            var width = (parseInt(to) - 1) * 20;
+            $(".progress_bar").find('.current_steps').animate({'width': width+'%'}, speed, function() {
+                $("#step"+to).removeClass('complete').addClass('current');
+            });
+        } else {
+            // Move to Step
+            var steps = Math.abs(from-to);
+            var step_speed = speed / steps;
+            if (from < to) {
+                move_to_step(from, to, 'asc', step_speed);
+            } else {
+                move_to_step(from, to, 'desc', step_speed);
+            }
+        }
+    }
+
+    function move_to_step(step, end, dir, step_speed) {
+        if (dir == 'asc') {
+            $("#step"+step).addClass('complete').removeClass('current');
+            var width = (parseInt(step+1) - 1) * 20;
+            $(".progress_bar").find('.current_steps').animate({'width': width+'%'}, step_speed, function() {
+                $("#step"+(step+1)).removeClass('complete').addClass('current');
+                if (step+1 < end) move_to_step((step+1), end, dir, step_speed);
+            });
+        } else {
+            $("#step"+step).removeClass('complete').removeClass('current');
+            var width = (parseInt(step-1) - 1) * 20;
+            $(".progress_bar").find('.current_steps').animate({'width': width+'%'}, step_speed, function() {
+                $("#step"+(step-1)).removeClass('complete').addClass('current');
+                if (step-1 > end) move_to_step((step-1), end, dir, step_speed);
+            });
+        }
+    }
+
+    $(document).ready(function() {
+        $("body").on("click", ".progress_bar .step.complete", function() {
+            var from = $(this).parent().find('.current').data('step');
+            var to = $(this).data('step');
+            var dir = "desc";
+            if (from < to) dir = "asc";
+
+            step_process(from, to, dir);
+        });
+    });
+
+    // Edit profile picture form
+    $('.profile-picture-inline').click(function(e) {
+      e.preventDefault;
+      console.log('hello')
+      $('.edit-profile-picture').removeClass('invisible');
+    });
 
     // When refreshing page the same tab loads
     // (have to find a way to send a param to the url as file: render is being used and no #mytab in the url)
