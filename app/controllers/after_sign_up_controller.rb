@@ -5,12 +5,14 @@ class AfterSignUpController < ApplicationController
 
   def show
     @user = current_user
+    authorize @user
     sign_in(@user, bypass: true)
     render_wizard
   end
 
   def update
     @user = current_user
+    authorize @user
     @user.update_attributes(user_params)
     render_wizard @user
   end

@@ -1,165 +1,114 @@
-/**
- * Define variables
- */
-$points        : 5;
-$demo_w        : 90%;
-$track_h       : 4px;
-$track_h05     : $track_h / 2;
-$gutter        : 100% / ($points - 1);
-$duration      : 1s;
-
-$_r    : 24px;
-$_r05  : $_r / 2;
-$_r025 : $_r05 / 2;
-$_b    : $_r / 6;
-$_mt   : ($track_h - $_r) * 0.5 - $track_h;
-
-$tint-track      : #ddd;
-$tint-progress   : red;
-$tint-complete   : #777;
-$tint-incomplete : lighten($tint-complete, 20%);s
-
-
-/**
- * Utility styles
- */
-.inliner {
-  height: 100%;
-}
-
-.inliner,
-.inliner + .inlined {
-  display        : inline-block;
-  vertical-align : middle;
-}
-
-.inlined {
-  width: $demo_w;
-}
-
-
-/**
- * Component styles
- */
-%progress-meter-demo {
-  margin  : 20px auto 40px;
-  padding : 40px;
-}
-
-.progress-meter {
-  @extend %progress-meter-demo;
-
-  counter-reset : point;
-
-  %check {
-    @include transition;
-    @include border-radius($_r);
-    @include box-shadow(0 0 0 2px white);
-
-    content          : "\2713";
-    display          : block;
-    width            : $_r;
-    margin           : 0 auto $_r05;
-    border           : $_b solid $tint-incomplete;
-    text-align       : center;
-    background-color : white;
-    color            : white;
-  }
-
-  .track {
-    position   : relative;
-    height     : $track_h;
-    background : $tint-track;
-  }
-
-  .progress {
-    @include transition(width 1s);
-
-    display    : block;
-    position   : absolute;
-    left       : 0;
-    top        : 0;
-    width      : 0;
-    height     : $track_h;
-    background : $tint-progress;
-  }
-
-  .progress-points {
-    position   : relative;
-    margin     : $_mt 0 0;
-    padding    : 0;
-    list-style : none;
-
-    @for $i from 1 through $points {
-      .progress-point:nth-child(#{$i}) {
-        left: ($i - 1) * $gutter;
-      }
-    }
-  }
-
-  .progress-point {
-    $_w : 100px;
-    $_ml: $_w / -2;
-
-    @include transition(color $duration);
-
-    position    : absolute;
-    display     : block;
-    width       : $_w;
-    margin-left : $_ml;
-    text-align  : center;
-    cursor      : pointer;
-    color       : #999;
-
-    &:before {
-      @extend %check;
-    }
-
-    &.completed,
-      &.active {
-      color: $tint-complete;
-    }
-
-    &.completed:before {
-      border-color     : $tint-complete;
-      background-color : $tint-complete;
-    }
-
-    &.active:before {
-      @include transition-delay($duration);
-
-      border-color: $tint-complete;
-    }
-
-    .label:before {
-      counter-increment: point;
-      content: counter(point) ". "; /* Display the counter */
-    }
-  }
-}
-
-/**
- * Demo controls
- */
-.controls {
+/*form styles*/
+#msform {
+  width: 400px;
+  margin: 50px auto;
   text-align: center;
-  font-size: 12px;
+  position: relative;
 }
+#msform fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
 
-.trigger {
-  $_tint-bg     : #bbb;
-  $tint_text    : darken($_tint-bg, 35%);
-  $_tint-shadow : lighten($_tint-bg, 25%);
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 10%;
 
-  @include border-radius(3px);
-
-  padding     : 6px 8px;
-  border      : none;
-  font        : 14px inherit;
-  text-shadow : 0px 1px 1px rgba($_tint-shadow, 0.75);
-  color       : $tint_text;
-
-  @include background-image(
-    linear-gradient($_tint-bg, darken($_tint-bg, 15%))
-  );
+  /*stacking fieldsets above each other*/
+  position: absolute;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+}
+/*buttons*/
+#msform .action-button {
+  width: 100px;
+  background: #27AE60;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+/*headings*/
+.fs-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #2C3E50;
+  margin-bottom: 10px;
+}
+.fs-subtitle {
+  font-weight: normal;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+}
+#progressbar li {
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+}
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: white;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+  background: #27AE60;
+  color: white;
 }
