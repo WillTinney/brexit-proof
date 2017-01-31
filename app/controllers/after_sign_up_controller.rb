@@ -14,8 +14,12 @@ class AfterSignUpController < ApplicationController
         @assignee = @user.assignees.new
       when :partner_contact
         @assignee = @user.partner
-      when :child_basic || :child_contact
+      when :child_basic
         skip_step if @user.number_of_children == 0
+        @assignee = @user.assignees.new
+      when :child_contact
+        skip_step if @user.number_of_children == 0
+        @assignee = @user.children.last
     end
     sign_in(@user, bypass: true)
     render_wizard
@@ -39,6 +43,7 @@ class AfterSignUpController < ApplicationController
       when :children
           @user.number_of_children = params[:commit].to_i
           @user.save
+          render_wizard @user
       when :child_basic
         @assignee = @user.assignees.new
         @assignee.update_attributes(assignee_params)
@@ -48,8 +53,9 @@ class AfterSignUpController < ApplicationController
         @assignee = @user.children.last
         sign_in(@user, bypass: true)
         @assignee.update_attributes(assignee_params)
+        binding.pry
         if @user.children.count < @user.number_of_children
-          jump_to(:child_basic)
+          redirect_to wizard_path(:child_basic)
         else
           render_wizard @assignee
         end
