@@ -1,0 +1,28 @@
+<% content_for(:navbar) do %>
+  <%= render 'shared/navbars/navbar_sign_up' %>
+<% end %>
+
+<div class="navbar-box">
+  <div class="container">
+    <h3>Your Children</h3>
+
+    <p>Please enter</p>
+  </div>
+</div>
+
+<div class="wizard-box text-center">
+  <h2>Do you have a partner or spouse?</h2>
+  <%= simple_form_for(@user, url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-4">
+        <%= f.submit "0" %>
+        <%= f.submit "1" %>
+        <%= f.submit "2" %>
+        <%= f.submit "3" %>
+        <%= f.submit "4" %>
+        <%= link_to 'No', wizard_path(:guardians), class: "butt" %>
+        <%= link_to 'Yes', wizard_path(:child_basic), class: "butt" %>
+      </div>
+    </div>
+  <% end %>
+</div>

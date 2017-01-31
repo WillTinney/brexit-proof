@@ -6,7 +6,7 @@ class AfterSignUpPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.user = user
   end
 
   def update?

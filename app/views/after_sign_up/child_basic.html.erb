@@ -4,18 +4,28 @@
 
 <div class="navbar-box">
   <div class="container">
-    <h3>Please enter some basic details about yourself.</h3>
+    <h3>Your Children</h3>
 
-    <p>This is important so we are able to identify you and set up your account.</p>
+    <p>Please enter some basic details about your partner.</p>
   </div>
 </div>
 
 <div class="wizard-box text-center">
-  <%= simple_form_for(@user, url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
+  <%= simple_form_for([@user, @assignee], url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
+    <%= f.hidden_field :type, value: 'Recipient' %>
+    <%= f.hidden_field :relationship, value: 'Child' %>
+
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
+        <%= f.input :profile_picture, as: :attachinary %>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
         <%= f.input :first_name, placeholder: 'First name' %>
       </div>
+
       <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
         <%= f.input :middle_name, label: "Middle name(s)", placeholder: 'Middle name' %>
       </div>
@@ -23,6 +33,7 @@
         <%= f.input :last_name, placeholder: 'Last name' %>
       </div>
     </div>
+
     <div class="row">
       <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-2">
         <%= f.input :citizenship %>

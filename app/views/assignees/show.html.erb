@@ -9,32 +9,31 @@
 <div class="dashboard-box">
   <div id="tab-content">
     <div class="container-box">
-  <div class="progress_bar">
-    <div class="left-box"></div>
-    <div class="right-box"></div>
-    <hr class="all_steps">
-    <hr class="current_steps">
-    <div class="step current" id="step1" data-step="1">
-      Profile
-    </div>
-    <div class="step" id="step3" data-step="3">
-      Edit Details
-    </div>
-    <div class="step" id="step5" data-step="5">
-      Notes
-    </div>
-  </div>
+      <div class="progress_bar">
+        <div class="left-box"></div>
+        <div class="right-box"></div>
+        <hr class="all_steps">
+        <hr class="current_steps">
+        <div class="step current" id="step1" data-step="1">
+          Profile
+        </div>
+        <div class="step" id="step3" data-step="3">
+          Edit Details
+        </div>
+        <div class="step" id="step5" data-step="5">
+          Notes
+        </div>
+      </div>
 
-  <div id="blocks">
-    <%= render 'assignees/profile' %>
-    <%= render file: 'assignees/edit' %>
-    <%= render file: 'assignees/notes' %>
-  </div>
-  <br class="clear" />
-</div>
+      <div id="blocks">
+        <%= render 'assignees/profile' %>
+        <%= render file: 'assignees/edit' %>
+        <%= render file: 'assignees/notes' %>
+      </div>
 
-<br>
-
+      <br class="clear" />
+    </div>
+    <br>
   </div>
 </div>
 

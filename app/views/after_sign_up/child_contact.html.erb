@@ -1,0 +1,51 @@
+<% content_for(:navbar) do %>
+  <%= render 'shared/navbars/navbar_sign_up' %>
+<% end %>
+
+<div class="navbar-box">
+  <div class="container">
+    <h3>Your Children</h3>
+
+    <p>Please enter your phone number and address so that you can be contacted if necessary.<br />We will never share you details with 3rd parties.</p>
+  </div>
+</div>
+
+<div class="wizard-box text-center">
+  <%= simple_form_for([@user, @assignee], url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
+        <%= f.input :phone_number %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-0">
+        <%= f.input :address_line_1 %>
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-0">
+        <%= f.input :address_line_2 %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+        <%= f.input :town %>
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+        <%= f.input :postcode %>
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+        <%= f.input :country %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-4">
+        <div class="wizard-buttons">
+          <%= link_to 'back', previous_wizard_path, class: "butt" %>
+          <%= f.submit 'Next', class: 'btn btn-success' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
