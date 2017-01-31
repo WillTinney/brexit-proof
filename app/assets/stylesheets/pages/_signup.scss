@@ -20,3 +20,19 @@
 .sign-up-form {
   margin: 0 auto;
 }
+.wizard-box {
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  label {
+    margin-top: 10px;
+  }
+}
+.wizard-buttons {
+  margin-top: 20px;
+}
+.wizard-choice-buttons {
+  margin-top: 50px;
+}

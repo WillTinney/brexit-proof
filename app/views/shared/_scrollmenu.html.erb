@@ -9,57 +9,65 @@
     </div>
   </div>
 
-  <div class="scrollbox text-center">
-    <h3>Partner</h3>
-    <% @user.assignees.where('relationship = ?', 'Partner').each do |recipient| %>
-      <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
-        <%= link_to user_recipient_path(current_user, recipient), class: 'scrollmenu-partner' do %>
-          <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
-          <h4><%= recipient.first_name %></h4>
-          <h6><%= recipient.id %></h6>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <% if !@user.assignees.where('relationship = ?', 'Partner').empty? %>
+    <div class="scrollbox text-center">
+      <h3>Partner</h3>
+      <% @user.assignees.where('relationship = ?', 'Partner').each do |recipient| %>
+        <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
+          <%= link_to user_recipient_path(current_user, recipient), class: 'scrollmenu-partner' do %>
+            <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
+            <h4><%= recipient.first_name %></h4>
+            <h6><%= recipient.id %></h6>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
-  <div class="scrollbox">
-    <h3>Children</h3>
-    <% @user.children.each do |recipient| %>
-      <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
-        <%= link_to user_recipient_path(current_user, recipient),class: 'scrollmenu-children' do %>
-          <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
-          <h4><%= recipient.first_name %></h4>
-          <h6><%= recipient.id %></h6>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <% if !@user.children.empty? %>
+    <div class="scrollbox">
+      <h3>Children</h3>
+      <% @user.children.each do |recipient| %>
+        <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
+          <%= link_to user_recipient_path(current_user, recipient),class: 'scrollmenu-children' do %>
+            <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
+            <h4><%= recipient.first_name %></h4>
+            <h6><%= recipient.id %></h6>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
-  <div class="scrollbox">
-    <h3>Guardians</h3>
-    <% @user.guardians.each do |guardian| %>
-      <div class="scrollitem <%= 'active' if @guardian && @guardian.id == guardian.id %>">
-        <%= link_to user_guardian_path(current_user, guardian), class: 'scrollmenu-guardians' do %>
-          <%= guardian.profile_picture ? cl_image_tag(guardian.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
-          <h4><%= guardian.first_name %></h4>
-          <h6><%= guardian.id %></h6>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <% if !@user.guardians.empty? %>
+    <div class="scrollbox">
+      <h3>Guardians</h3>
+      <% @user.guardians.each do |guardian| %>
+        <div class="scrollitem <%= 'active' if @guardian && @guardian.id == guardian.id %>">
+          <%= link_to user_guardian_path(current_user, guardian), class: 'scrollmenu-guardians' do %>
+            <%= guardian.profile_picture ? cl_image_tag(guardian.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
+            <h4><%= guardian.first_name %></h4>
+            <h6><%= guardian.id %></h6>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
-  <div class="scrollbox">
-    <h3>Other Friends & Family</h3>
-    <% @user.show_other.each do |recipient| %>
-      <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
-        <%= link_to user_recipient_path(current_user, recipient), class: 'scrollmenu-recipients' do %>
-          <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
-          <h4><%= recipient.first_name %></h4>
-          <h6><%= recipient.id %></h6>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <% if !@user.show_other.empty? %>
+    <div class="scrollbox">
+      <h3>Other Friends & Family</h3>
+      <% @user.show_other.each do |recipient| %>
+        <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
+          <%= link_to user_recipient_path(current_user, recipient), class: 'scrollmenu-recipients' do %>
+            <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
+            <h4><%= recipient.first_name %></h4>
+            <h6><%= recipient.id %></h6>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <% content_for(:after_js) do %>

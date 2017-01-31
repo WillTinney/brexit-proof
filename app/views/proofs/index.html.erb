@@ -1,7 +1,7 @@
 <br>
 
 <div class="container-box">
-  <% if @proofs != [] %>
+  <% if !@proofs.empty? %>
     <div class="header-box">
       <h2>Your Proof of Residency</h2>
       <%= link_to "Add Document", new_user_proof_path(current_user, @proof), remote: true, class: "btn btn-transparent btn-default button-height-default" %>

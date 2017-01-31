@@ -19,7 +19,7 @@
         <%= yield %>
       </div>
     <% else %>
-      <%= render 'shared/flashes' %>
+      <%= render 'shared/flashes' unless params[:controller] == 'after_sign_up' || params[:action] == 'home' %>
       <%= yield %>
     <% end %>
     <%= render 'shared/footers/home_footer' if params[:action] == 'home' %>

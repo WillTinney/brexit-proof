@@ -4,9 +4,9 @@
 
 <div class="navbar-box">
   <div class="container">
-    <h3>Please enter some basic details about yourself.</h3>
+    <h3>Contact information</h3>
 
-    <p>This is important so we are able to identify you and set up your account.</p>
+    <p>Please enter your phone number and address so that you can be contacted if necessary.<br />We will never share you details with 3rd parties.</p>
   </div>
 </div>
 
@@ -41,22 +41,29 @@
 <div class="wizard-box text-center">
   <%= simple_form_for(@user, url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-        <%= f.input :first_name, placeholder: 'First name' %>
-      </div>
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-        <%= f.input :middle_name, label: "Middle name(s)", placeholder: 'Middle name' %>
-      </div>
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-        <%= f.input :last_name, placeholder: 'Last name' %>
+      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
+        <%= f.input :phone_number %>
       </div>
     </div>
+
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-2">
-        <%= f.input :citizenship %>
+      <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-0">
+        <%= f.input :address_line_1 %>
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-0">
+        <%= f.input :address_line_2 %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+        <%= f.input :town %>
       </div>
       <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-        <%= f.input :date_of_birth %>
+        <%= f.input :postcode %>
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+        <%= f.input :country %>
       </div>
     </div>
 
