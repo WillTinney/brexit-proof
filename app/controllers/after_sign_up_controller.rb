@@ -1,7 +1,7 @@
 class AfterSignUpController < ApplicationController
   include Wicked::Wizard
 
-  steps :sign_up, :basic_profile, :contact_info, :partner, :partner_basic, :partner_contact, :children, :child_basic, :child_contact # :guardian, :guardian_basic, :guardian_contact, :complete
+  steps :sign_up, :basic_profile, :contact_info, :partner, :partner_basic, :partner_contact, :children, :child_basic, :child_contact, :guardians, :guardian_basic, :guardian_contact, :complete
 
   def show
     @user = current_user
@@ -20,6 +20,10 @@ class AfterSignUpController < ApplicationController
       when :child_contact
         skip_step if @user.number_of_children == 0
         @assignee = @user.children.last
+      when :guardian_basic
+        @assignee = @user.assignees.new
+      when :guardian_contact
+        @assignee = @user.guardians.last
     end
     sign_in(@user, bypass: true)
     render_wizard
@@ -59,6 +63,16 @@ class AfterSignUpController < ApplicationController
         else
           render_wizard @assignee
         end
+      when :guardian_basic
+        @assignee = @user.assignees.new
+        @assignee.update_attributes(assignee_params)
+        sign_in(@user, bypass: true)
+        render_wizard @assignee
+      when :guardian_contact
+        @assignee = @user.guardians.last
+        @assignee.update_attributes(assignee_params)
+        sign_in(@user, bypass: true)
+        render_wizard @assignee
       else
         @user.update_attributes(user_params)
         sign_in(@user, bypass: true)

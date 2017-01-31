@@ -1,0 +1,16 @@
+<% content_for(:navbar) do %>
+  <%= render 'shared/navbars/navbar_sign_up' %>
+<% end %>
+
+<div class="navbar-box">
+  <div class="container">
+    <h3>Congratulations</h3>
+
+    <p>You have secured your future by signing up to BrexitProof.</p>
+  </div>
+</div>
+
+<div class="wizard-box text-center">
+  <%= link_to 'Click to add another guardian', wizard_path(:guardian_basic), class: "butt" %>
+  <%= link_to 'Click to enter your dashboard', user_path(current_user), class: "butt" %>
+</div>
