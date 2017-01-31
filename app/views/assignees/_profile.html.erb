@@ -1,278 +1,43 @@
-<div class="container-box">
-  <div class="progress_bar">
-    <div class="left-box"></div>
-    <div class="right-box"></div>
-    <hr class="all_steps">
-    <hr class="current_steps">
-    <div class="step current" id="step1" data-step="1">
-      Profile
+<div class="block" id="block1" style="left: 0%;">
+  <div class="wrap">
+    <%= link_to '#', class: 'profile-picture-inline' do %>
+      <%= @assignee.profile_picture ? cl_image_tag(@assignee.profile_picture.path, transformation: [{width: 100, height: 100, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-card") : image_tag('user3.png', class: "avatar-card") %>
+    <% end %>
+    <h1 class="text-center"><%= @assignee.name_surname %></h1>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="assignee-card" id="action-card">
+          <h4>Details</h4>
+          <hr>
+          <div class="card-content card-overflow">
+            <p><strong><%= @assignee.try(:full_name) %></strong>: <%= @assignee.try(:relationship) %></p>
+            <p><%= @assignee.citizenship ? @assignee.citizenship + " Citizen" : "Please enter your citizenship" %></p>
+            <p>Date of Birth: <%= @assignee.try(:date_of_birth) %></p>
+            <p>Email: <%= @assignee.try(:email) %></p>
+            <p>Phone Number: <%= @assignee.try(:phone_number) %></p>
+            <br>
+            <p><%= @assignee.try(:address_line_1) + ", " + @assignee.try(:address_line_2) %></p>
+            <p><%= @assignee.try(:town) + ", " + @assignee.try(:postcode) %><% ", " + @assignee.country if @assignee.country %></p>
+            <% unless @assignee.details_completed? %>
+              <i class="fa fa-exclamation-triangle" aria-hidden="true"> Details incomplete</i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="assignee-card" id="note-card">
+          <h4>Notes</h4>
+          <hr>
+          <div class="card-content card-overflow">
+            <% @assignee.notes.each do |note| %>
+              <p>- <%= note.title %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="step" id="step3" data-step="3">
-      Edit Details
-    </div>
-    <div class="step" id="step5" data-step="5">
-      Notes
-    </div>
+    <br />
+    <a onclick="step_process(1, 3)" class="btn btn-success next-button pull-right">Next</a>
+    <br />
   </div>
-
-  <div id="blocks">
-    <div class="block" id="block1" style="left: 0%;">
-      <div class="wrap">
-        <%= link_to '#', class: 'profile-picture-inline' do %>
-          <%= @assignee.profile_picture ? cl_image_tag(@assignee.profile_picture.path, transformation: [{width: 100, height: 100, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-card") : image_tag('user3.png', class: "avatar-card") %>
-        <% end %>
-        <h1 class="text-center"><%= @assignee.name_surname %></h1>
-        <div class="row">
-          <div class="col-xs-12 col-md-6">
-            <div class="assignee-card" id="action-card">
-              <h4>Details</h4>
-              <hr>
-              <div class="card-content card-overflow">
-                <p><strong><%= @assignee.try(:full_name) %></strong>: <%= @assignee.try(:relationship) %></p>
-                <p><%= @assignee.citizenship ? @assignee.citizenship + " Citizen" : "Please enter your citizenship" %></p>
-                <p>Date of Birth: <%= @assignee.try(:date_of_birth) %></p>
-                <p>Email: <%= @assignee.try(:email) %></p>
-                <p>Phone Number: <%= @assignee.try(:phone_number) %></p>
-                <br>
-                <p><%= @assignee.try(:address_line_1) + ", " + @assignee.try(:address_line_2) %></p>
-                <p><%= @assignee.try(:town) + ", " + @assignee.try(:postcode) %><% ", " + @assignee.country if @assignee.country %></p>
-                <% unless @assignee.details_completed? %>
-                  <i class="fa fa-exclamation-triangle" aria-hidden="true"> Details incomplete</i>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6">
-            <div class="assignee-card" id="note-card">
-              <h4>Notes</h4>
-              <hr>
-              <div class="card-content card-overflow">
-                <% @assignee.notes.each do |note| %>
-                  <p>- <%= note.title %></p>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br />
-        <a onclick="step_process(1, 3)" class="btn btn-success next-button pull-right">Next</a>
-        <br />
-      </div>
-    </div>
-    <div class="block invisible" id="block3">
-      <div class="wrap">
-        <br>
-
-        <%= link_to '#', class: 'profile-picture-inline' do %>
-          <%= @assignee.profile_picture ? cl_image_tag(@assignee.profile_picture.path, transformation: [{width: 100, height: 100, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-edit") : image_tag('user3.png', class: "avatar-edit") %>
-          <p>Change Picture</p>
-          <%= simple_form_for [current_user, @assignee], html: {class: 'form-inline edit-profile-picture invisible'} do |f| %>
-            <%= f.input :profile_picture, as: :attachinary, label: false, input_html: { class: 'profile-upload'} %>
-            <%= f.submit "Upload", class: 'profile-upload'  %>
-          <% end %>
-        <% end %>
-
-        <%= simple_form_for [current_user, @assignee] do |f| %>
-          <%= f.hidden_field :type, value: @type %>
-          <div class="form-container">
-            <div class="row">
-              <div class="col-xs-12 col-sm-4">
-                <%= f.input :first_name %>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <%= f.input :middle_name %>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <%= f.input :last_name %>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-12 col-sm-4">
-                <%= f.input :citizenship %>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <%= f.input :date_of_birth %>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <%= f.input :relationship %>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-12 col-sm-4 col-sm-offset-2">
-                <%= f.input :email %>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <%= f.input :phone_number %>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-12 col-sm-6">
-                <%= f.input :address_line_1 %>
-              </div>
-              <div class="col-xs-12 col-sm-6">
-                <%= f.input :address_line_2 %>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-12 col-sm-4">
-                <%= f.input :town %>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <%= f.input :postcode %>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <%= f.input :country %>
-              </div>
-            </div>
-
-            <%= f.hidden_field :type, value: @assignee.type %>
-
-            <div class="row">
-              <div class="col-xs-4 col-xs-offset-4">
-                <%= f.button :submit, "Save & Next", onclick: "step_process(3, 5)" %>
-                <a onclick="step_process(3, 1, 'desc')" class="butt back-button">Back</a>
-              </div>
-
-            </div>
-          </div>
-        <% end %>
-        <br />
-
-      </div>
-    </div>
-    <div class="block invisible" id="block5">
-      <div class="wrap">
-        <div class="header-box">
-          <h2>Notes for <%= @assignee.first_name.capitalize %></h2>
-          <%= link_to "Add New Note", new_user_assignee_note_path(current_user, @assignee, @note), remote: true, class: "btn btn-transparent btn-default button-height-default" %>
-        </div>
-
-        <div class="blue-box">
-          <p>Here include all notes associated with this <%= @assignee.type %>.</p>
-        </div>
-
-        <% @assignee.notes.each do |note| %>
-          <div class="col-xs-12 col-md-6">
-            <div class="alt-card">
-              <div class="note-spacing" id="assignee-note-<%= note.id %>">
-                <h5><strong><%= note.title %></strong></h5>
-                <p><%= note.content %></p>
-
-                <div class="button-box">
-                  <%= link_to "Edit", edit_user_assignee_note_path(current_user, @assignee, note.id), remote: true, class: "btn btn-success btn-default" %>
-                  <%= link_to "Delete", user_assignee_note_path(current_user, @assignee, note.id), data: {confirm: 'Are you sure?'}, method: :delete, class: "btn btn-danger btn-default" %>
-                </div>
-
-              </div>
-              <div class="note-form" id="edit-note-form-<%= note.id %>"></div>
-            </div>
-          </div>
-        <% end %>
-
-        <div class="col-xs-12 col-md-6">
-          <div class="alt-card invisible">
-            <div class="note-form" id="new-note-form"></div>
-          </div>
-        </div>
-        <br />
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="pull-right">
-              <a onclick="step_process(5, 3, 'desc')" class="butt">Prev</a>
-              <%= link_to "Finish", user_path(current_user), class: "btn btn-success" %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br class="clear" />
 </div>
-
-<br>
-
-<%= content_for(:after_js) do %>
-  <script>
-    function step_process(from, to, dir) {
-        if (typeof(dir) === 'undefined') dir = 'asc';
-        var old_move = '';
-        var new_start = '';
-
-        var speed = 500;
-
-        if (dir == 'asc') {
-            old_move = '-';
-            new_start = '';
-        } else if (dir == 'desc') {
-            old_move = '';
-            new_start = '-';
-        }
-
-        $('#block'+from).animate({left: old_move+'100%'}, speed, function() {
-            $(this).css({left: '100%', 'background-color':'transparent', 'z-index':'2'});
-            $(this).addClass('invisible');
-        });
-        $('#block'+to).css({'z-index': '3', left:new_start+'100%'}).animate({left: '0%'}, speed, function() {
-            $(this).removeClass('invisible');
-            $(this).css({'z-index':'2'});
-        });
-
-        if (Math.abs(from-to) === 1) {
-            // Next Step
-            if (from < to) $("#step"+from).addClass('complete').removeClass('current');
-            else $("#step"+from).removeClass('complete').removeClass('current');
-            var width = (parseInt(to) - 1) * 20;
-            $(".progress_bar").find('.current_steps').animate({'width': width+'%'}, speed, function() {
-                $("#step"+to).removeClass('complete').addClass('current');
-            });
-        } else {
-            // Move to Step
-            var steps = Math.abs(from-to);
-            var step_speed = speed / steps;
-            if (from < to) {
-                move_to_step(from, to, 'asc', step_speed);
-            } else {
-                move_to_step(from, to, 'desc', step_speed);
-            }
-        }
-    }
-
-    function move_to_step(step, end, dir, step_speed) {
-        if (dir == 'asc') {
-            $("#step"+step).addClass('complete').removeClass('current');
-            var width = (parseInt(step+1) - 1) * 20;
-            $(".progress_bar").find('.current_steps').animate({'width': width+'%'}, step_speed, function() {
-                $("#step"+(step+1)).removeClass('complete').addClass('current');
-                if (step+1 < end) move_to_step((step+1), end, dir, step_speed);
-            });
-        } else {
-            $("#step"+step).removeClass('complete').removeClass('current');
-            var width = (parseInt(step-1) - 1) * 20;
-            $(".progress_bar").find('.current_steps').animate({'width': width+'%'}, step_speed, function() {
-                $("#step"+(step-1)).removeClass('complete').addClass('current');
-                if (step-1 > end) move_to_step((step-1), end, dir, step_speed);
-            });
-        }
-    }
-
-    $(document).ready(function() {
-        $("body").on("click", ".progress_bar .step.complete", function() {
-            var from = $(this).parent().find('.current').data('step');
-            var to = $(this).data('step');
-            var dir = "desc";
-            if (from < to) dir = "asc";
-
-            step_process(from, to, dir);
-        });
-    });
-    $('.profile-picture-inline').click(function(e) {
-      e.preventDefault;
-      console.log('hello')
-      $('.edit-profile-picture').removeClass('invisible');
-    });
-  </script>
-<% end %>
