@@ -2,11 +2,15 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.home-banner {
+  max-height: 1200px;
+}
 .home-image {
+  background-size: cover;
   position: relative;
   img {
-    width: 100%;
-    max-height: 80%;
+    width: auto;
+    max-height: 800px;
   }
   h2 {
     position: absolute;
@@ -27,10 +31,32 @@
     }
   }
 }
+@media (max-width: 1200px) {
+  .home-image img {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .home-image img {
+    object-fit: cover;
+    min-width: 100%;
+    width: auto;
+  }
+}
+@media (max-width: 720px) {
+  #standard-title {
+    visibility: hidden;
+  }
+}
+@media (min-width: 720px) {
+  #mobile-title {
+    visibility: hidden;
+  }
+}
 .banner-button {
   position: absolute;
-  top: 70%;
-  right: 10%;
+  top: 30%;
+  left: 10%;
 }
 .home-section {
   padding: 80px 0;

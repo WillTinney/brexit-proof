@@ -3,6 +3,7 @@
 <% end %>
 
 <!-- Banner  -->
+<div class="home-banner">
 <div class="home-image">
 <!--   <div id="cycler">
     <%= image_tag('banner1.jpg', class: "active") %>
@@ -10,7 +11,9 @@
     <%= image_tag('banner3.jpg') %>
 <!--   </div> -->
 
-  <h2><span> BrexitProof:<span class='spacer'></span><br><span class='spacer'></span>Protect your residency</span></h2>
+  <h2 id="mobile-title"><span> BrexitProof</span></h2>
+
+  <h2 id="standard-title"><span> BrexitProof:<span class='spacer'></span><br><span class='spacer'></span>Protect your residency</span></h2>
 
   <div class="banner-button">
     <%= link_to new_user_session_path, class: "white-text" do %>
@@ -24,7 +27,7 @@
     </div>
   <% end %>
 </div>
-
+</div>
 
 <!-- Caroussel - Medias -->
 <div class="wrapper">
