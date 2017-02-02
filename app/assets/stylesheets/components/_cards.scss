@@ -1,3 +1,6 @@
+/* -------------------------------------
+ * Cards and related classes
+ * ------------------------------------- */
 .card {
   height: 175px;
   margin: 20px 0;
@@ -29,13 +32,7 @@
     margin: 0 3px;
   }
 }
-.black-text {
-  color: black;
-}
-.black-links a {
-  color: black;
-  color: black;
-}
+
 // Profile Cards
 .profile-cards {
 
@@ -119,6 +116,7 @@
   top: 6px;
   right: 6px;
 }
+
 // Asset Cards
 .asset-card {
   height: 240px;

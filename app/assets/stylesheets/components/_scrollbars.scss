@@ -1,4 +1,4 @@
-// Scrollmenu
+// Scrollmenu scrollbar
 .scrollmenu::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   background-color: #DBF0E7;
@@ -10,7 +10,8 @@
 .scrollmenu::-webkit-scrollbar-thumb {
   background-color: $purple;
 }
-// Cards
+
+// Cards scrollbar
 .card-overflow {
   overflow-x: hidden;
 }

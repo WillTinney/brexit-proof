@@ -1,3 +1,6 @@
+/* -------------------------------------
+ * Banner-related CSS
+ * ------------------------------------- */
 .banner {
   color: white;
   text-align: center;
@@ -20,7 +23,7 @@
   }
 }
 #home-banner{
-  height: 85vh;
+  max-height: 768px;
   width: 100%;
 }
 .banner-float {
@@ -59,4 +62,22 @@
 .fa-chevron-down{
   font-size: 50px;
   color: #6B648A;
+}
+@media (max-width: 720px) {
+  #home-arrow {
+    display: none;
+  }
+}
+
+// Image fade
+#cycler {
+  position: relative;
+}
+#cycler img {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+#cycler img.active {
+  z-index: 3;
 }
