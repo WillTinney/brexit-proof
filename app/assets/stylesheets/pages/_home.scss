@@ -6,7 +6,6 @@
   max-height: 1200px;
 }
 .home-image {
-  background-size: cover;
   position: relative;
   img {
     width: auto;
@@ -46,6 +45,9 @@
 @media (max-width: 720px) {
   #standard-title {
     visibility: hidden;
+  }
+  #mobile-title {
+    margin-top: 50px;
   }
 }
 @media (min-width: 720px) {
