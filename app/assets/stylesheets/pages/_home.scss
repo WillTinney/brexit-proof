@@ -22,6 +22,7 @@
       padding: 10px;
       .spacer {
         padding: 0 5px;
+        background: #252938;
       }
     }
   }
@@ -86,9 +87,16 @@
   height: 140px;
   margin-bottom: 10px;
 }
+.feature-image-unlock {
+  height: 100px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 110px;
+  color: $purple;
+}
 .feature-image-proof {
   height: 100px;
-  margin-top: 20px;
+  margin-top: 35px;
   margin-bottom: 20px;
 }
 #feedback {
@@ -96,7 +104,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 90vh;
-
 }
 #caroussel{
   width: 100%;
