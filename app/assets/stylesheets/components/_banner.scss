@@ -20,7 +20,7 @@
   }
 }
 #home-banner{
-  height: 85vh;
+  max-height: 768px;
   width: 100%;
 }
 .banner-float {
@@ -60,3 +60,8 @@
   font-size: 50px;
   color: #6B648A;
 }
+
+// Image fade
+#cycler{position:relative;}
+#cycler img{position:absolute;z-index:1}
+#cycler img.active{z-index:3}
