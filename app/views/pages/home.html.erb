@@ -4,33 +4,33 @@
 
 <!-- Banner  -->
 <div class="home-banner">
-<div class="home-image">
-<!--   <div id="cycler">
-    <%= image_tag('banner1.jpg', class: "active") %>
-    <%= image_tag('banner2.jpg') %> -->
-    <%= image_tag('banner3.jpg') %>
-<!--   </div> -->
+  <div class="home-image">
+  <div id="cycler">
+      <%= image_tag('banner1.jpg', class: "active") %>
+      <%= image_tag('banner2.jpg') %>
+      <%= image_tag('banner3.jpg') %>
+  </div>
 
-  <h2 id="mobile-title"><span> BrexitProof</span></h2>
+    <h2 id="mobile-title"><span> BrexitProof</span></h2>
 
-  <h2 id="standard-title"><span> BrexitProof:<span class='spacer'></span><br><span class='spacer'></span>Protect your residency</span></h2>
+    <h2 id="standard-title"><span> BrexitProof:<span class='spacer'></span><br><span class='spacer'></span>Protect your residency</span></h2>
 
-  <div class="banner-button">
-    <%= link_to new_user_session_path, class: "white-text" do %>
-      <button class="btn btn-secondary white-button">Enroll now for our Beta Version</button>
+    <div class="banner-button">
+      <%= link_to new_user_session_path, class: "white-text" do %>
+        <button class="btn btn-secondary white-button">Enroll now for our Beta Version</button>
+      <% end %>
+    </div>
+    <!-- Floating Arrow -->
+    <%= link_to "#media-quotes", id: "home-arrow" do %>
+      <div class="floating">
+        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+      </div>
     <% end %>
   </div>
-  <!-- Floating Arrow -->
-  <%= link_to "#media-quotes", id: "home-arrow" do %>
-    <div class="floating">
-      <i class="fa fa-chevron-down" aria-hidden="true"></i>
-    </div>
-  <% end %>
-</div>
 </div>
 
 <!-- Caroussel - Medias -->
-<div class="wrapper">
+<div class="wrapper overflow-hidden">
   <section id="media-quotes" class="container content-section text-center home-section">
     <h2>Why?</h2>
     <p>Theresa May has not defined new immigration control rules yet and the eligibility criteria remain very uncertain.<br>History and recent political events remind us we need to be prepared to protect us and our relatives.</p>
