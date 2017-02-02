@@ -2,9 +2,6 @@
  * Additional Home Page Clases
  * ------------------------------------- */
 .home-banner {
-  max-height: 1200px;
-}
-.home-image {
   position: relative;
   img {
     width: auto;
@@ -30,12 +27,12 @@
   }
 }
 @media (max-width: 1200px) {
-  .home-image img {
+  .home-banner img {
     width: 100%;
   }
 }
 @media (min-width: 1200px) {
-  .home-image img {
+  .home-banner img {
     object-fit: cover;
     min-width: 100%;
     width: auto;
