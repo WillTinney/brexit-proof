@@ -1,3 +1,6 @@
+/* -------------------------------------
+ * Sidebar
+ * ------------------------------------- */
 .include-sidebar {
   padding-left: 250px;
 }
@@ -41,13 +44,10 @@
   margin: 2px 0;
   background-color: $orange;
 }
+
 // Sidebar Tabs
 .sidebar-item {
-
   display: inline-block;
-}
-.sidebar-tab {
-
 }
 .sidebar a:hover {
   color: #f1f1f1;

@@ -1,7 +1,5 @@
 /* -------------------------------------
  * Utilities classes
- * These are examples of utilities classes
- * Feel free to change them and create your own
  * ------------------------------------- */
 
 // Paddings
@@ -30,6 +28,14 @@
 }
 .white-heading h2 {
   color: white !important;
+}
+
+// Black text
+.black-text {
+  color: black;
+}
+.black-links a {
+  color: black;
 }
 
 // Variable Container Sizes

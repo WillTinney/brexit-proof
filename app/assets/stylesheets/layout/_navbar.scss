@@ -1,3 +1,6 @@
+/* -------------------------------------
+ * Navbar
+ * ------------------------------------- */
 .navbar-wagon {
   background: #6B648A;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -18,16 +21,19 @@
   z-index: 101;
   width: 100%;
 }
+
 /* Navbar logo */
 .navbar-wagon-brand img {
   width: 50px;
 }
+
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 /* Navbar item */
 .navbar-wagon-item {
   flex: 0 1 auto;
@@ -35,6 +41,7 @@
   padding: 0 20px;
   color: white;
 }
+
 /* Navbar standard link */
 .navbar-wagon-link {
   color: #616668;
@@ -44,6 +51,7 @@
   color: #da552f;
   text-decoration: none;
 }
+
 /* Navbar right button */
 .navbar-wagon-button {
   margin-left: 10px;
@@ -60,6 +68,7 @@
   background: #D23333;
   border-color: #ac2626;
 }
+
 /* Navbar search form */
 .navbar-wagon-search {
   flex: 0 1 300px;
