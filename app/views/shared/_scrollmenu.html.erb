@@ -1,7 +1,8 @@
+<div class="scrollmenu-wrapper">
 <div class="scrollmenu">
   <div class="scrollbox text-center">
     <h3>Me</h3>
-    <div class="scrollitem <%= 'active' if @guardian.nil? && @recipient.nil? %>">
+    <div class="scrollitem <%= 'active' if params[:controller] == 'users' %>">
       <%= link_to user_path(current_user), class: 'scrollmenu-me' do %>
       <%= current_user.profile_picture ? cl_image_tag(current_user.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
         <h4><%= @user.first_name %></h4>
@@ -56,7 +57,7 @@
 
   <div class="scrollbox">
     <h3>Digital Assets</h3>
-    <div class="scrollitem <%= 'active' if params[:action] == 'proof' %>">
+    <div class="scrollitem <%= 'active' if params[:controller] == 'proofs' %>">
       <%= link_to user_proofs_path(current_user) do %>
         <i class="fa fa-home menu-icon" aria-hidden="true"></i>
         <h4>Proof of Residency</h4>
@@ -69,6 +70,7 @@
       <% end %>
     </div>
   </div>
+</div>
 </div>
 
 <% content_for(:after_js) do %>

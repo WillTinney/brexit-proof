@@ -52,5 +52,5 @@ Assignee.create!(relationship: "Friend", first_name: "Mike", last_name: "Lawson"
 
 # Notes
 10.times do
-  Note.create!(title: Faker::Book.title, content: Faker::Lorem.paragraph, assignee_id: rand(1..7).to_s, user_id: "1")
+  Note.create!(title: Faker::Book.title, content: Faker::Lorem.paragraph, user_id: "1")
 end
