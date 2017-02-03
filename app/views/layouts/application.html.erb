@@ -12,11 +12,13 @@
   <body>
     <%= yield(:navbar) %>
     <% if params[:controller] == 'users' && params[:action] == 'show' || params[:controller] == 'assignees' && params[:action] == 'show' %>
-        <%= render 'shared/scrollmenu' %>
-        <%= render 'shared/flashes' %>
-        <%= yield %>
+      <%= render 'shared/scrollmenu' %>
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+    <% elsif params[:controller] == 'after_sign_up' || params[:action] == 'home' || params[:controller] == 'devise/sessions' %>
+      <%= yield %>
     <% else %>
-      <%= render 'shared/flashes' unless params[:controller] == 'after_sign_up' || params[:action] == 'home' %>
+      <%= render 'shared/flashes' %>
       <%= yield %>
     <% end %>
     <%= render 'shared/footers/home_footer' if params[:action] == 'home' %>
