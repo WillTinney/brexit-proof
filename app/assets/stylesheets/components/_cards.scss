@@ -149,7 +149,7 @@
   }
 }
 .note-spacing {
-  height: 90%;
+  min-height: 30px;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
@@ -169,6 +169,7 @@
 .note-form {
   width: 90%;
   padding: 5px 5px 12px 5px;
+  margin-top: 30px;
 }
 .proof-spacing {
   height: 90%;

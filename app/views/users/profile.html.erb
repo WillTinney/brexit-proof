@@ -133,8 +133,8 @@
       <div class="card-content card-overflow">
         <% if !@user.notes.empty? %>
 
-          <% @user.notes.each do |note| %>
-            <p><%= note.title %> - <strong><%= Assignee.find(note.assignee_id).first_name %></strong></p>
+          <% @user.notes.reverse.each do |note| %>
+            <p><%= note.title %></strong></p>
           <% end %>
 
         <% else %>
