@@ -11,7 +11,7 @@
   </head>
   <body>
     <%= yield(:navbar) %>
-    <% if params[:controller] == 'users' && params[:action] == 'show' || params[:controller] == 'assignees' && params[:action] == 'show' %>
+    <% if params[:controller] == 'users' && params[:action] == 'show' || params[:controller] == 'assignees' && params[:action] == 'show' || params[:controller] == 'proofs' && params[:action] == 'index' || params[:action] == 'notes' %>
       <%= render 'shared/scrollmenu' %>
       <%= render 'shared/flashes' %>
       <%= yield %>

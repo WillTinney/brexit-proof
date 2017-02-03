@@ -1,3 +1,7 @@
+<% content_for(:navbar) do %>
+  <%= render 'shared/navbar' %>
+<% end %>
+
 <br>
 
 <div class="container-box">
@@ -13,8 +17,6 @@
         <div class="note-spacing" id="assignee-note-<%= note.id %>">
           <div class="note-title">
             <h4><strong><%= note.title %></strong></h4>
-
-            <h5><strong>For:</strong> <%= Assignee.find(note.assignee_id).first_name %></h5>
           </div>
           <div class="card-content card-overflow">
             <p><%= note.content %></p>
