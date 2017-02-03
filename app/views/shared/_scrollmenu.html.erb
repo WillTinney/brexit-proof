@@ -54,20 +54,21 @@
     </div>
   <% end %>
 
-  <% if !@user.show_other.empty? %>
-    <div class="scrollbox">
-      <h3>Other Friends & Family</h3>
-      <% @user.show_other.each do |recipient| %>
-        <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
-          <%= link_to user_recipient_path(current_user, recipient), class: 'scrollmenu-recipients' do %>
-            <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
-            <h4><%= recipient.first_name %></h4>
-            <h6><%= recipient.id %></h6>
-          <% end %>
-        </div>
+  <div class="scrollbox">
+    <h3>Digital Assets</h3>
+    <div class="scrollitem <%= 'active' if params[:action] == 'proof' %>">
+      <%= link_to user_proof_path(current_user) do %>
+        <i class="fa fa-home menu-icon" aria-hidden="true"></i>
+        <h4>Proof of Residency</h4>
       <% end %>
     </div>
-  <% end %>
+    <div class="scrollitem digital-asset <%= 'active' if params[:controller] == 'notes' %>">
+      <%= link_to user_proof_path(current_user) do %>
+        <i class="fa fa-pencil-square-o menu-icon" aria-hidden="true"></i>
+        <h4>My Notes</h4>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <% content_for(:after_js) do %>
