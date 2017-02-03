@@ -1,14 +1,14 @@
 // Scrollmenu scrollbar
 .scrollmenu::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  background-color: #DBF0E7;
+  background-color: #BBB8C9;
 }
 .scrollmenu::-webkit-scrollbar {
   height: 6px;
-  background-color: #DBF0E7;
+  background-color: #BBB8C9;
 }
 .scrollmenu::-webkit-scrollbar-thumb {
-  background-color: $purple;
+  background-color: #787294;
 }
 
 // Cards scrollbar

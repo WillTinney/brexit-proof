@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:edit, :update, :destroy]
-  before_action :set_assignee, only: [:new, :create, :edit, :update, :destroy]
+  # before_action :set_assignee, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @notes = policy_scope(Note)
@@ -12,11 +12,11 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = current_user.assignees.find(@assignee.id).notes.create!(note_params)
-    @note[:user_id] = @assignee.user_id
+    @note = current_user.notes.create!(note_params)
+    # @note[:user_id] = @assignee.user_id
     authorize @note
     if @note.save
-      redirect_to :back, notice: 'Note was successfully created.'
+      redirect_to user_notes_path(current_user), notice: 'Note was successfully created.'
     else
       render :new
     end
@@ -30,7 +30,7 @@ class NotesController < ApplicationController
     authorize @note
     if @note.update(note_params)
       # redirect_to user_assignee_path(current_user, @note.assignee_id)
-      redirect_to :back
+      redirect_to user_notes_path(current_user)
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class NotesController < ApplicationController
   def destroy
     authorize @note
     @note.destroy
-    redirect_to :back
+    redirect_to user_notes_path(current_user)
   end
 
   private
@@ -48,9 +48,9 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
   end
 
-  def set_assignee
-    @assignee = Assignee.find(params[:assignee_id] || params[:guardian_id] || params[:recipient_id])
-  end
+  # def set_assignee
+  #   @assignee = Assignee.find(params[:assignee_id] || params[:guardian_id] || params[:recipient_id])
+  # end
 
   def note_params
     params.require(:note).permit(:title, :content, :assignee_id)

@@ -23,7 +23,7 @@ class ProofsController < ApplicationController
     if @proof.save
       respond_to do |format|
         format.js
-        format.html { redirect_to user_path(current_user), notice: 'Proof was successfully created.' }
+        format.html { redirect_to user_proofs_path(current_user), notice: 'Proof was successfully created.' }
       end
     else
       respond_to do |format|
@@ -40,7 +40,7 @@ class ProofsController < ApplicationController
   def update
     authorize @proof
     if @proof.update(proof_params)
-      redirect_to user_path(current_user)
+      redirect_to user_proofs_path(current_user)
     else
       render :edit
     end
@@ -49,7 +49,7 @@ class ProofsController < ApplicationController
   def destroy
     authorize @proof
     @proof.destroy
-    redirect_to user_path(current_user)
+    redirect_to user_proofs_path(current_user)
   end
 
   private
