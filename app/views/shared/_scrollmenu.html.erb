@@ -57,13 +57,13 @@
   <div class="scrollbox">
     <h3>Digital Assets</h3>
     <div class="scrollitem <%= 'active' if params[:action] == 'proof' %>">
-      <%= link_to user_proof_path(current_user) do %>
+      <%= link_to user_proofs_path(current_user) do %>
         <i class="fa fa-home menu-icon" aria-hidden="true"></i>
         <h4>Proof of Residency</h4>
       <% end %>
     </div>
     <div class="scrollitem digital-asset <%= 'active' if params[:controller] == 'notes' %>">
-      <%= link_to user_proof_path(current_user) do %>
+      <%= link_to user_notes_path(current_user) do %>
         <i class="fa fa-pencil-square-o menu-icon" aria-hidden="true"></i>
         <h4>My Notes</h4>
       <% end %>
