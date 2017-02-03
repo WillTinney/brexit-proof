@@ -5,7 +5,10 @@
 <br>
 
 <div class="container-box">
-  <h2>Notes Library</h2>
+  <div class="header-box">
+    <h2>Notes Library</h2>
+    <%= link_to "Add Note", new_user_note_path(current_user, @proof), remote: true, class: "btn btn-transparent btn-default button-height-default" %>
+  </div>
 
   <div class="blue-box">
     <p>Here you can add notes and leave messages for those that matter to you so that...</p>
@@ -14,20 +17,32 @@
   <% @user.notes.each do |note| %>
     <div class="col-xs-12 col-sm-6">
       <div class="note-card">
+        <div class="card-buttons">
+          <%= link_to edit_user_note_path(current_user, note.id), remote: true do %>
+            <i class="fa fa-pencil" aria-hidden="true"> </i>
+          <% end %>
+          <%= link_to user_note_path(current_user, note.id), data: {confirm: 'Are you sure?'}, method: :delete do %>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          <% end %>
+        </div>
         <div class="note-spacing" id="assignee-note-<%= note.id %>">
           <div class="note-title">
             <h4><strong><%= note.title %></strong></h4>
           </div>
+          <hr>
+          <br>
           <div class="card-content card-overflow">
             <p><%= note.content %></p>
-          </div>
-          <div class="button-box">
-            <%= link_to "Edit", edit_user_note_path(current_user, note.id), remote: true, class: "btn btn-success btn-default" %>
-            <%= link_to "Delete", user_note_path(current_user, note.id), data: {confirm: 'Are you sure?'}, method: :delete, class: "btn btn-danger btn-default" %>
           </div>
         </div>
         <div class="note-form" id="edit-note-form-<%= note.id %>"></div>
       </div>
     </div>
   <% end %>
+
+  <div class="col-xs-12 col-md-6">
+    <div class="note-card invisible">
+      <div class="note-form" id="new-note-form"></div>
+    </div>
+  </div>
 </div>

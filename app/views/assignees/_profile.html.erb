@@ -14,8 +14,8 @@
             <h1 class="text-center"><%= @assignee.name_surname %></h1>
           </div>
           <div class="col-xs-12 col-sm-6">
-            <p><strong>Relationship</strong>: <%= @assignee.try(:relationship) %></p>
             <p><%= @assignee.citizenship ? @assignee.citizenship + " Citizen" : "Please enter your citizenship" %></p>
+            <p><strong>Relationship</strong>: <%= @assignee.try(:relationship) %></p>
             <p><strong>Date of Birth</strong>: <%= @assignee.try(:date_of_birth) %></p>
             <p><strong>Email</strong>: <%= @assignee.try(:email) %></p>
             <p><strong>Phone Number</strong>: <%= @assignee.try(:phone_number) %></p>

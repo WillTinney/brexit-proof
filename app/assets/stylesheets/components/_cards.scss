@@ -90,23 +90,6 @@
     margin: 3px;
   }
 }
-.note-card {
-  position: relative;
-  height: 280px;
-  margin: 20px 0;
-  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
-  border-radius: 2px;
-  background-size: cover !important;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  hr {
-    border: 1px solid #EDE8E9;
-    width: 85%;
-    margin: 4px 0;
-  }
-}
 .card-content {
   overflow-y: auto;
   width: 80%;
@@ -139,10 +122,30 @@
   flex-direction: column;
   align-items: center;
 }
+.note-card {
+  position: relative;
+  height: 280px;
+  margin: 20px 0;
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
+  border-radius: 2px;
+  background-size: cover !important;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  hr {
+    border: 1px solid #EDE8E9;
+    width: 85%;
+    margin: 4px 0;
+  }
+}
 .note-title {
   text-align: center;
+  h4 {
+    margin-top: 25px;
+  }
   h5 {
-  margin-top: 6px;
+    margin-top: 6px;
   }
 }
 .note-spacing {
@@ -151,7 +154,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  // justify-content: space-around;
+}
+.card-buttons {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  a {
+    color: grey;
+    font-size: 18px;
+    margin: 0 5px;
+  }
 }
 .note-form {
   width: 90%;

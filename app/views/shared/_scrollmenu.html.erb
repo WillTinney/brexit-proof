@@ -16,7 +16,13 @@
       <% @user.assignees.where('relationship = ?', 'Partner').each do |recipient| %>
         <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
           <%= link_to user_recipient_path(current_user, recipient), class: 'scrollmenu-partner' do %>
-            <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
+            <% if recipient.profile_picture %>
+              <%= cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) %>
+            <% else %>
+              <div class="menu-icon">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+              </div>
+            <% end %>
             <h4><%= recipient.first_name %></h4>
             <h6><%= recipient.id %></h6>
           <% end %>
@@ -31,7 +37,13 @@
       <% @user.children.each do |recipient| %>
         <div class="scrollitem <%= 'active' if @recipient && @recipient.id == recipient.id %>">
           <%= link_to user_recipient_path(current_user, recipient),class: 'scrollmenu-children' do %>
-            <%= recipient.profile_picture ? cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) : image_tag('user3.png') %>
+            <% if recipient.profile_picture %>
+              <%= cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) %>
+            <% else %>
+              <div class="menu-icon">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+              </div>
+            <% end %>
             <h4><%= recipient.first_name %></h4>
             <h6><%= recipient.id %></h6>
           <% end %>
@@ -58,14 +70,18 @@
   <div class="scrollbox">
     <h3>Digital Assets</h3>
     <div class="scrollitem <%= 'active' if params[:controller] == 'proofs' %>">
-      <%= link_to user_proofs_path(current_user) do %>
-        <i class="fa fa-home menu-icon" aria-hidden="true"></i>
+      <%= link_to user_proofs_path(current_user), class: "margin-auto" do %>
+        <div class="menu-icon">
+          <i class="fa fa-home" aria-hidden="true"></i>
+        </div>
         <h4>Proof of Residency</h4>
       <% end %>
     </div>
     <div class="scrollitem digital-asset <%= 'active' if params[:controller] == 'notes' %>">
-      <%= link_to user_notes_path(current_user) do %>
-        <i class="fa fa-pencil-square-o menu-icon" aria-hidden="true"></i>
+      <%= link_to user_notes_path(current_user), class: "margin-auto" do %>
+        <div class="menu-icon">
+          <i class="fa fa-pencil-square-o" id="note-menu-icon" aria-hidden="true"></i>
+        </div>
         <h4>My Notes</h4>
       <% end %>
     </div>

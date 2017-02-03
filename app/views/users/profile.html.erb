@@ -3,7 +3,7 @@
 <div class="container-box profile-cards">
 
   <div class="col-xs-12 col-sm-6 col-md-4">
-    <div class="alt-card black-links <%= 'orange-border' unless @user.details_completed? %>">
+    <div class="alt-card black-links">
       <% unless @user.details_completed? %>
         <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
       <% end %>
@@ -27,7 +27,7 @@
   <div class="col-xs-12 col-sm-6 col-md-4">
     <% if @user.assignees.where('relationship = ?', 'Partner').last %>
 
-      <div class="alt-card black-links <%= 'orange-border' unless @user.assignees.where('relationship = ?', 'Partner').last.details_completed? %>">
+      <div class="alt-card black-links">
         <% @user.assignees.where('relationship = ?', 'Partner').each do |partner| %>
           <% unless partner.details_completed? %>
           <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
@@ -63,13 +63,11 @@
         <% if !@user.children.empty? %>
 
           <% @user.assignees.where('relationship = ?', 'Child').each do |child| %>
-            <div class="<%= 'small-orange-border' unless child.details_completed? %>">
-              <% unless child.details_completed? %>
-                <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
-              <% end %>
-              <p><strong><%= link_to child.try(:name_surname), user_assignee_path(@user, child) %></strong></p>
-              <p><%= child.try(:phone_number) %></p>
-            </div>
+            <% unless child.details_completed? %>
+              <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+            <% end %>
+            <p><strong><%= link_to child.try(:name_surname), user_assignee_path(@user, child) %></strong></p>
+            <p><%= child.try(:phone_number) %></p>
           <% end %>
 
         <% else %>
@@ -89,13 +87,11 @@
         <% if !@user.guardians.empty? %>
 
           <% @user.guardians.each do |guardian| %>
-            <div class="<%= 'small-orange-border' unless guardian.details_completed? %>">
-              <% unless guardian.details_completed? %>
-                <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
-              <% end %>
-              <p><strong><%= link_to guardian.name_surname, user_assignee_path(@user, guardian) %></strong></p>
-              <p><%= guardian.try(:phone_number) %></p>
-            </div>
+            <% unless guardian.details_completed? %>
+              <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+            <% end %>
+            <p><strong><%= link_to guardian.name_surname, user_assignee_path(@user, guardian) %></strong></p>
+            <p><%= guardian.try(:phone_number) %></p>
           <% end %>
 
         <% else %>
@@ -108,11 +104,11 @@
   </div>
 
   <div class="col-xs-12 col-sm-6 col-md-4">
-    <div class="alt-card black-links <%= 'orange-border' if @user.proofs.empty? %>">
+    <div class="alt-card black-links">
       <% if @user.proofs.empty? %>
         <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
       <% end %>
-      <h4><%= link_to "Proof of Residency", "#", class: "proof-card" %></h4>
+      <h4><%= link_to "Proof of Residency", user_proofs_path(current_user), class: "proof-card" %></h4>
       <hr>
       <div class="card-content card-overflow">
         <% if !@user.proofs.empty? %>
@@ -123,7 +119,7 @@
 
         <% else %>
 
-          <p><%= link_to "You have not uploaded any proof of residency. Click here to go to our secure upload form.", "#", class: "proof-card" %></p>
+          <p><%= link_to "You have not uploaded any proof of residency. Click here to go to our secure upload form.", user_proofs_path(current_user), class: "proof-card" %></p>
 
         <% end %>
       </div>
@@ -206,19 +202,19 @@
           }
       });
     });
-    $('.proof-card').click(function(e){
-      e.preventDefault();
-      $('.sidebar-tabs').children().removeClass('active');
-      $('#proof-of-residency-sidebar-tab').addClass('active')
-      $.ajax({
-          type: "GET",
-          url: <%= @user.id %> + "/proofs",
-          data: { },
-          success: function(data){
-              $('#tab-content').empty().html(data);
-          }
-      });
-    });
+    // $('.proof-card').click(function(e){
+    //   e.preventDefault();
+    //   $('.sidebar-tabs').children().removeClass('active');
+    //   $('#proof-of-residency-sidebar-tab').addClass('active')
+    //   $.ajax({
+    //       type: "GET",
+    //       url: <%= @user.id %> + "/proofs",
+    //       data: { },
+    //       success: function(data){
+    //           $('#tab-content').empty().html(data);
+    //       }
+    //   });
+    // });
     $('#notes-card').click(function(e){
       e.preventDefault();
       $('.sidebar-tabs').children().removeClass('active');
