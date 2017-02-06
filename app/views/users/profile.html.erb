@@ -7,7 +7,7 @@
       <% unless @user.details_completed? %>
         <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
       <% end %>
-      <h4><%= link_to "My Details", "#", id: "details-card" %></h4>
+      <h4><%= link_to "My Details", "#", class: "details-link" %></h4>
       <hr>
       <div class="card-content card-overflow">
         <p><strong><%= @user.try(:name_surname) %></strong></p>
@@ -32,7 +32,7 @@
           <% unless partner.details_completed? %>
           <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
         <% end %>
-        <h4><%= link_to "My Partner", user_assignee_path(@user, partner) , id: "partner-card" %></h4>
+        <h4><%= link_to "My Partner", user_assignee_path(@user, partner) , class: "partner-link" %></h4>
         <hr>
         <div class="card-content card-overflow">
           <p><strong><%= link_to partner.name_surname, user_assignee_path(@user, partner) %></strong></p>
@@ -47,7 +47,7 @@
     <% else %>
 
       <div class="alt-card black-links">
-        <h4><%= link_to "My Partner", "#" , id: "partner-card" %></h4>
+        <h4><%= link_to "My Partner", "#" , class: "partner-link" %></h4>
         <hr>
         <p>You have not assigned a partner.</p>
       </div>
@@ -57,7 +57,7 @@
 
   <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="alt-card black-links">
-      <h4><%= link_to "My Children", "#", id: "children-card" %></h4>
+      <h4><%= link_to "My Children", "#", class: "children-link" %></h4>
       <hr>
       <div class="card-content card-overflow">
         <% if !@user.children.empty? %>
@@ -81,7 +81,7 @@
 
   <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="alt-card black-links">
-      <h4><%= link_to "My Guardians", "#", id: "guardian-card" %></h4>
+      <h4><%= link_to "My Guardians", "#", class: "guardian-link" %></h4>
       <hr>
       <div class="card-content card-overflow">
         <% if !@user.guardians.empty? %>
@@ -108,7 +108,7 @@
       <% if @user.proofs.empty? %>
         <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
       <% end %>
-      <h4><%= link_to "Proof of Residency", user_proofs_path(current_user), class: "proof-card" %></h4>
+      <h4><%= link_to "Proof of Residency", user_proofs_path(current_user) %></h4>
       <hr>
       <div class="card-content card-overflow">
         <% if !@user.proofs.empty? %>
@@ -128,7 +128,7 @@
 
   <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="alt-card black-links">
-      <h4><%= link_to "Notes", "#", id: "notes-card" %></h4>
+      <h4><%= link_to "Notes", user_notes_path(current_user) %></h4>
       <hr>
       <div class="card-content card-overflow">
         <% if !@user.notes.empty? %>
@@ -149,8 +149,8 @@
 
 <% content_for(:after_js) do %>
   <script>
-    // Clicking on platform icons on profile tab loads tab content
-    $('#details-card').click(function(e){
+    // Clicking on links on profile/scrollmenu tab loads tab content
+    $('.details-link').click(function(e){
       e.preventDefault();
       $('.sidebar-tabs').children().removeClass('active');
       $('#personal-details-sidebar-tab').addClass('active')
@@ -163,7 +163,7 @@
           }
       });
     });
-    // $('#partner-card').click(function(e){
+    // $('#partner-link').click(function(e){
     //   e.preventDefault();
     //   $('.sidebar-tabs').children().removeClass('active');
     //   $('#partner-sidebar-tab').addClass('active')
@@ -176,7 +176,7 @@
     //       }
     //   });
     // });
-    $('#children-card').click(function(e){
+    $('.children-link').click(function(e){
       e.preventDefault();
       $('.sidebar-tabs').children().removeClass('active');
       $('#children-sidebar-tab').addClass('active')
@@ -189,7 +189,7 @@
           }
       });
     });
-    $('#guardian-card').click(function(e){
+    $('.guardian-link').click(function(e){
       e.preventDefault();
       $('.sidebar-tabs').children().removeClass('active');
       $('#guardian-sidebar-tab').addClass('active')
@@ -202,7 +202,7 @@
           }
       });
     });
-    // $('.proof-card').click(function(e){
+    // $('.proof-link').click(function(e){
     //   e.preventDefault();
     //   $('.sidebar-tabs').children().removeClass('active');
     //   $('#proof-of-residency-sidebar-tab').addClass('active')
@@ -215,7 +215,7 @@
     //       }
     //   });
     // });
-    $('#notes-card').click(function(e){
+    $('.notes-link').click(function(e){
       e.preventDefault();
       $('.sidebar-tabs').children().removeClass('active');
       $('#notes-sidebar-tab').addClass('active')
@@ -229,7 +229,7 @@
       });
     });
     // Clicking on digital assets icon loads tab content
-    $('#digital-icon').click(function(e){
+    $('.digital-link').click(function(e){
       e.preventDefault();
       $('.sidebar-tabs').children().removeClass('active');
       $('#digital-assets-sidebar-tab').addClass('active')
