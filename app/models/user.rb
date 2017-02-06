@@ -6,8 +6,6 @@ class User < ApplicationRecord
 
   has_attachment :profile_picture
 
-  # delegate :approvers, :guardians, :recipients, to: :assignees
-
   has_many :assignees, dependent: :destroy
     has_many :guardians, dependent: :destroy
     has_many :recipients, dependent: :destroy
@@ -52,4 +50,18 @@ class User < ApplicationRecord
     recipients.where('relationship = ?', 'Friend')
   end
 
+  # Validations
+  attr_accessor :current_step
+
+  def current_step?(step_key)
+    current_step.blank? || current_step == step_key
+  end
+
+  validates :first_name, presence: :true, if: 'current_step?(:basic_profile)'
+  validates :last_name, presence: :true, if: 'current_step?(:basic_profile)'
+
+  validates :address_line_1, presence: :true, if: 'current_step?(:contact_info)'
+  validates :town, presence: :true, if: 'current_step?(:contact_info)'
+  validates :country, presence: :true, if: 'current_step?(:contact_info)'
+  validates :postcode, presence: :true, if: 'current_step?(:contact_info)'
 end

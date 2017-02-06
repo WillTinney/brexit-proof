@@ -40,14 +40,15 @@
 
 
 <div class="wizard-box text-center">
-  <h2>Would you like to add a guardian?</h2>
+  <h2>How many guardians would you like to designate?</h2>
   <%= simple_form_for(@user, url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
-    <div class="row wizard-choice-buttons">
-      <div class="col-xs-2 ">
-        <%= link_to 'No', wizard_path(:complete), class: "choice-button-alt" %>
-      </div>
-      <div class="col-xs-2 col-xs-offset-3">
-        <%= link_to 'Yes', wizard_path(:guardian_basic), class: "choice-button" %>
+    <div class="row wizard-buttons">
+      <div class="col-xs-12">
+        <%= f.submit "0", class: "choice-button-alt" %>
+        <%= f.submit "1", class: "choice-button-alt" %>
+        <%= f.submit "2", class: "choice-button-alt" %>
+        <%= f.submit "3", class: "choice-button-alt" %>
+        <%= f.submit "4", class: "choice-button-alt" %>
       </div>
     </div>
   <% end %>

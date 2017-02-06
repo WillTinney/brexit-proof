@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170131162411) do
+ActiveRecord::Schema.define(version: 20170206113603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "assignees", force: :cascade do |t|
+    t.string   "title"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(version: 20170131162411) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.string   "title"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
@@ -98,9 +100,9 @@ ActiveRecord::Schema.define(version: 20170131162411) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "profile_picture"
-    t.string   "gender"
-    t.boolean  "married",                default: false
+    t.boolean  "partner",                default: false
     t.integer  "number_of_children"
+    t.integer  "number_of_guardians"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
