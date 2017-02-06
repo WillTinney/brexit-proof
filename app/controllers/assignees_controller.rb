@@ -26,7 +26,7 @@ class AssigneesController < ApplicationController
     if @assignee.save
       respond_to do |format|
         format.js
-        format.html { redirect_to user_assignee_path(current_user, @assignee), notice: 'Assignee was successfully created.' }
+        format.html { redirect_to user_assignees_path(current_user, @assignee.type), notice: 'Assignee was successfully created.' }
       end
     else
       respond_to do |format|
@@ -43,7 +43,7 @@ class AssigneesController < ApplicationController
   def update
     authorize @assignee
     if @assignee.update(assignee_params)
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user, @assignee.type)
     else
       render :edit
     end
