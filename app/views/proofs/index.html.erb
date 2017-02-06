@@ -11,6 +11,10 @@
       <%= link_to "Add Document", new_user_proof_path(current_user, @proof), remote: true, class: "btn btn-transparent btn-default button-height-default" %>
     </div>
 
+    <div class="blue-box side-margin-small">
+      <p>By including as much documentation as possible on your UK residency you give yourself the best chance of protection.</p>
+    </div>
+
     <div class="col-xs-12 col-md-6 invisible">
       <div class="proof-card">
         <div class="note-form" id="new-proof-form"></div>
@@ -35,10 +39,6 @@
               <h4 class="text-center"><strong><%= proof.title %></strong></h4>
               <div class="proof-comments card-overflow">
                 <p><%= proof.comments %></p>
-              </div>
-              <div class="button-box text-center">
-                <%= link_to "Edit", edit_user_proof_path(current_user, proof.id), remote: true, class: "btn btn-success btn-default" %>
-                <%= link_to "Delete", user_proof_path(current_user, proof.id), data: {confirm: 'Are you sure?'}, method: :delete, class: "btn btn-danger btn-default" %>
               </div>
             </div>
           </div>
