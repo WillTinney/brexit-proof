@@ -69,16 +69,3 @@
     display: none;
   }
 }
-
-// Image fade
-#cycler {
-  position: relative;
-}
-#cycler img {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-#cycler img.active {
-  z-index: 3;
-}
