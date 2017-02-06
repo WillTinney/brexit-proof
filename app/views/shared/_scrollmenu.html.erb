@@ -1,14 +1,14 @@
 <div class="scrollmenu-wrapper"></div>
 <div class="scrollmenu">
-  <div class="scrollbox text-center">
+  <div class="scrollbox text-center" id="user-scrollbox">
     <h3>Me</h3>
     <div class="scrollitem <%= 'active' if params[:controller] == 'users' %>">
       <%= link_to user_path(current_user), class: 'scrollmenu-me' do %>
         <% if current_user.profile_picture %>
           <%= cl_image_tag(current_user.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) %>
         <% else %>
-          <div class="menu-icon">
-            <i class="fa fa-user-o" aria-hidden="true"></i>
+          <div class="menu-icon placeholder">
+            <!-- <i class="fa fa-user-o" aria-hidden="true"></i> -->
           </div>
         <% end %>
         <h4><%= @user.first_name %></h4>
@@ -25,8 +25,8 @@
             <% if recipient.profile_picture %>
               <%= cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) %>
             <% else %>
-              <div class="menu-icon">
-                <i class="fa fa-user-o" aria-hidden="true"></i>
+              <div class="menu-icon placeholder">
+                <!-- <i class="fa fa-user-o" aria-hidden="true"></i> -->
               </div>
             <% end %>
             <h4><%= recipient.first_name %></h4>
@@ -46,8 +46,8 @@
             <% if recipient.profile_picture %>
               <%= cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) %>
             <% else %>
-              <div class="menu-icon">
-                <i class="fa fa-user-o" aria-hidden="true"></i>
+              <div class="menu-icon placeholder">
+                <!-- <i class="fa fa-user-o" aria-hidden="true"></i> -->
               </div>
             <% end %>
             <h4><%= recipient.first_name %></h4>
@@ -67,8 +67,8 @@
             <% if guardian.profile_picture %>
               <%= cl_image_tag(guardian.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) %>
             <% else %>
-              <div class="menu-icon">
-                <i class="fa fa-user-o" aria-hidden="true"></i>
+              <div class="menu-icon placeholder">
+                <!-- <i class="fa fa-user-o" aria-hidden="true"></i> -->
               </div>
             <% end %>
             <h4><%= guardian.first_name %></h4>
@@ -92,7 +92,7 @@
     <div class="scrollitem digital-asset <%= 'active' if params[:controller] == 'notes' %>">
       <%= link_to user_notes_path(current_user), class: "margin-auto" do %>
         <div class="menu-icon">
-          <i class="fa fa-pencil-square-o" id="note-menu-icon" aria-hidden="true"></i>
+          <!-- <i class="fa fa-pencil-square-o" id="note-menu-icon" aria-hidden="true"></i> -->
         </div>
         <h4>My Notes</h4>
       <% end %>

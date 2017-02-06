@@ -11,7 +11,7 @@
   z-index: 99;
   top: 0;
   left: 0;
-  background-color: $grey;
+  background-color: $beige;
   overflow-x: hidden;
   margin-top: 50px;
   transition: 0.5s;
@@ -51,10 +51,10 @@
 }
 .sidebar a:hover {
   color: #f1f1f1;
-  background-color: $light-teal;
+  background-color: $teal;
 }
 .sidebar-tab.active {
-  background-color: $teal;
+  background-color: $green;
   color: white;
   text-decoration: none;
   opacity: 1;
