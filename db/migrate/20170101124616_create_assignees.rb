@@ -1,6 +1,7 @@
 class CreateAssignees < ActiveRecord::Migration[5.0]
   def change
     create_table :assignees do |t|
+      t.string :title
       t.string :first_name
       t.string :middle_name
       t.string :last_name

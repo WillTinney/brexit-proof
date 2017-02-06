@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20170206113603) do
   enable_extension "plpgsql"
 
   create_table "assignees", force: :cascade do |t|
+    t.string   "title"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
