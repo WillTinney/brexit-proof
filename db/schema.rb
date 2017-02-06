@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20170206113603) do
   enable_extension "plpgsql"
 
   create_table "assignees", force: :cascade do |t|
-    t.string   "title"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
@@ -56,9 +55,11 @@ ActiveRecord::Schema.define(version: 20170206113603) do
   create_table "notes", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
+    t.integer  "assignee_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["assignee_id"], name: "index_notes_on_assignee_id", using: :btree
     t.index ["user_id"], name: "index_notes_on_user_id", using: :btree
   end
 
@@ -85,7 +86,6 @@ ActiveRecord::Schema.define(version: 20170206113603) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.string   "title"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
@@ -100,12 +100,14 @@ ActiveRecord::Schema.define(version: 20170206113603) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "profile_picture"
-    t.boolean  "partner",                default: false
+    t.string   "gender"
+    t.boolean  "married",                default: false
     t.integer  "number_of_children"
     t.integer  "number_of_guardians"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "notes", "assignees"
   add_foreign_key "notes", "users"
 end
