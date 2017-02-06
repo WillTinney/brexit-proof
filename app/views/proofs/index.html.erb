@@ -6,23 +6,39 @@
 
 <div class="container-box">
   <% if !@proofs.empty? %>
-    <div class="header-box">
+    <div class="header-box padding-15">
       <h2>Your Proof of Residency</h2>
       <%= link_to "Add Document", new_user_proof_path(current_user, @proof), remote: true, class: "btn btn-transparent btn-default button-height-default" %>
     </div>
-    <% @proofs.each do |proof| %>
+
+    <div class="blue-box side-margin-small">
+      <p>By including as much documentation as possible on your UK residency you give yourself the best chance of protection.</p>
+    </div>
+
+    <div class="col-xs-12 col-md-6 invisible">
+      <div class="proof-card">
+        <div class="note-form" id="new-proof-form"></div>
+      </div>
+    </div>
+
+    <% @proofs.reverse.each do |proof| %>
+
       <div class="col-xs-12 col-lg-6">
-        <div class="note-card">
+        <div class="proof-card">
+          <div class="card-buttons">
+            <%= link_to edit_user_proof_path(current_user, proof.id), remote: true do %>
+              <i class="fa fa-pencil" aria-hidden="true"> </i>
+            <% end %>
+            <%= link_to user_proof_path(current_user, proof.id), data: {confirm: 'Are you sure?'}, method: :delete do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            <% end %>
+          </div>
           <div class="proof-spacing" id="proof-<%= proof.id %>">
             <%= cl_image_tag(proof.document.path, transformation: [{width: 150, height: 200, crop: "fill"}]) %>
             <div class="details-box margin-left">
               <h4 class="text-center"><strong><%= proof.title %></strong></h4>
               <div class="proof-comments card-overflow">
                 <p><%= proof.comments %></p>
-              </div>
-              <div class="button-box text-center">
-                <%= link_to "Edit", edit_user_proof_path(current_user, proof.id), remote: true, class: "btn btn-success btn-default" %>
-                <%= link_to "Delete", user_proof_path(current_user, proof.id), data: {confirm: 'Are you sure?'}, method: :delete, class: "btn btn-danger btn-default" %>
               </div>
             </div>
           </div>
@@ -31,18 +47,14 @@
       </div>
     <% end %>
 
-    <div class="col-xs-12 col-md-6">
-      <div class="note-card invisible">
-        <div class="note-form" id="new-proof-form"></div>
-      </div>
-    </div>
-
   <% else %>
 
-    <h2>Proof of Residency</h2>
+    <div class="side-margin">
+      <h2>Proof of Residency</h2>
 
-    <div class="blue-box">
-      <p>In order to authenticate your...</p>
+      <div class="blue-box">
+        <p>In order to authenticate your...</p>
+      </div>
     </div>
 
     <div class="grey-box">

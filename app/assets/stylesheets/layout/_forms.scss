@@ -35,3 +35,12 @@
   border: 1px solid #16a085;
   border-width: 1px 1px 3px;
 }
+.new_proof {
+  ul {
+    list-style-type: none;
+  }
+  img {
+    min-height: 200px;
+    min-width: 200px;
+  }
+}

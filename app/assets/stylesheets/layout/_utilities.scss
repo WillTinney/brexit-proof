@@ -7,6 +7,17 @@
   padding-top: 5em;
   padding-bottom: 5em;
 }
+.padding-15 {
+  padding: 0 15px;
+}
+
+// Margins
+.side-margin {
+  margin: 0 30px;
+}
+.side-margin-small {
+  margin: 0 15px;
+}
 
 // Backgrounds
 .bg-black {
@@ -32,10 +43,10 @@
 
 // Black text
 .black-text {
-  color: black;
+  color: $black;
 }
 .black-links a {
-  color: black;
+  color: $black;
 }
 
 // Variable Container Sizes
