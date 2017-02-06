@@ -26,6 +26,7 @@ gem 'jquery-fileupload-rails'
 
 # Sign-up Wizard
 gem 'wicked'
+gem 'wicked-wizard-validations'
 
 # Country Select for Simple Form
 gem 'country_select'
