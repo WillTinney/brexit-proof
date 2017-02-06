@@ -26,7 +26,7 @@ class AssigneesController < ApplicationController
     if @assignee.save
       respond_to do |format|
         format.js
-        format.html { redirect_to user_assignees_path(current_user, @assignee.type), notice: 'Assignee was successfully created.' }
+        format.html { redirect_to user_path(current_user), notice: 'Assignee was successfully created.' }
       end
     else
       respond_to do |format|

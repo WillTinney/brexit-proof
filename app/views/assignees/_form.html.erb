@@ -69,7 +69,8 @@
     <% if @assignee.type == 'Guardian' || params[:format] == 'Guardian' %>
       <%= f.hidden_field :type, value: 'Guardian' %>
     <% else %>
-      <%= f.hidden_field :type, value: 'Child' %>
+      <%= f.hidden_field :type, value: 'Recipient' %>
+      <%= f.hidden_field :relationship, value: 'Child' %>
     <% end %>
 
     <div class="row">

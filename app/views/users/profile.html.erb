@@ -176,32 +176,32 @@
     //       }
     //   });
     // });
-    $('.children-link').click(function(e){
-      e.preventDefault();
-      $('.sidebar-tabs').children().removeClass('active');
-      $('#children-sidebar-tab').addClass('active')
-      $.ajax({
-          type: "GET",
-          url: <%= @user.id %> + "/children",
-          data: { },
-          success: function(data){
-              $('#tab-content').empty().html(data);
-          }
-      });
-    });
-    $('.guardian-link').click(function(e){
-      e.preventDefault();
-      $('.sidebar-tabs').children().removeClass('active');
-      $('#guardian-sidebar-tab').addClass('active')
-      $.ajax({
-          type: "GET",
-          url: <%= @user.id %> + "/guardians",
-          data: { },
-          success: function(data){
-              $('#tab-content').empty().html(data);
-          }
-      });
-    });
+    // $('.children-link').click(function(e){
+    //   e.preventDefault();
+    //   $('.sidebar-tabs').children().removeClass('active');
+    //   $('#children-sidebar-tab').addClass('active')
+    //   $.ajax({
+    //       type: "GET",
+    //       url: <%= @user.id %> + "/children",
+    //       data: { },
+    //       success: function(data){
+    //           $('#tab-content').empty().html(data);
+    //       }
+    //   });
+    // });
+    // $('.guardian-link').click(function(e){
+    //   e.preventDefault();
+    //   $('.sidebar-tabs').children().removeClass('active');
+    //   $('#guardian-sidebar-tab').addClass('active')
+    //   $.ajax({
+    //       type: "GET",
+    //       url: <%= @user.id %> + "/guardians",
+    //       data: { },
+    //       success: function(data){
+    //           $('#tab-content').empty().html(data);
+    //       }
+    //   });
+    // });
     // $('.proof-link').click(function(e){
     //   e.preventDefault();
     //   $('.sidebar-tabs').children().removeClass('active');
@@ -215,32 +215,32 @@
     //       }
     //   });
     // });
-    $('.notes-link').click(function(e){
-      e.preventDefault();
-      $('.sidebar-tabs').children().removeClass('active');
-      $('#notes-sidebar-tab').addClass('active')
-      $.ajax({
-          type: "GET",
-          url: <%= @user.id %> + "/notes",
-          data: { },
-          success: function(data){
-              $('#tab-content').empty().html(data);
-          }
-      });
-    });
-    // Clicking on digital assets icon loads tab content
-    $('.digital-link').click(function(e){
-      e.preventDefault();
-      $('.sidebar-tabs').children().removeClass('active');
-      $('#digital-assets-sidebar-tab').addClass('active')
-      $.ajax({
-          type: "GET",
-          url: <%= @user.id %> + "/digital",
-          data: { },
-          success: function(data){
-              $('#tab-content').empty().html(data);
-          }
-      });
-    });
+    // $('.notes-link').click(function(e){
+    //   e.preventDefault();
+    //   $('.sidebar-tabs').children().removeClass('active');
+    //   $('#notes-sidebar-tab').addClass('active')
+    //   $.ajax({
+    //       type: "GET",
+    //       url: <%= @user.id %> + "/notes",
+    //       data: { },
+    //       success: function(data){
+    //           $('#tab-content').empty().html(data);
+    //       }
+    //   });
+    // });
+    // // Clicking on digital assets icon loads tab content
+    // $('.digital-link').click(function(e){
+    //   e.preventDefault();
+    //   $('.sidebar-tabs').children().removeClass('active');
+    //   $('#digital-assets-sidebar-tab').addClass('active')
+    //   $.ajax({
+    //       type: "GET",
+    //       url: <%= @user.id %> + "/digital",
+    //       data: { },
+    //       success: function(data){
+    //           $('#tab-content').empty().html(data);
+    //       }
+    //   });
+    // });
   </script>
 <% end %>
