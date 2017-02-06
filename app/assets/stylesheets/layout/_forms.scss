@@ -6,16 +6,16 @@
 }
 .form-container input[type="submit"] {
   display: block;
-  padding: 19px 39px 18px 39px;
+  padding: 9px 19px 8px 19px;
   color: #FFF;
   margin: 20px auto;
-  background: #1abc9c;
+  background: $purple;
   font-size: 18px;
-  text-align: center;
-  font-style: normal;
+  // text-align: center;
+  // font-style: normal;
+  min-width: 78px;
   width: 100%;
-  border: 1px solid #16a085;
-  border-width: 1px 1px 3px;
+  // border-radius: 30%;
 }
 .form-container input[type="submit"]:hover {
   box-shadow: 0px 6px 15px 0px rgba(224,224,224,1);
