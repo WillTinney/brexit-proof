@@ -57,7 +57,7 @@
 
   <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="alt-card black-links">
-      <h4><%= link_to "My Children", "#", class: "children-link" %></h4>
+      <h4><%= link_to "My Children",user_children_path(current_user), class: "children-link" %></h4>
       <hr>
       <div class="card-content card-overflow">
         <% if !@user.children.empty? %>
@@ -81,7 +81,7 @@
 
   <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="alt-card black-links">
-      <h4><%= link_to "My Guardians", "#", class: "guardian-link" %></h4>
+      <h4><%= link_to "My Guardians", user_guardians_path(current_user), class: "guardian-link" %></h4>
       <hr>
       <div class="card-content card-overflow">
         <% if !@user.guardians.empty? %>
