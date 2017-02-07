@@ -246,26 +246,13 @@
   // top: 10px;
   // left: 10px;
 }
-@media (max-width: 300px) {
+@media (max-width: 1200px) {
   .banner-space {
-    margin-top: 10%;
+    padding-top: 30%;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 1201px) {
   .banner-space {
-    margin-top: 20%;
-  }
-}
-@media (max-width: 600px) {
-  .banner-space {
-    margin-top: 25%;
-  }
-}
-.banner-space {
-  margin-top: 30%;
-}
-@media (min-width: 1300px) {
-  .banner-space {
-    margin-top: 40%;
+    padding-top: 520px;
   }
 }
