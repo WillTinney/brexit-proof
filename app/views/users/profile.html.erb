@@ -29,7 +29,7 @@
             <p>Email: <%= @user.try(:email) %></p>
             <p>Phone Number: <%= @user.try(:phone_number) %></p>
             <p>Address: <%= @user.try(:address_line_1) + ", " + @user.try(:address_line_2) %></p>
-            <p><%= @user.try(:town) + ", " + @user.try(:postcode) %> <% ", " + @user.country if @user.country %></p>
+            <p><%= @user.try(:city) + ", " + @user.try(:postcode) %> <% ", " + @user.country if @user.country %></p>
             <% unless @user.details_completed? %>
               <i class="fa fa-exclamation-triangle" aria-hidden="true"> Details incomplete</i>
             <% end %>
@@ -52,7 +52,7 @@
               <p><%= partner.phone_number %></p>
               <br>
               <p><%= partner.try(:address_line_1) + ", " + partner.try(:address_line_2) %></p>
-              <p><%= partner.try(:town) + ", " + partner.try(:postcode) %><% ", " + partner.country if partner.country %></p>
+              <p><%= partner.try(:city) + ", " + partner.try(:postcode) %><% ", " + partner.country if partner.country %></p>
             </div>
           <% end %>
         </div>

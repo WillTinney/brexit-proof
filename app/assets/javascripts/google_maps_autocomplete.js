@@ -19,6 +19,9 @@ function onPlaceChanged() {
   $('#user_address').trigger('blur').val(components.address);
   $('#user_postcode').val(components.postcode);
   $('#user_city').val(components.city);
+  $('#assignee_address').trigger('blur').val(components.address);
+  $('#assignee_postcode').val(components.postcode);
+  $('#assignee_city').val(components.city);
 }
 
 function getAddressComponents(place) {

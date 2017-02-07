@@ -61,7 +61,7 @@ class User < ApplicationRecord
   # validates :last_name, presence: :true, if: 'current_step?(:basic_profile)'
 
   # validates :address_line_1, presence: :true, if: 'current_step?(:contact_info)'
-  # validates :town, presence: :true, if: 'current_step?(:contact_info)'
+  # validates :city, presence: :true, if: 'current_step?(:contact_info)'
   # validates :country, presence: :true, if: 'current_step?(:contact_info)'
   # validates :postcode, presence: :true, if: 'current_step?(:contact_info)'
 end

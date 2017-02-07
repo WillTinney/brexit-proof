@@ -46,7 +46,7 @@
 
         <div class="row">
           <div class="col-xs-12 col-sm-6">
-            <%= f.input :address_line_1 %>
+            <%= f.input :address_line_1, input_html: { id: "user_address"} %>
           </div>
           <div class="col-xs-12 col-sm-6">
             <%= f.input :address_line_2 %>
@@ -55,7 +55,7 @@
 
         <div class="row">
           <div class="col-xs-12 col-sm-4">
-            <%= f.input :town %>
+            <%= f.input :city %>
           </div>
           <div class="col-xs-12 col-sm-4">
             <%= f.input :postcode %>
@@ -74,6 +74,7 @@
 <% end %>
 
 <%= content_for(:after_js) do %>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=<%= ENV['GOOGLE_API_BROWSER_KEY'] %>"></script>
   <script>
     $('.profile-picture-inline').click(function(e) {
       e.preventDefault;
@@ -81,4 +82,8 @@
       $('.edit-profile-picture').removeClass('invisible');
     });
   </script>
+<% end %>
+
+<%= content_for(:after_js) do %>
+
 <% end %>

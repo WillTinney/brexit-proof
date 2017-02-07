@@ -48,7 +48,7 @@ class AfterSignUpController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :title, :first_name, :middle_name, :last_name,
       :citizenship, :date_of_birth, :phone_number, :gender,
-      :address_line_1, :address_line_2, :town, :country, :postcode,
+      :address_line_1, :address_line_2, :city, :country, :postcode,
       :latitude, :longitude, :profile_picture)
   end
 
