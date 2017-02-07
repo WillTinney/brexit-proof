@@ -24,6 +24,9 @@ gem 'cloudinary'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 
+# Google Autocomplete
+gem 'gmaps-autocomplete-rails'
+
 # Sign-up Wizard
 gem 'wicked'
 gem 'wicked-wizard-validations'
