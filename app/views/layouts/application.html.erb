@@ -7,6 +7,8 @@
     <%= action_cable_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_BROWSER_KEY'] %>&libraries=places"></script>
+
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>

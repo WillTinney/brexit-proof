@@ -25,7 +25,7 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 
 # Google Autocomplete
-gem 'gmaps-autocomplete-rails'
+gem 'geocoder'
 
 # Sign-up Wizard
 gem 'wicked'
