@@ -18,7 +18,7 @@
     </div>
 
     <div class="banner-button">
-      <%= link_to new_user_session_path, class: "white-text" do %>
+      <%= link_to new_user_session_path, class: "white-text", id: 'modal-button', data: { toggle: "modal", target: ".bd-example-modal-sm" } do %>
         <button id="banner-button" class="btn btn-transparent">Stay in the UK</button>
       <% end %>
     </div>
@@ -32,6 +32,16 @@
   </div>
 </div>
 
+<!-- Sign-up modal -->
+<div class="modal fade bd-example-modal-sm" id="sign_up" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <%= render 'devise/registrations/new', resource: User.new, resource_name: :user %>
+    </div>
+  </div>
+</div>
+
+<!-- Space below banner -->
 <div class="banner-space"></div>
 
 <!-- Caroussel - Medias -->
@@ -228,21 +238,6 @@
       });
     });
     // Banner image cycler
-    // function cycleImages(){
-    //   var $active = $('#cycler .active');
-    //   var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
-    //   $next.css('z-index',2);//move the next image up the pile
-    //   $active.fadeOut(1500,function(){//fade out the top image
-    // $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
-    //       $next.css('z-index',3).addClass('active');//make the next image the top one
-    //   });
-    // }
-
-    // $(document).ready(function(){
-    // // run every 7s
-    // setInterval('cycleImages()', 7000);
-    // })
-
     $("#banner2").hide();
     $('#banner3').hide();
 
@@ -255,5 +250,10 @@
         .appendTo('#slideshow');
     }, 6000);
 
+    // // Sign-up Modal
+    // $('#modal-button').on('click', function(e) {
+    //   e.preventDefault();
+    //   $('#user_mobile_number').val(prefix + ' ' + mobile);
+    // });
   </script>
 <% end %>

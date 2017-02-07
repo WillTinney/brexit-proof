@@ -17,10 +17,13 @@
           <% unless @user.details_completed? %>
             <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
           <% end %>
-          <h4><%= link_to "My Details", "#", class: "details-link" %></h4>
+          <h4><%= link_to "My Details", user_path(current_user), class: "details-link" %></h4>
           <hr>
           <div class="card-content card-overflow">
-            <p><strong><%= @user.try(:name_surname) %></strong></p>
+            <%= link_to user_path(current_user) do %>
+              <p><strong><%= @user.try(:name_surname) %>
+            <% end %>
+            </strong></p>
             <p><%= @user.citizenship ? @user.citizenship + " Citizen" : "Please enter your citizenship" %></p>
             <p>Date of Birth: <%= @user.try(:date_of_birth) %></p>
             <p>Email: <%= @user.try(:email) %></p>
