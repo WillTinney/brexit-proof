@@ -5,44 +5,70 @@
 <br>
 
 <div class="container-box">
-  <div class="header-box padding-15">
-    <h2>Notes Library</h2>
-    <%= link_to "Add Note", new_user_note_path(current_user, @proof), remote: true, class: "btn btn-transparent btn-default button-height-default" %>
-  </div>
 
-  <div class="blue-box side-margin-small">
-    <p>Here you can add notes and leave messages for those that matter to you so that...</p>
-  </div>
-
-  <div class="col-xs-12 col-md-6 invisible">
-    <div class="note-card">
-      <div class="note-form" id="new-note-form"></div>
+  <% if !@notes.empty? %>
+    <div class="header-box padding-15">
+      <h2>Notes Library</h2>
+      <%= link_to "Add Note", new_user_note_path(current_user, @note), remote: true, class: "btn btn-transparent btn-default button-height-default" %>
     </div>
-  </div>
 
-  <% @user.notes.reverse.each do |note| %>
-    <div class="col-xs-12 col-sm-6">
+    <div class="blue-box side-margin-small">
+      <p>Here you can add notes and leave messages for those that matter to you so that...</p>
+    </div>
+
+    <div class="col-xs-12 col-md-6 invisible">
       <div class="note-card">
-        <div class="card-buttons">
-          <%= link_to edit_user_note_path(current_user, note.id), remote: true do %>
-            <i class="fa fa-pencil" aria-hidden="true"> </i>
-          <% end %>
-          <%= link_to user_note_path(current_user, note.id), data: {confirm: 'Are you sure?'}, method: :delete do %>
-            <i class="fa fa-trash" aria-hidden="true"></i>
-          <% end %>
-        </div>
-        <div class="note-spacing" id="assignee-note-<%= note.id %>">
-          <div class="note-title">
-            <h4><strong><%= note.title %></strong></h4>
-          </div>
-          <hr>
-          <br>
-          <div class="card-content card-overflow">
-            <p><%= note.content %></p>
-          </div>
-        </div>
-        <div class="note-form" id="edit-note-form-<%= note.id %>"></div>
+        <div class="note-form" id="new-note-form"></div>
       </div>
     </div>
+
+    <% @user.notes.reverse.each do |note| %>
+      <div class="col-xs-12 col-sm-6">
+        <div class="note-card">
+          <div class="card-buttons">
+            <%= link_to edit_user_note_path(current_user, note.id), remote: true do %>
+              <i class="fa fa-pencil" aria-hidden="true"> </i>
+            <% end %>
+            <%= link_to user_note_path(current_user, note.id), data: {confirm: 'Are you sure?'}, method: :delete do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            <% end %>
+          </div>
+          <div class="note-spacing" id="assignee-note-<%= note.id %>">
+            <div class="note-title">
+              <h4><strong><%= note.title %></strong></h4>
+            </div>
+            <hr>
+            <br>
+            <div class="card-content card-overflow">
+              <p><%= note.content %></p>
+            </div>
+          </div>
+          <div class="note-form" id="edit-note-form-<%= note.id %>"></div>
+        </div>
+      </div>
+    <% end %>
+
+  <% else %>
+
+    <div class="side-margin">
+      <h2>Notes</h2>
+
+      <div class="blue-box">
+        <p>You can leave notes that...</p>
+      </div>
+    </div>
+
+    <div class="grey-box">
+      <h5><strong>You have not yet added any notes.</strong></h5>
+      <p>Please use the form below to do so:</p>
+      <%= simple_form_for([@user, @note]) do |f| %>
+        <%= f.input :title %>
+        <%= f.input :content %>
+        <div class="submit-button text-center">
+          <%= f.button :submit, "Create", class: "btn btn-success" %>
+        </div>
+      <% end %>
+    </div>
+
   <% end %>
 </div>

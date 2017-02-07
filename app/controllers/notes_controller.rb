@@ -4,6 +4,7 @@ class NotesController < ApplicationController
 
   def index
     @notes = policy_scope(Note)
+    @note = Note.new
   end
 
   def new

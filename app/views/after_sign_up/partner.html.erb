@@ -39,14 +39,14 @@
 </div>
 
 <div class="wizard-box text-center">
-  <h2>Do you have a partner or spouse?</h2>
+  <h3>Do you have a partner or spouse?</h3>
   <%= simple_form_for(@user, url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
     <div class="row wizard-choice-buttons">
       <div class="col-xs-2 ">
-        <%= link_to 'No', wizard_path(:children), class: "choice-button-alt" %>
+        <%= f.submit 'No', class: "choice-button-alt" %>
       </div>
       <div class="col-xs-2 col-xs-offset-3">
-        <%= link_to 'Yes', wizard_path(:children), class: "choice-button" %>
+        <%= f.submit 'Yes', class: "choice-button" %>
       </div>
     </div>
   <% end %>

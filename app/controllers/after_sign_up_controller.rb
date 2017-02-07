@@ -17,7 +17,7 @@ class AfterSignUpController < ApplicationController
 
     case step
       when :partner
-        @user.partner = params[:commit]
+        @user.partner = true if params[:commit] == "Yes"
         @user.save
         render_wizard @user
       when :children
