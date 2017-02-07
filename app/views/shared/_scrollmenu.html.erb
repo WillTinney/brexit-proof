@@ -1,8 +1,24 @@
 <div class="scrollmenu-wrapper"></div>
 <div class="scrollmenu">
-  <div class="scrollbox text-center" id="user-scrollbox">
+  <div class="scrollbox text-center" id="home-scrollbox">
     <div>
-      <%= link_to user_path(current_user), class: "scrollmenu-link details-link" do %>
+      <%= link_to user_profile_path(current_user), class: "scrollmenu-link" do %>
+        <h3>Home</h3>
+      <% end %>
+    </div>
+    <div class="scrollitem <%= 'active' if params[:controller] == 'users' %>">
+      <%= link_to user_profile_path(current_user), class: 'scrollmenu-me' do %>
+        <div class="menu-icon">
+          <i class="fa fa-home" aria-hidden="true"></i>
+        </div>
+        <h4>Profile</h4>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="scrollbox text-center">
+    <div>
+      <%= link_to user_path(current_user), class: "scrollmenu-link" do %>
         <h3>Me</h3>
       <% end %>
     </div>
@@ -104,7 +120,7 @@
     <div class="scrollitem <%= 'active' if params[:controller] == 'proofs' %>">
       <%= link_to user_proofs_path(current_user), class: "margin-auto" do %>
         <div class="menu-icon">
-          <i class="fa fa-home" aria-hidden="true"></i>
+          <i class="fa fa-file-text-o" id="proof-menu-icon" aria-hidden="true"></i>
         </div>
         <h4>Proof of Residency</h4>
       <% end %>

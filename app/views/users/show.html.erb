@@ -2,46 +2,13 @@
   <%= render 'shared/navbar' %>
 <% end %>
 
-<% content_for(:sidebar) do %>
-  <%= render 'shared/sidebars/sidebar_core' %>
-<% end %>
-
 <div class="dashboard-box" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url('/assets/background.jpg')">
   <div id="tab-content">
-    <div class="0" id="my-profile-content">
-      <%= render file: 'users/profile' %>
+    <div class="container">
+      <br>
+      <div class="grey-box">
+        <%= render file: 'users/edit' %>
+      </div>
     </div>
-
-    <div class="2 hidden" id="personal-details-content">
-      <%= render file: 'users/edit' %>
-    </div>
-
-    <div class="4 hidden" id="partner-content">
-    </div>
-
-    <div class="6 hidden" id="children-content">
-      <%# render file: 'users/children' %>
-    </div>
-
-    <div class="8 hidden" id="guardian-content">
-
-    </div>
-
-    <div class="10 hidden" id="family-and-friends-content">
-
-    </div>
-
-    <div class="12 hidden" id="my-digital-assets-content">
-      <%= render file: 'users/digital' %>
-    </div>
-
-    <div class="14 hidden" id="proof-of-residency-content">
-      <%= render file: 'proofs/index' %>
-    </div>
-
-    <div class="16 hidden" id="notes-content">
-      <%= render file: 'notes/index' %>
-    </div>
-
   </div>
 </div>
