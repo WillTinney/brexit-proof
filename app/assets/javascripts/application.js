@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require gmaps-auto-complete
 //= require bootstrap-sprockets
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary

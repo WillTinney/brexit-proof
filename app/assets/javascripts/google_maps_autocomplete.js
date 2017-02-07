@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   var user_address = $('#user_address').get(0);
 
@@ -19,7 +18,7 @@ function onPlaceChanged() {
 
   $('#user_address').trigger('blur').val(components.address);
   $('#user_postcode').val(components.postcode);
-  $('#user_town').val(components.city);
+  $('#user_city').val(components.city);
 }
 
 function getAddressComponents(place) {
