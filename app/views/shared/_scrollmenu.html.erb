@@ -6,7 +6,7 @@
         <h3>Home</h3>
       <% end %>
     </div>
-    <div class="scrollitem <%= 'active' if params[:controller] == 'users' %>">
+    <div class="scrollitem <%= 'active' if params[:controller] == 'users' && params[:action] == 'profile' %>">
       <%= link_to user_profile_path(current_user), class: 'scrollmenu-me' do %>
         <div class="menu-icon">
           <i class="fa fa-home" aria-hidden="true"></i>
@@ -22,7 +22,7 @@
         <h3>Me</h3>
       <% end %>
     </div>
-    <div class="scrollitem <%= 'active' if params[:controller] == 'users' %>">
+    <div class="scrollitem <%= 'active' if params[:controller] == 'users' && params[:action] == 'show' %>">
       <%= link_to user_path(current_user), class: 'scrollmenu-me' do %>
         <% if current_user.profile_picture %>
           <%= cl_image_tag(current_user.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) %>
@@ -135,67 +135,3 @@
     </div>
   </div>
 </div>
-
-<% content_for(:after_js) do %>
-  <script>
-    // // Clicking on links on profile/scrollmenu tab loads tab content
-    // $('.details-link').click(function(e){
-    //   e.preventDefault();
-    //   $('.sidebar-tabs').children().removeClass('active');
-    //   $('#personal-details-sidebar-tab').addClass('active')
-    //   $.ajax({
-    //       type: "GET",
-    //       url: <%= @user.id %> + "/edit",
-    //       data: { },
-    //       success: function(data){
-    //           $('#tab-content').empty().html(data);
-    //       }
-    //   });
-    // });
-
-    // $('.children-link').click(function(e){
-    //   e.preventDefault();
-    //   $.ajax({
-    //       type: "GET",
-    //       url: <%= @user.id %> + "/children",
-    //       data: { },
-    //       success: function(data){
-    //           $('#tab-content').empty().html(data);
-    //       }
-    //   });
-    // });
-    // $('.guardian-link').click(function(e){
-    //   e.preventDefault();
-    //   $.ajax({
-    //       type: "GET",
-    //       url: <%= @user.id %> + "/guardians",
-    //       data: { },
-    //       success: function(data){
-    //           $('#tab-content').empty().html(data);
-    //       }
-    //   });
-    // });
-    // $('.notes-link').click(function(e){
-    //   e.preventDefault();
-    //   $.ajax({
-    //       type: "GET",
-    //       url: <%= @user.id %> + "/notes",
-    //       data: { },
-    //       success: function(data){
-    //           $('#tab-content').empty().html(data);
-    //       }
-    //   });
-    // });
-    // $('.digital-link').click(function(e){
-    //   e.preventDefault();
-    //   $.ajax({
-    //       type: "GET",
-    //       url: <%= @user.id %> + "/digital",
-    //       data: { },
-    //       success: function(data){
-    //           $('#tab-content').empty().html(data);
-    //       }
-    //   });
-    // });
-  </script>
-<% end %>
