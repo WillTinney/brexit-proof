@@ -13,7 +13,7 @@
 <div class="progress-width">
   <div class="row bs-wizard" style="border-bottom:0;">
     <div class="col-xs-3 bs-wizard-step complete">
-      <div class="text-center bs-wizard-stepnum">Your Details</div>
+      <div class="text-center bs-wizard-stepnum">You</div>
       <div class="progress"><div class="progress-bar"></div></div>
       <a href="#" class="bs-wizard-dot"></a>
     </div>
@@ -39,14 +39,14 @@
 </div>
 
 <div class="wizard-box text-center">
-  <h2>Do you have a partner or spouse?</h2>
+  <h3>Do you have a partner or spouse?</h3>
   <%= simple_form_for(@user, url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
     <div class="row wizard-choice-buttons">
       <div class="col-xs-2 ">
-        <%= link_to 'No', wizard_path(:children), class: "choice-button-alt" %>
+        <%= f.submit 'No', class: "choice-button-alt" %>
       </div>
       <div class="col-xs-2 col-xs-offset-3">
-        <%= link_to 'Yes', wizard_path(:partner_basic), class: "choice-button" %>
+        <%= f.submit 'Yes', class: "choice-button" %>
       </div>
     </div>
   <% end %>

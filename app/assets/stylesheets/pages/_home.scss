@@ -42,8 +42,20 @@
 .overflow-hidden {
   overflow: hidden;
 }
+.banner-text {
+  margin: 13% 0 5% 5%;
+  color: $background-grey;
+  align-self: flex-start;
+  z-index: 10;
+  h4 {
+    font-size: 24px;
+  }
+}
 .banner-button {
   z-index: 10;
+  h4 {
+    font-size: 22px;
+  }
 }
 .home-section {
   padding: 80px 0;
@@ -214,9 +226,10 @@
   height: 50vh;
   background-color: #EEE9E8;
   h2 {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   p {
+    margin-top: 10px;
     margin-bottom: 30px;
   }
 }
@@ -246,26 +259,13 @@
   // top: 10px;
   // left: 10px;
 }
-@media (max-width: 300px) {
+@media (max-width: 1200px) {
   .banner-space {
-    margin-top: 10%;
+    padding-top: 12%;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 1201px) {
   .banner-space {
-    margin-top: 20%;
-  }
-}
-@media (max-width: 600px) {
-  .banner-space {
-    margin-top: 25%;
-  }
-}
-.banner-space {
-  margin-top: 30%;
-}
-@media (min-width: 1300px) {
-  .banner-space {
-    margin-top: 40%;
+    padding-top: 70px;
   }
 }

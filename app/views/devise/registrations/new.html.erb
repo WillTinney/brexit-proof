@@ -1,32 +1,38 @@
-<% content_for(:navbar) do %>
-  <%= render 'shared/navbars/navbar_sign_up' %>
-<% end %>
-
-<div class="navbar-box">
+<!-- <div class="navbar-box">
   <div class="container">
     <h3>Welcome to BrexitProof. Let's get started.</h3>
 
     <p>First off you need to sign-up with your email address and set a password.</p>
   </div>
-</div>
+</div> -->
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
+    <div class="col-sm-5 col-md-4 col-lg-3 bg-grey">
       <br>
-      <h2>Sign up</h2>
-
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, required: true %>
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+              <%= f.input :email, required: true, autofocus: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+              <%= f.input :password_confirmation, required: true %>
+            </div>
+          </div>
         </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+        <div class="form-actions text-center">
+          <%= f.button :submit, "Register" %>
         </div>
       <% end %>
 

@@ -21,7 +21,7 @@
             <p><strong>Phone Number</strong>: <%= @assignee.try(:phone_number) %></p>
             <br>
             <p><%= @assignee.try(:address_line_1) + ", " + @assignee.try(:address_line_2) %></p>
-            <p><%= @assignee.try(:town) + ", " + @assignee.try(:postcode) %><% ", " + @assignee.country if @assignee.country %></p>
+            <p><%= @assignee.try(:city) + ", " + @assignee.try(:postcode) %><% ", " + @assignee.country if @assignee.country %></p>
           </div>
         </div>
       </div>

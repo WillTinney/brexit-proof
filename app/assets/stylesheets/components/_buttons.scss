@@ -10,9 +10,19 @@
 }
 #banner-button{
   color: $black;
-  border-radius: 0 3px 3px rgba(0,0,0,0.8);
+  border-radius: 5px;
   box-shadow: 0 2px 2px rgba(0,0,0,0.2);
-  padding: 10px 30px;
+  padding: 10px 50px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.orange-button {
+  background: $orange;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  padding: 10px 120px;
+  font-size: 18px;
+  font-weight: bold;
 }
 .signup-button{
   background-color: $brand-color;
@@ -28,7 +38,7 @@
   margin-right: 5px;
   /* End Additions */
 
-  font-size: .825em;
+  font-size: 20px;
   text-decoration: none;
   font-weight: 700;
   padding: 30px;
@@ -57,7 +67,7 @@ a.choice-button:hover {
   margin-right: 5px;
   /* End Additions */
 
-  font-size: .825em;
+  font-size: 20px;
   text-decoration: none;
   font-weight: 700;
   padding: 30px;

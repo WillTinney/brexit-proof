@@ -12,7 +12,7 @@ class CreateAssignees < ActiveRecord::Migration[5.0]
       t.string :phone_number
       t.string :address_line_1
       t.string :address_line_2
-      t.string :town
+      t.string :city
       t.string :country
       t.string :postcode
       t.string :profile_picture
