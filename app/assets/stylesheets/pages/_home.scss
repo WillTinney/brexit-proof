@@ -42,8 +42,17 @@
 .overflow-hidden {
   overflow: hidden;
 }
+.banner-text {
+  margin: 14% 0 5% 5%;
+  color: $background-grey;
+  align-self: flex-start;
+  z-index: 10;
+}
 .banner-button {
   z-index: 10;
+  h4 {
+    font-size: 22px;
+  }
 }
 .home-section {
   padding: 80px 0;
@@ -248,11 +257,11 @@
 }
 @media (max-width: 1200px) {
   .banner-space {
-    padding-top: 30%;
+    padding-top: 15%;
   }
 }
 @media (min-width: 1201px) {
   .banner-space {
-    padding-top: 520px;
+    padding-top: 80px;
   }
 }
