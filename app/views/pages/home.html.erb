@@ -224,13 +224,10 @@
   <span class="registration text">
   </span>
   <span class="call-to-action-text">
-    <p>Leave us your email address to be notified when our service is live:</p>
+    <p>to stay in the UK</p>
   </span>
-  <%= form_tag("/subscribe", method: "POST", class: "form form-inline", remote: true) do %>
-    <%= email_field_tag("subscriber[email]", nil,
-      placeholder: "Email address",
-      class: "form-control") %>
-    <%= submit_tag("Subscribe", class: "btn btn-primary") %>
+  <%= link_to new_user_registration_path, class: "white-text", data: { toggle: "modal", target: ".signup-modal-sm" } do %>
+    <button class="btn orange-button">Sign Up</button>
   <% end %>
 </section>
 

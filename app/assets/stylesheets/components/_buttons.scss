@@ -16,6 +16,14 @@
   font-size: 18px;
   font-weight: bold;
 }
+.orange-button {
+  background: $orange;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  padding: 10px 120px;
+  font-size: 18px;
+  font-weight: bold;
+}
 .signup-button{
   background-color: $brand-color;
   color: white;
