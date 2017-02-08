@@ -11,15 +11,17 @@
   </div>
 
   <div class="banner-content">
+
     <div class="banner-text">
-      <h4>Brexit is now certain.</h4>
-      <h4>EU citizens living in the UK before the Referendum<br />should claim their right to stay.</h4>
-      <h4><strong>We help you prove your right to live in the UK.</strong></h4>
+      <h4>"EU citizens living in the UK before the Referendum will have to prove their right to stay."</h4><br/>
+    </div>
+    <div class="banner-text">
+      <h4><strong>Protect your Residency Right</strong>,<br/>in any circumstances even at a border control.</h4>
     </div>
 
     <div class="banner-button">
       <%= link_to new_user_registration_path, class: "white-text", data: { toggle: "modal", target: ".signup-modal-sm" } do %>
-        <button id="banner-button" class="btn btn-transparent">Stay in the UK</button>
+        <button id="banner-button" class="btn btn-transparent">Protect your Resident Status</button>
       <% end %>
     </div>
 
@@ -55,8 +57,8 @@
 <!-- Caroussel - Medias -->
 <div class="wrapper overflow-hidden">
   <section id="media-quotes" class="container content-section text-center home-section">
-    <h2>Why?</h2>
-    <p>Theresa May has not defined new immigration control rules yet and the eligibility criteria remain very uncertain.<br>History and recent political events remind us we need to be prepared to protect us and our relatives.</p>
+    <h2>Why BrexitHedge?</h2>
+    <p>Only EU Citizens who can prove they took up <strong>residence in the UK prior to June 23</strong>, date of the EU Membership Referendum, will be allow to stay post Brexit. History and recent political events remind us <strong>we need to be prepared to any situation</strong> and to protect our relatives.</p>
     <div class="progress-width">
       <div id="carousel-container">
         <div class="cloud9-carousel" id="cloud9-carousel">
@@ -134,8 +136,8 @@
 
 <!-- What do we do for you? -->
 <section class="container text-center home-section" id="instructions">
-  <h2>What does BrexitProof do for me?</h2>
-  <p>BrexitProof helps EU citizens living in the UK protect their residency right to stay post Brexit.<br>BrexitProof provide a unique infrastructure of authenticity and trust, and give people the ability to unlock data.<br>BrexitProof servers are based in Norway.</p>
+  <h2>What does BrexitHedge do for me?</h2>
+  <p>BrexitHedge helps EU citizens living in the UK protect their residency right to stay post Brexit.<br>BrexitHedge provide a unique infrastructure of authenticity and trust, and give people the ability to unlock data.<br>BrexitHedge servers are based in Norway.</p>
   <div class="col-xs-12 col-sm-4">
     <div class="flexbox-vertical feature">
       <%= image_tag('vault', class: "feature-image-vault") %>
@@ -148,7 +150,7 @@
     <div class="flexbox-vertical feature">
       <i class="fa fa-unlock-alt feature-image-unlock" aria-hidden="true"></i>
       <h4>Unlock</h4>
-      <p class="text-justify">We offer a unique and secure unlocking process of your data and send it <strong>only to the people individually designated by you.</strong> </p>
+      <p class="text-justify">We offer a unique and secure unlocking process of your data and send it <strong>only to who you designated. We can send your data to the Home Office on request.</strong> </p>
     </div>
   </div>
 
@@ -162,7 +164,7 @@
 </section>
 
 <!-- Feedback -->
-<!-- <section class="home-section" id="feedback" style="background-image: linear-gradient(-225deg, rgba(0,101,128,0.4) 0%, rgba(0,36,51,0.4) 50%), url(<%= image_path('banner2.jpg') %>);">
+<section class="home-section" id="feedback" style="background-image: linear-gradient(-225deg, rgba(0,101,128,0.4) 0%, rgba(0,36,51,0.4) 50%), url(<%= image_path('banner2.jpg') %>);">
   <div class="container text-center" id="reviews">
     <h2>Act now!</h2>
     <div class="row">
@@ -182,31 +184,35 @@
     </div>
   </div>
 </section>
- -->
+
 <!-- Pricing -->
 
 <section class="home-section" id="comparison">
   <div class="container text-center">
-    <h2>Do I need to pay to use BrexitProof?</h2>
+    <h2>Do I need to pay to use BrexitHedge?</h2>
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
           <div class="comparison-box my-will">
-            <h5>BrexitProof is</h5>
+            <h5>BrexitHedge is completely</h5>
             <h3>Free</h3>
-            <h5>For the first users to join our network</h5>
+            <h5>Made by EU citizens for EU citizens</h5>
             <hr>
             <ul>
               <li class="comparison-li text-left">
                 <%= icon('check', class: "comparison-icon green") %>
-                <p> Trust infrastructure: storage and authenticity</p>
+                <p>  Trust infrastructure: storage and authenticity</p>
               </li>
               <li class="comparison-li text-left">
                 <%= icon('check', class: "comparison-icon green") %>
-                <p> Update any time </p>
+                <p>  Designate your "guardians" </p>
               </li>
               <li class="comparison-li text-left">
                 <%= icon('check', class: "comparison-icon green") %>
-                <p> Designate your "guardians" </p>
+                <p>  Unlock your data access from anywhere</p>
+              </li>
+              <li class="comparison-li text-left">
+                <%= icon('check', class: "comparison-icon green") %>
+                <p>  Update any time </p>
               </li>
             </ul>
           </div>
@@ -220,11 +226,11 @@
 <!-- Call to Registration -->
 
 <section class="container text-center home-section" id="registration">
-  <h2> Sign up now </h3>
+  <h2> Sign up now to prove your right of residency</h2>
   <span class="registration text">
   </span>
   <span class="call-to-action-text">
-    <p>to stay in the UK</p>
+    <p></p>
   </span>
   <%= link_to new_user_registration_path, class: "white-text", data: { toggle: "modal", target: ".signup-modal-sm" } do %>
     <button class="btn orange-button">Sign Up</button>
