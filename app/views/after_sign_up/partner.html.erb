@@ -41,13 +41,9 @@
 <div class="wizard-box text-center">
   <p class="sign-up-title top-margin">Do you have a partner or spouse?</p>
   <%= simple_form_for(@user, url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
-    <div class="row wizard-choice-buttons">
-      <div class="col-xs-2 ">
-        <%= f.submit 'No', class: "choice-button-alt" %>
-      </div>
-      <div class="col-xs-2 col-xs-offset-3">
-        <%= f.submit 'Yes', class: "choice-button" %>
-      </div>
+    <div class="wizard-choice-buttons">
+      <%= f.submit 'No', class: "purple-button side-margin-small" %>
+      <%= f.submit 'Yes', class: "purple-button side-margin-small" %>
     </div>
   <% end %>
 </div>

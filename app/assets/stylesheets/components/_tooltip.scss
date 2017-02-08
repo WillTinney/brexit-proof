@@ -46,3 +46,26 @@
     visibility: visible;
   }
 }
+
+.question-tooltip {
+  visibility: hidden;
+  width: 200px;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  right: 5px;
+}
+.question-circle:hover {
+  color: $grey;
+  .question-tooltip {
+    visibility: visible;
+  }
+}

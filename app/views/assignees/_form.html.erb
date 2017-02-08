@@ -87,12 +87,9 @@
       <%= f.hidden_field :relationship, value: 'Child' %>
     <% end %>
 
-    <div class="row">
-      <div class="col-xs-4 col-xs-offset-4">
-        <%= f.button :submit, "Save" %>
-        <%= link_to "back", user_profile_path(current_user), class: "butt back-button" %>
-      </div>
-
+    <div class="nav-buttons">
+      <%= link_to "Back", user_profile_path(current_user), class: "back-button" %>
+      <%= f.button :submit, "Save", class: "purple-button" %>
     </div>
   </div>
 <% end %>

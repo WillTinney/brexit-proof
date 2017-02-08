@@ -29,6 +29,43 @@
   font-size: 18px;
   font-weight: bold;
 }
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 5px 10px 5px;
+}
+.purple-button {
+  background: $purple;
+  border: $purple;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  padding: 10px 40px;
+}
+.purple-button:hover {
+  background: #787294;
+  color: white;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+}
+.back-button {
+  border: 3px solid $grey;
+  color: $grey;
+  border-radius: 50px;
+  padding: 8px 35px;
+}
+.grey-button {
+  background: #CCCCCC;
+  border: #CCCCCC;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  padding: 10px 40px;
+}
+.grey-button:hover {
+  background: $grey;
+  color: white;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+}
 .signup-button{
   background-color: $brand-color;
   color: white;

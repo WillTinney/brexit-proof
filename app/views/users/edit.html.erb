@@ -16,64 +16,62 @@
 <%= simple_form_for(@user) do |f| %>
   <div class="form-container">
     <div class="row">
-          <div class="col-xs-12 col-sm-4">
-            <%= f.input :title, collection: ["Mr", "Mrs", "Ms"] %>
-          </div>
-          <div class="col-xs-12 col-sm-8">
-            <%= f.input :email %>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12 col-sm-4">
-            <%= f.input :first_name %>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <%= f.input :middle_name %>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <%= f.input :last_name %>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12 col-sm-4">
-            <%= f.input :citizenship, collection: Nationality::NATIONALITY %>
-          </div>
-          <div class="col-xs-12 col-sm-4 date-of-birth">
-            <%= f.input :date_of_birth, as: :string, input_html: {type: :date} %>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <%= f.input :phone_number %>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12 col-sm-6">
-            <%= f.input :address_line_1, input_html: { id: "user_address"} %>
-          </div>
-          <div class="col-xs-12 col-sm-6">
-            <%= f.input :address_line_2 %>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12 col-sm-4">
-            <%= f.input :city %>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <%= f.input :postcode %>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <%= f.input :country, priority: ["United Kingdom"] %>
-          </div>
-        </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :title, collection: ["Mr", "Mrs", "Ms"] %>
+      </div>
+      <div class="col-xs-12 col-sm-8">
+        <%= f.input :email %>
+      </div>
+    </div>
 
     <div class="row">
-      <div class="col-xs-4 col-xs-offset-4">
-        <%= link_to "back", user_profile_path(current_user), class: "butt back-button" %>
-        <%= f.button :submit, "Save" %>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :first_name %>
       </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :middle_name %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :last_name %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :citizenship, collection: Nationality::NATIONALITY %>
+      </div>
+      <div class="col-xs-12 col-sm-4 date-of-birth">
+        <%= f.input :date_of_birth, as: :string, input_html: {type: :date} %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :phone_number %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <%= f.input :address_line_1, input_html: { id: "user_address"} %>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <%= f.input :address_line_2 %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :city %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :postcode %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :country, priority: ["United Kingdom"] %>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <%= link_to "Back", user_profile_path(current_user), class: "back-button" %>
+      <%= f.button :submit, "Save", class: "purple-button" %>
     </div>
   </div>
 <% end %>
