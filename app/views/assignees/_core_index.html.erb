@@ -1,10 +1,10 @@
 <div class="container-box">
-  <div class="header-box">
+  <div class="header-box padding-15">
     <h2>My <%= @type.capitalize %>s</h2>
     <%= link_to "Add New " + @type, new_user_assignee_path(current_user, @type), class: "btn btn-transparent btn-default button-height-default" %>
   </div>
 
-  <div class="blue-box">
+  <div class="blue-box side-margin-small">
     <p><%= @type.capitalize %>s are...</p>
   </div>
 
@@ -13,7 +13,11 @@
       <div class="col-xs-12 col-md-6 col-lg-4">
         <div class="card">
           <%= link_to user_assignee_path(current_user, assignee.id) do %>
-            <%= assignee.profile_picture ? cl_image_tag(assignee.profile_picture.path, transformation: [{width: 100, height: 100, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-card push-right") : image_tag('user3.png', class: "avatar-card push-right") %>
+            <% if assignee.profile_picture %>
+              <%= cl_image_tag(assignee.profile_picture.path, transformation: [{width: 100, height: 100, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-card push-right") %>
+            <% else %>
+              <div class="index-placeholder"></div>
+            <% end %>
             <div class="card-description">
               <h5 class="black-text"><strong><%= assignee.name_surname %></strong></h5>
               <%= link_to "View", user_assignee_path(current_user, assignee.id), class: "btn btn-info btn-default btn-ice reference-link" %>

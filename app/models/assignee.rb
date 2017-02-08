@@ -12,7 +12,7 @@ class Assignee < ApplicationRecord
   end
 
   def details_completed?
-    true if first_name && last_name && relationship && profile_picture && citizenship && date_of_birth && email && phone_number && address_line_1 && address_line_2 && town && postcode && country
+    true if first_name && last_name && relationship && profile_picture && citizenship && date_of_birth && email && phone_number && address_line_1 && address_line_2 && city && postcode && country
   end
 
   def self.show_partner
