@@ -86,9 +86,16 @@
     width: 85%;
     margin: 4px 0;
   }
+  h4 {
+    font-weight: bold;
+  }
   p {
     margin: 3px;
+    // color: #666666;
   }
+  // a {
+  //   color: #666666;
+  // }
 }
 .card-content {
   overflow-y: auto;
