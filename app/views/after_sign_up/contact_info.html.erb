@@ -42,11 +42,11 @@
   <%= simple_form_for(@user, url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
     <div class="row">
       <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
-        <%= f.input :phone_number, placeholder: '+44 7977 123123', label: 'What is your primary contact number?' %>
+        <%= f.input :phone_number, placeholder: '+44 7977 123123', label: 'What is your number?' %>
       </div>
     </div>
 
-    <h3>What is your primary UK address?</h3>
+    <p class="sign-up-title top-margin">What is your primary UK address?</p>
 
     <div class="row">
       <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-0">

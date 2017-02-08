@@ -18,6 +18,9 @@
 .side-margin-small {
   margin: 0 15px;
 }
+.top-margin {
+  margin-top: 30px;
+}
 
 // Backgrounds
 .bg-black {
@@ -47,6 +50,11 @@
 }
 .black-links a {
   color: $black;
+}
+
+// Other text classes
+.lighter {
+  font-weight: lighter;
 }
 
 // Variable Container Sizes

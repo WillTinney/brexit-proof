@@ -6,7 +6,7 @@
   <div class="container">
     <h3>Your Children</h3>
 
-    <p>Please enter some basic details about your partner.</p>
+    <p>Please enter some basic details about your children.</p>
   </div>
 </div>
 
@@ -43,31 +43,19 @@
     <%= f.hidden_field :type, value: 'Recipient' %>
     <%= f.hidden_field :relationship, value: 'Child' %>
 
-    <div class="row">
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
-        <%= f.input :profile_picture, as: :attachinary %>
-      </div>
-    </div>
+    <% if @user.children.count > 0 %>
+      <p class="sign-up-title">What is your next child's name?</p>
+    <% else %>
+      <p class="sign-up-title">What is your child's name?</p>
+    <% end %>
 
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-        <%= f.input :first_name, placeholder: 'First name' %>
+      <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-0">
+        <%= f.input :first_name, placeholder: 'First name', label: false %>
       </div>
 
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-        <%= f.input :middle_name, label: "Middle name(s)", placeholder: 'Middle name' %>
-      </div>
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-        <%= f.input :last_name, placeholder: 'Last name' %>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-2">
-        <%= f.input :citizenship %>
-      </div>
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-        <%= f.input :date_of_birth %>
+      <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-0">
+        <%= f.input :last_name, placeholder: 'Last name', label: false %>
       </div>
     </div>
 
