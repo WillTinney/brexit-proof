@@ -61,3 +61,14 @@
   left: 25px;
   color: $grey;
 }
+@media (min-width: 1000px) {
+  #assignee_date_of_birth_3i {
+    width: 25%;
+  }
+  #assignee_date_of_birth_2i {
+    width: 33%;
+  }
+  #assignee_date_of_birth_1i {
+    width: 37%;
+  }
+}

@@ -50,7 +50,6 @@ class AfterSignUpController < ApplicationController
         sign_in(@user, bypass: true)
         if @user.children.count < @user.number_of_children
           redirect_to wizard_path(:child_basic)
-          binding.pry
         else
           render_wizard @assignee
         end

@@ -141,6 +141,7 @@ GEM
       sixarm_ruby_unaccent (>= 1.1.1, < 2)
     multi_json (1.12.1)
     multipart-post (2.0.0)
+    nationality (0.0.2)
     netrc (0.11.0)
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
@@ -265,6 +266,7 @@ DEPENDENCIES
   jquery-fileupload-rails
   jquery-rails
   listen (~> 3.0.5)
+  nationality (~> 0.0.2)
   pg
   pry-byebug
   pry-rails
