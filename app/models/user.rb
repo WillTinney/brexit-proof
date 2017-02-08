@@ -57,8 +57,8 @@ class User < ApplicationRecord
     current_step.blank? || current_step == step_key
   end
 
-  # validates :first_name, presence: :true, if: 'current_step?(:basic_profile)'
-  # validates :last_name, presence: :true, if: 'current_step?(:basic_profile)'
+  validates :first_name, presence: :true
+  validates :last_name, presence: :true
 
   # validates :address_line_1, presence: :true, if: 'current_step?(:contact_info)'
   # validates :city, presence: :true, if: 'current_step?(:contact_info)'

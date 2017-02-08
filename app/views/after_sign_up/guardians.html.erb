@@ -40,7 +40,7 @@
 
 
 <div class="wizard-box text-center">
-  <h2>How many guardians would you like to designate?</h2>
+  <p class="sign-up-title">How many guardians would you like to designate?</p>
   <%= simple_form_for(@user, url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
     <div class="row wizard-buttons">
       <div class="col-xs-12">
@@ -52,4 +52,5 @@
       </div>
     </div>
   <% end %>
+  <p class="top-margin">*guardian details can be edited at any time</p>
 </div>

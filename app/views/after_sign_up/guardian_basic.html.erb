@@ -43,9 +43,9 @@
     <%= f.hidden_field :type, value: 'Guardian' %>
 
     <% if @user.guardians.count > 0 %>
-      <p class="sign-up-title">What is the name of this guardian?</p>
-    <% else %>
       <p class="sign-up-title">What is the name of this next guardian?</p>
+    <% else %>
+      <p class="sign-up-title">What is the name of this guardian?</p>
     <% end %>
 
     <div class="row">

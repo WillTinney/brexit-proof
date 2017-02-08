@@ -8,18 +8,22 @@
   box-shadow: 0 2px 2px rgba(0,0,0,0.2);
   padding: 10px 30px;
 }
-#banner-button{
+#banner-button {
   color: $black;
-  border-radius: 5px;
+  background: $background-grey;
+  border-radius: 50px;
   box-shadow: 0 2px 2px rgba(0,0,0,0.2);
   padding: 10px 60px;
   font-size: 18px;
   font-weight: bold;
   margin-top: 30%;
 }
+#banner-button:hover {
+  box-shadow: 0 5px 5px rgba(0,0,0,0.6);
+}
 .orange-button {
   background: $orange;
-  border-radius: 5px;
+  border-radius: 50px;
   box-shadow: 0 2px 2px rgba(0,0,0,0.2);
   padding: 10px 120px;
   font-size: 18px;
