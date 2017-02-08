@@ -7,8 +7,7 @@
     <div class="container">
       <br>
       <div class="grey-box relative">
-        <%= raise %>
-        <h3 class="new-title">New <%= @assignee.type == 'Guardian' ? 'Guardian' : 'Child' %></h3>
+        <h3 class="new-title">New <%= params[:format] == 'Guardian' ? 'Guardian' : 'Child' %></h3>
         <%= render 'assignees/form' %>
       </div>
     </div>

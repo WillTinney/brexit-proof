@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <% if @assignee.type == 'Guardian' || params[:format] == 'Guardian' %>
+    <% if params[:format] == 'Guardian' || @assignee.type == 'Guardian' %>
       <%= f.hidden_field :type, value: 'Guardian' %>
     <% else %>
       <%= f.hidden_field :type, value: 'Recipient' %>
@@ -80,7 +80,7 @@
     <div class="row">
       <div class="col-xs-4 col-xs-offset-4">
         <%= f.button :submit, "Save" %>
-        <%= link_to "back", user_path(current_user), class: "butt back-button" %>
+        <%= link_to "back", user_profile_path(current_user), class: "butt back-button" %>
       </div>
 
     </div>
