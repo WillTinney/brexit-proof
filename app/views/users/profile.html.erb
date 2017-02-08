@@ -15,7 +15,8 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="alt-card black-links">
           <% unless @user.details_completed? %>
-            <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+            <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">Details still to complete</span></i>
+
           <% end %>
           <h4><%= link_to "My Details", user_path(current_user), class: "details-link" %></h4>
           <hr>
@@ -24,7 +25,7 @@
               <p><strong><%= @user.try(:name_surname) %></strong></p>
             <% end %>
 
-            <% if @user.citizenship == " " %>
+            <% if @user.citizenship %>
               <p><%= @user.citizenship + " Citizen" %></p>
             <% else %>
               <p>Please enter your citizenship</p>
@@ -52,10 +53,6 @@
             <% end %>
 
             <br>
-
-            <% unless @user.details_completed? %>
-              <i class="fa fa-exclamation-triangle" aria-hidden="true"> Details incomplete</i>
-            <% end %>
           </div>
         </div>
       </div>
@@ -66,7 +63,7 @@
           <div class="alt-card black-links">
             <% @user.assignees.where('relationship = ?', 'Partner').each do |partner| %>
               <% unless partner.details_completed? %>
-              <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">Details still to complete</span></i>
             <% end %>
             <h4><%= link_to "My Partner", user_assignee_path(@user, partner) , class: "partner-link" %></h4>
             <hr>
@@ -100,7 +97,7 @@
 
               <% @user.assignees.where('relationship = ?', 'Child').each do |child| %>
                 <% unless child.details_completed? %>
-                  <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+                  <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">Details still to complete</span></i>
                 <% end %>
                 <p><strong><%= link_to child.try(:name_surname), user_assignee_path(@user, child) %></strong></p>
                 <p><%= child.try(:phone_number) %></p>
@@ -124,7 +121,7 @@
 
               <% @user.guardians.each do |guardian| %>
                 <% unless guardian.details_completed? %>
-                  <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+                  <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">Details still to complete</span></i>
                 <% end %>
                 <p><strong><%= link_to guardian.name_surname, user_assignee_path(@user, guardian) %></strong></p>
                 <p><%= guardian.try(:phone_number) %></p>
@@ -142,7 +139,7 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="alt-card black-links">
           <% if @user.proofs.empty? %>
-            <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+            <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">No proof of residency</span></i>
           <% end %>
           <h4><%= link_to "Proof of Residency", user_proofs_path(current_user) %></h4>
           <hr>
