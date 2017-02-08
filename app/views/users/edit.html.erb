@@ -38,7 +38,7 @@
 
         <div class="row">
           <div class="col-xs-12 col-sm-4">
-            <%= f.input :citizenship, as: :country %>
+            <%= f.input :citizenship, collection: Nationality::NATIONALITY %>
           </div>
           <div class="col-xs-12 col-sm-4 date-of-birth">
             <%= f.input :date_of_birth, as: :string, input_html: {type: :date} %>
