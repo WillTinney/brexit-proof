@@ -29,6 +29,8 @@ class AssigneesController < ApplicationController
         format.html {
           if @assignee.type == 'Guardian'
             redirect_to user_guardians_path(current_user), notice: 'Assignee was successfully created.'
+          elsif @assignee.relationship == 'Partner'
+            redirect_to user_profile_path(current_user)
           else
             redirect_to user_children_path(current_user), notice: 'Assignee was successfully created.'
           end
@@ -51,6 +53,8 @@ class AssigneesController < ApplicationController
     if @assignee.update(assignee_params)
       if @assignee.type == 'Guardian'
         redirect_to user_guardians_path(current_user), notice: 'Assignee was successfully updated.'
+      elsif @assignee.relationship == 'Partner'
+        redirect_to user_profile_path(current_user)
       else
         redirect_to user_children_path(current_user), notice: 'Assignee was successfully updated.'
       end

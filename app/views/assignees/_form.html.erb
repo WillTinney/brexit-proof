@@ -79,6 +79,9 @@
 
     <% if params[:format] == 'Guardian' || @assignee.type == 'Guardian' %>
       <%= f.hidden_field :type, value: 'Guardian' %>
+    <% elsif params[:relationship] == 'Partner' %>
+      <%= f.hidden_field :type, value: 'Recipient' %>
+      <%= f.hidden_field :relationship, value: 'Partner' %>
     <% else %>
       <%= f.hidden_field :type, value: 'Recipient' %>
       <%= f.hidden_field :relationship, value: 'Child' %>
