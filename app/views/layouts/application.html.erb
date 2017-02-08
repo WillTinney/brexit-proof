@@ -15,10 +15,8 @@
       <%= render 'shared/scrollmenu' %>
       <%= render 'shared/flashes' %>
       <%= yield %>
-    <% elsif params[:controller] == 'after_sign_up' || params[:action] == 'home' || params[:controller] == 'devise/sessions' || params[:controller] == 'devise/registrations' %>
-      <%= yield %>
     <% else %>
-      <%= render 'shared/flashes' %>
+      <%= render 'shared/flashes' unless params[:controller] == 'after_sign_up' || params[:controller] == 'devise/sessions' || params[:controller] == 'registrations' || params[:action] == 'home' %>
       <%= yield %>
     <% end %>
     <%= render 'shared/footers/home_footer' unless params[:controller] == 'after_sign_up' || params[:controller] == 'devise/sessions' || params[:controller] == 'registrations' %>

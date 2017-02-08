@@ -52,3 +52,12 @@
     margin-top: 10px;
   }
 }
+.relative {
+  position: relative;
+}
+.new-title {
+  position: absolute;
+  top: 5px;
+  left: 25px;
+  color: $grey;
+}

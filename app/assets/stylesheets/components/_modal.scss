@@ -1,6 +1,31 @@
 /* -------------------------------------
  * Modal on homepage
  * ------------------------------------- */
+.modal-form {
+  color: $black;
+  a {
+    color: $black;
+  }
+  abbr[title="required"] {
+    display: none;
+  }
+  input {
+    border-radius: 4px;
+  }
+  input[type="submit"] {
+    background: $orange;
+    font-weight: bolder;
+    color: $background-grey;
+    padding: 8px 40px;
+  }
+  .form-group {
+    margin-bottom: 10px;
+  }
+}
 .modal-content {
   padding: 15px 0;
+}
+.link-buttons {
+  text-align: center;
+  margin-top: 10px;
 }

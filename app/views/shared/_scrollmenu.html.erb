@@ -63,9 +63,12 @@
 
   <% if !@user.children.empty? %>
     <div class="scrollbox">
-      <div>
+      <div class="scrolltitle">
         <%= link_to user_children_path(current_user), class: "scrollmenu-link children-link" do %>
           <h3>Children</h3>
+        <% end %>
+        <%= link_to new_user_assignee_path(current_user, 'Child'), class: "add-icon" do %>
+          <i class="fa fa-plus" aria-hidden="true"></i>
         <% end %>
       </div>
       <% @user.children.each do |recipient| %>
@@ -88,9 +91,12 @@
 
   <% if !@user.guardians.empty? %>
     <div class="scrollbox">
-      <div>
+      <div class="scrolltitle">
         <%= link_to user_guardians_path(current_user), class: "scrollmenu-link guardian-link" do %>
           <h3>Guardians</h3>
+        <% end %>
+        <%= link_to new_user_assignee_path(current_user, 'Guardian'), class: "add-icon" do %>
+          <i class="fa fa-plus" aria-hidden="true"></i>
         <% end %>
       </div>
       <% @user.guardians.each do |guardian| %>
