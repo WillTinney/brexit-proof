@@ -6,14 +6,25 @@
   </div>
 </div> -->
 
-<div class="container">
+<div class="container modal-form">
   <div class="row">
     <div class="col-sm-5 col-md-4 col-lg-3 bg-grey">
       <br>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
+        <%= render 'shared/error_messages', :object => f.object %>
 
         <div class="form-inputs">
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+              <%= f.input :first_name, required: true, autofocus: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+              <%= f.input :last_name, required: true, autofocus: true %>
+            </div>
+          </div>
           <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
               <%= f.input :email, required: true, autofocus: true %>
@@ -36,7 +47,9 @@
         </div>
       <% end %>
 
-      <%= link_to "Log in", new_session_path(resource_name), "data-backdrop": "false", "data-dismiss": "modal", id: "modal-login" %><br />
+      <div class="link-buttons">
+        <%= link_to "Already a member?", new_session_path(resource_name), "data-backdrop": "false", "data-dismiss": "modal", id: "modal-login" %><br />
+      </div>
 
     </div>
   </div>
