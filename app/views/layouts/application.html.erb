@@ -16,9 +16,9 @@
       <%= render 'shared/flashes' %>
       <%= yield %>
     <% else %>
+      <%= render 'shared/flashes' unless params[:controller] == 'after_sign_up' || params[:controller] == 'devise/sessions' || params[:controller] == 'registrations' || params[:action] == 'home' %>
       <%= yield %>
     <% end %>
-    <%= render 'shared/flashes' unless params[:controller] == 'after_sign_up' || params[:controller] == 'devise/sessions' || params[:controller] == 'registrations' || params[:action] == 'home' %>
     <%= render 'shared/footers/home_footer' unless params[:controller] == 'after_sign_up' || params[:controller] == 'devise/sessions' || params[:controller] == 'registrations' %>
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>

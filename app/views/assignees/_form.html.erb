@@ -1,6 +1,10 @@
 <br>
 <%= link_to '#', class: 'profile-picture-inline' do %>
-  <%= @assignee.profile_picture ? cl_image_tag(@assignee.profile_picture.path, transformation: [{width: 100, height: 100, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-edit") : image_tag('user3.png', class: "avatar-edit") %>
+  <% if @assignee.profile_picture %>
+    <%= cl_image_tag(@assignee.profile_picture.path, transformation: [{width: 100, height: 100, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-edit") %>
+  <% else %>
+    <div class="edit-placeholder"></div>
+  <% end %>
   <p>Change Picture</p>
   <%= simple_form_for [current_user, @assignee], html: {class: 'form-inline edit-profile-picture invisible'} do |f| %>
     <%= f.input :profile_picture, as: :attachinary, label: false, input_html: { class: 'profile-upload'} %>

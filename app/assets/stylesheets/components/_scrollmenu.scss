@@ -64,6 +64,16 @@
 .scrollmenu h6 {
   display: none;
 }
+.scrolltitle {
+  display: flex;
+  justify-content: space-between;
+}
+.add-icon {
+  margin-top: 4px;
+  i:hover {
+    color: $purple;
+  }
+}
 .scrollbox {
   padding: 5px 10px;
   margin-top: 8px;
