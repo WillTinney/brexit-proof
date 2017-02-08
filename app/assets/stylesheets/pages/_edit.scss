@@ -1,9 +1,18 @@
 /* -------------------------------------
  * Additional Edit Page Classes
  * ------------------------------------- */
-.no-top-margin {
-  margin-top: 0;
-}
-.no-bottom-margin {
-  margin-bottom: 0;
+// .no-top-margin {
+//   margin-top: 0;
+// }
+// .no-bottom-margin {
+//   margin-bottom: 0;
+// }
+
+.edit-placeholder {
+  height: 120px;
+  width: 120px;
+  background: #D7D7D7;
+  background-size: cover;
+  border-radius: 50%;
+  margin-top: 20px;
 }
