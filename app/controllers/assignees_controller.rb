@@ -17,6 +17,14 @@ class AssigneesController < ApplicationController
 
   def new
     @assignee = Assignee.new
+    if params[:format] != 'Guardian'
+      @assignee.address_line_1 = @user.address_line_1
+      @assignee.address_line_2 = @user.address_line_2
+      @assignee.city = @user.city
+      @assignee.postcode = @user.postcode
+      @assignee.country = @user.country
+    end
+
     authorize @assignee
   end
 
