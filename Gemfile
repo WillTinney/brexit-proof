@@ -27,6 +27,9 @@ gem 'jquery-fileupload-rails'
 # Google Autocomplete
 gem 'geocoder'
 
+# Nationalities
+gem 'nationality', '~> 0.0.2'
+
 # Sign-up Wizard
 gem 'wicked'
 gem 'wicked-wizard-validations'

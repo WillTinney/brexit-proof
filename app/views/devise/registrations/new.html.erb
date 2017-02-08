@@ -16,6 +16,12 @@
         <div class="form-inputs">
           <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
+              <%= f.input :title, required: true, autofocus: true, collection: ["Mr", "Mrs", "Ms"] %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
               <%= f.input :first_name, required: true, autofocus: true %>
             </div>
           </div>

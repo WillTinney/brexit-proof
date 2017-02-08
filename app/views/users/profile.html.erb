@@ -15,24 +15,44 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="alt-card black-links">
           <% unless @user.details_completed? %>
-            <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+            <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">Details still to complete</span></i>
+
           <% end %>
           <h4><%= link_to "My Details", user_path(current_user), class: "details-link" %></h4>
           <hr>
           <div class="card-content card-overflow">
             <%= link_to user_path(current_user) do %>
-              <p><strong><%= @user.try(:name_surname) %>
+              <p><strong><%= @user.try(:name_surname) %></strong></p>
             <% end %>
-            </strong></p>
-            <p><%= @user.citizenship ? @user.citizenship + " Citizen" : "Please enter your citizenship" %></p>
-            <p>Date of Birth: <%= @user.try(:date_of_birth) %></p>
-            <p>Email: <%= @user.try(:email) %></p>
-            <p>Phone Number: <%= @user.try(:phone_number) %></p>
-            <p>Address: <%= @user.try(:address_line_1) + ", " + @user.try(:address_line_2) %></p>
-            <p><%= @user.try(:city) + ", " + @user.try(:postcode) %> <% ", " + @user.country if @user.country %></p>
-            <% unless @user.details_completed? %>
-              <i class="fa fa-exclamation-triangle" aria-hidden="true"> Details incomplete</i>
+
+            <% if @user.citizenship %>
+              <p><%= @user.citizenship + " Citizen" %></p>
+            <% else %>
+              <p>Please enter your citizenship</p>
             <% end %>
+
+            <% if @user.date_of_birth %>
+              <p>Date of Birth: <%= @user.date_of_birth %></p>
+            <% else %>
+              <p>Please enter your date of birth</p>
+            <% end %>
+
+            <p>Email: <%= @user.email %></p>
+
+            <% if @user.phone_number != "" %>
+              <p>Phone Number: <%= @user.phone_number %></p>
+            <% else %>
+              <p>Please enter your phone number</p>
+            <% end %>
+
+            <% if @user.address_line_1 != "" %>
+              <p>Address: <%= @user.address_line_1 %><%= ", " + @user.address_line_2 if @user.address_line_2 %></p>
+              <p><%= @user.try(:city) %><%= ", " + @user.postcode if @user.postcode %><%= ", " + @user.country if @user.country %></p>
+            <% else %>
+              <p>Please enter your address</p>
+            <% end %>
+
+            <br>
           </div>
         </div>
       </div>
@@ -43,7 +63,7 @@
           <div class="alt-card black-links">
             <% @user.assignees.where('relationship = ?', 'Partner').each do |partner| %>
               <% unless partner.details_completed? %>
-              <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">Details still to complete</span></i>
             <% end %>
             <h4><%= link_to "My Partner", user_assignee_path(@user, partner) , class: "partner-link" %></h4>
             <hr>
@@ -60,7 +80,9 @@
           <div class="alt-card black-links">
             <h4><%= link_to "My Partner", "#" , class: "partner-link" %></h4>
             <hr>
-            <p>You have not assigned a partner.</p>
+            <div class="card-content card-overflow">
+              <p><%= link_to "You have not assigned a partner. Click here to add a partner.", new_user_assignee_path(current_user, 'Recipient', relationship: 'Partner'), class: "proof-card" %></p>
+            </div>
           </div>
 
         <% end %>
@@ -75,7 +97,7 @@
 
               <% @user.assignees.where('relationship = ?', 'Child').each do |child| %>
                 <% unless child.details_completed? %>
-                  <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+                  <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">Details still to complete</span></i>
                 <% end %>
                 <p><strong><%= link_to child.try(:name_surname), user_assignee_path(@user, child) %></strong></p>
                 <p><%= child.try(:phone_number) %></p>
@@ -83,7 +105,7 @@
 
             <% else %>
 
-              <p>You have not assigned any children.</p>
+              <p><%= link_to "You have not assigned any children. Click here to add a child.", new_user_assignee_path(current_user, 'Child'), class: "proof-card" %></p>
 
             <% end %>
           </div>
@@ -99,7 +121,7 @@
 
               <% @user.guardians.each do |guardian| %>
                 <% unless guardian.details_completed? %>
-                  <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+                  <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">Details still to complete</span></i>
                 <% end %>
                 <p><strong><%= link_to guardian.name_surname, user_assignee_path(@user, guardian) %></strong></p>
                 <p><%= guardian.try(:phone_number) %></p>
@@ -107,7 +129,7 @@
 
             <% else %>
 
-              <p>You have not assigned any guardians.</p>
+              <p><%= link_to "You have not assigned any guardians. Click here to add a guardian.", new_user_assignee_path(current_user, 'Guardian'), class: "proof-card" %></p>
 
             <% end %>
           </div>
@@ -117,7 +139,7 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="alt-card black-links">
           <% if @user.proofs.empty? %>
-            <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"></i>
+            <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">No proof of residency</span></i>
           <% end %>
           <h4><%= link_to "Proof of Residency", user_proofs_path(current_user) %></h4>
           <hr>
@@ -150,7 +172,7 @@
 
             <% else %>
 
-              <p>You have not created any notes.</p>
+              <p><%= link_to "You have not created any notes. Click here to go to open your notes library.", user_notes_path(current_user), class: "proof-card" %></p>
 
             <% end %>
           </div>

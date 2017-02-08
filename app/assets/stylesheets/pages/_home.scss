@@ -42,6 +42,14 @@
 .overflow-hidden {
   overflow: hidden;
 }
+@media (max-width: 580px) {
+  .home-banner {
+    background-color: #EEE9E8;
+  }
+  .banner-space {
+    background: #EEE9E8;
+  }
+}
 .banner-text {
   margin: 8% 8% 1% 8%;
   color: $background-grey;

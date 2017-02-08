@@ -12,13 +12,21 @@
   <% end %>
 <% end %>
 
+<% if params[:format] == 'Guardian' %>
+  <h3 class="new-title padding-15">Guardian</h3>
+<% elsif params[:relationship] == 'Partner' %>
+  <h3 class="new-title padding-15">Partner</h3>
+<% else %>
+  <h3 class="new-title padding-15">Child</h3>
+<% end %>
+
 <%= simple_form_for [current_user, @assignee] do |f| %>
   <%= f.hidden_field :type, value: @type %>
   <div class="form-container">
 
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <%= f.input :title %>
+        <%= f.input :title, collection: ["Mr", "Mrs", "Ms"] %>
       </div>
       <div class="col-xs-12 col-sm-8">
         <%= f.input :email %>
@@ -39,7 +47,7 @@
 
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <%= f.input :citizenship %>
+        <%= f.input :citizenship, collection: Nationality::NATIONALITY %>
       </div>
       <% if @assignee.type == 'Guardian' %>
         <div class="col-xs-12 col-sm-4">
@@ -47,7 +55,7 @@
         </div>
       <% else %>
         <div class="col-xs-12 col-sm-4">
-          <%= f.input :date_of_birth %>
+          <%= f.input :date_of_birth, as: :string, input_html: {type: :date} %>
         </div>
       <% end %>
 
@@ -80,12 +88,9 @@
     <%= f.hidden_field :type, value: @assignee.type %>
     <%= f.hidden_field :relationship, value: @assignee.relationship %>
 
-    <div class="row">
-      <div class="col-xs-4 col-xs-offset-4">
-        <%= f.button :submit, "Save" %>
-        <%= link_to "back", user_profile_path(current_user), class: "butt back-button" %>
-      </div>
-
+    <div class="nav-buttons">
+      <%= link_to "Back", user_profile_path(current_user), class: "back-button" %>
+      <%= f.button :submit, "Save", class: "purple-button" %>
     </div>
   </div>
 <% end %>

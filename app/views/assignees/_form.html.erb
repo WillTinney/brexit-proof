@@ -18,7 +18,7 @@
 
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <%= f.input :title %>
+        <%= f.input :title, collection: ["Mr", "Mrs", "Ms"] %>
       </div>
       <div class="col-xs-12 col-sm-8">
         <%= f.input :email %>
@@ -39,11 +39,18 @@
 
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <%= f.input :citizenship %>
+        <%= f.input :citizenship, collection: Nationality::NATIONALITY %>
       </div>
-      <div class="col-xs-12 col-sm-4">
-        <%= f.input :date_of_birth %>
-      </div>
+      <% if params[:format] == 'Guardian' || @assignee.type == 'Guardian' %>
+        <div class="col-xs-12 col-sm-4">
+          <%= f.input :relationship %>
+        </div>
+      <% else %>
+        <div class="col-xs-12 col-sm-4">
+          <%= f.input :date_of_birth, as: :string, input_html: {type: :date} %>
+        </div>
+      <% end %>
+
       <div class="col-xs-12 col-sm-4">
         <%= f.input :phone_number %>
       </div>
@@ -72,17 +79,17 @@
 
     <% if params[:format] == 'Guardian' || @assignee.type == 'Guardian' %>
       <%= f.hidden_field :type, value: 'Guardian' %>
+    <% elsif params[:relationship] == 'Partner' %>
+      <%= f.hidden_field :type, value: 'Recipient' %>
+      <%= f.hidden_field :relationship, value: 'Partner' %>
     <% else %>
       <%= f.hidden_field :type, value: 'Recipient' %>
       <%= f.hidden_field :relationship, value: 'Child' %>
     <% end %>
 
-    <div class="row">
-      <div class="col-xs-4 col-xs-offset-4">
-        <%= f.button :submit, "Save" %>
-        <%= link_to "back", user_profile_path(current_user), class: "butt back-button" %>
-      </div>
-
+    <div class="nav-buttons">
+      <%= link_to "Back", user_profile_path(current_user), class: "back-button" %>
+      <%= f.button :submit, "Save", class: "purple-button" %>
     </div>
   </div>
 <% end %>

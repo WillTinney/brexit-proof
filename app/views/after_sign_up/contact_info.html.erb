@@ -69,13 +69,9 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-xs-4 col-xs-offset-4">
-        <div class="wizard-buttons">
-          <%= link_to 'back', previous_wizard_path, class: "butt" %>
-          <%= f.submit 'Next', class: 'btn btn-success' %>
-        </div>
-      </div>
+    <div class="wizard-buttons">
+      <%= link_to 'back', previous_wizard_path, class: "wizard-back-button" %>
+      <%= f.submit 'Next', class: 'btn purple-button' %>
     </div>
   <% end %>
 </div>

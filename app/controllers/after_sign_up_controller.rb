@@ -28,7 +28,11 @@ class AfterSignUpController < ApplicationController
 
     case step
       when :partner
-        @user.partner = true if params[:commit] == "Yes"
+        if params[:commit] == "Yes"
+          @user.partner = true
+        else
+          @user.partner = false
+        end
         @user.save
         render_wizard @user
       when :partner_basic
@@ -57,8 +61,8 @@ class AfterSignUpController < ApplicationController
         @assignee = @user.assignees.new
         @assignee.update_attributes(assignee_params)
         sign_in(@user, bypass: true)
-        if @user.children.count < @user.number_of_guardians
-          redirect_to wizard_path(:child_basic)
+        if @user.guardians.count < @user.number_of_guardians
+          redirect_to wizard_path(:guardian_basic)
         else
           render_wizard @assignee
         end

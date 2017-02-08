@@ -86,9 +86,16 @@
     width: 85%;
     margin: 4px 0;
   }
+  h4 {
+    font-weight: bold;
+  }
   p {
     margin: 3px;
+    // color: #666666;
   }
+  // a {
+  //   color: #666666;
+  // }
 }
 .card-content {
   overflow-y: auto;
@@ -108,6 +115,14 @@
   top: 6px;
   right: 6px;
 }
+.question-circle {
+  position: absolute;
+  font-size: 20px;
+  color: $black;
+  top: 6px;
+  right: 6px;
+}
+
 
 // Asset Cards
 .asset-card {

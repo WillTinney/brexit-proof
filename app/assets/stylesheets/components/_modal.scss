@@ -3,6 +3,7 @@
  * ------------------------------------- */
 .modal-form {
   color: $black;
+  border-radius: 4px;
   a {
     color: $black;
   }
@@ -23,9 +24,10 @@
   }
 }
 .modal-content {
-  padding: 15px 0;
+  border-radius: 4px;
+  background: $background-grey;
 }
 .link-buttons {
   text-align: center;
-  margin-top: 10px;
+  margin: 10px 0 20px 0;
 }

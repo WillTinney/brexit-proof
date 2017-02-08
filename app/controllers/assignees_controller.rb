@@ -17,6 +17,14 @@ class AssigneesController < ApplicationController
 
   def new
     @assignee = Assignee.new
+    if params[:format] != 'Guardian'
+      @assignee.address_line_1 = @user.address_line_1
+      @assignee.address_line_2 = @user.address_line_2
+      @assignee.city = @user.city
+      @assignee.postcode = @user.postcode
+      @assignee.country = @user.country
+    end
+
     authorize @assignee
   end
 
@@ -29,6 +37,8 @@ class AssigneesController < ApplicationController
         format.html {
           if @assignee.type == 'Guardian'
             redirect_to user_guardians_path(current_user), notice: 'Assignee was successfully created.'
+          elsif @assignee.relationship == 'Partner'
+            redirect_to user_profile_path(current_user)
           else
             redirect_to user_children_path(current_user), notice: 'Assignee was successfully created.'
           end
@@ -51,6 +61,8 @@ class AssigneesController < ApplicationController
     if @assignee.update(assignee_params)
       if @assignee.type == 'Guardian'
         redirect_to user_guardians_path(current_user), notice: 'Assignee was successfully updated.'
+      elsif @assignee.relationship == 'Partner'
+        redirect_to user_profile_path(current_user)
       else
         redirect_to user_children_path(current_user), notice: 'Assignee was successfully updated.'
       end

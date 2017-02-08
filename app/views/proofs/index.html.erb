@@ -58,7 +58,8 @@
           </div>
         </div>
 
-        <div class="grey-box">
+        <div class="grey-box relative">
+          <i class="fa fa-question-circle question-circle" aria-hidden="true"><span class="question-tooltip">The more accurate and complete your information the easier it will to prove your residency</span></i>
           <h5><strong>You have not uploaded a proof of residency.</strong></h5>
           <p>Please use the form below to do so:</p>
           <%= simple_form_for([@user, @proof]) do |f| %>
@@ -66,7 +67,7 @@
             <%= f.input :document, as: :attachinary %>
             <%= f.input :comments %>
             <div class="submit-button text-center">
-              <%= f.button :submit, "Submit Proof of Residency", class: "btn btn-success" %>
+              <%= f.button :submit, "Submit Proof of Residency", class: "btn purple-button" %>
             </div>
           <% end %>
         </div>
