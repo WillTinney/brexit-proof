@@ -39,7 +39,7 @@
 
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <%= f.input :citizenship, collection: Nationality::NATIONALITY %>
+        <%= f.input :citizenship, collection: Nationality::NATIONALITY, prompt: 'Citizenship' %>
       </div>
       <% if params[:format] == 'Guardian' || @assignee.type == 'Guardian' %>
         <div class="col-xs-12 col-sm-4">
