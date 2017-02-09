@@ -255,15 +255,19 @@
     //   });
     // });
 
-    $("#new_user").bind("ajax:success", function(e, data, status, xhr) {
-      console.log('hello');
-      if (data.success) {
-        $('#sign_up').modal('hide');
-        $('#sign_up_button').hide();
-        return $('#submit_comment').slideToggle(1000, "easeOutBack");
-      } else {
-        return alert('failure!');
-      }
+    $(document).ready(function() {
+      //form id
+      $('#new_user')
+      .bind('ajax:success', function(evt, data, status, xhr) {
+        //function called on status: 200 (for ex.)
+        console.log('success');
+      })
+      .bind("ajax:error", function(evt, xhr, status, error) {
+        //function called on status: 401 or 500 (for ex.)
+        console.log(xhr.responseText);
+        console.log('fail')
+      });
+
     });
 
     // Navbar colour change on scroll
