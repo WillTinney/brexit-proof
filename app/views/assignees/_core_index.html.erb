@@ -15,8 +15,10 @@
           <%= link_to user_assignee_path(current_user, assignee.id) do %>
             <% if assignee.profile_picture %>
               <%= cl_image_tag(assignee.profile_picture.path, transformation: [{width: 100, height: 100, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-card push-right") %>
+            <% elsif assignee.title == "Mrs" || assignee.title == "Ms" %>
+              <%= image_tag('guardian_female.png', class: "index-icon") %>
             <% else %>
-              <div class="index-placeholder"></div>
+              <%= image_tag('guardian_male.png', class: "index-icon") %>
             <% end %>
             <div class="card-description">
               <h5 class="black-text"><strong><%= assignee.name_surname %></strong></h5>
