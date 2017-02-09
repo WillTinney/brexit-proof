@@ -239,6 +239,33 @@
 
 <%= content_for(:after_js) do %>
   <script>
+    // Devise modal AJAX
+    // $( "#productForm" ).submit(function( e ) {
+
+    //   e.preventDefault();
+
+    //   $.ajax({
+    //     type: "POST",
+    //     url: <% session_path(resource_name) %>,
+    //     data: $(this).serializeArray(),
+    //     contentType: "application/json",
+    //     success: function (form) {
+    //       $("#contact-success").modal('show');
+    //     }
+    //   });
+    // });
+
+    $("#new_user").bind("ajax:success", function(e, data, status, xhr) {
+      console.log('hello');
+      if (data.success) {
+        $('#sign_up').modal('hide');
+        $('#sign_up_button').hide();
+        return $('#submit_comment').slideToggle(1000, "easeOutBack");
+      } else {
+        return alert('failure!');
+      }
+    });
+
     // Navbar colour change on scroll
     $(document).ready(function(){
       $(window).scroll(function(){
