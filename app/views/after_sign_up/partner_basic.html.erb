@@ -42,16 +42,13 @@
   <%= simple_form_for([@user, @assignee], url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
     <%= f.hidden_field :type, value: 'Recipient' %>
     <%= f.hidden_field :relationship, value: 'Partner' %>
+    <%= f.hidden_field :last_name, value: @user.last_name %>
 
     <p class="sign-up-title">What is your partner's name?</p>
 
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-2">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
         <%= f.input :first_name, placeholder: 'First name', label: false %>
-      </div>
-
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-        <%= f.input :last_name, placeholder: 'Last name', label: false %>
       </div>
     </div>
 

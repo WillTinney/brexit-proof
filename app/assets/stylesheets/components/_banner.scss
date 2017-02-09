@@ -26,6 +26,18 @@
   max-height: 768px;
   width: 100%;
 }
+.banner-gradient {
+  background-size: cover;
+  background: linear-gradient(135deg, rgba(55,60,80,0.8) 0%, rgba(50,54,90,0.2) 50%);
+  min-height: 100px;
+  max-height: 800px;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+}
+@media (min-width: 1200px) {
+  height: 800px;
+}
 .banner-float {
   position: absolute;
   top: 10%;
@@ -59,6 +71,7 @@
 }
 #home-arrow {
   margin: 40px auto;
+  z-index: 11;
 }
 @media (min-width: 1200px) {
   #home-arrow {

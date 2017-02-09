@@ -39,31 +39,27 @@
 </div>
 
 <div class="wizard-box text-center">
-  <%= simple_form_for([@user, @assignee], url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
-    <%= f.hidden_field :type, value: 'Recipient' %>
-    <%= f.hidden_field :relationship, value: 'Child' %>
+  <%= form_tag wizard_path, method: :put do %>
+    <% @user.number_of_children.times do |i|%>
+      <p class="sign-up-title list-title">What is your <%= (i+1).ordinalize %> child's name?</p>
+      <%= hidden_field_tag :type, "", name: "children[][type]", value: 'Recipient' %>
+      <%= hidden_field_tag :relationship, "", name: "children[][relationship]", value: 'Child' %>
+      <%= hidden_field_tag :last_name, "", name: "children[][last_name]", value: @user.last_name %>
 
-    <% if @user.children.count > 0 %>
-      <p class="sign-up-title">What is your next child's name?</p>
-    <% else %>
-      <p class="sign-up-title">What is your child's name?</p>
+
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
+          <%= text_field_tag :first_name, "", name: "children[][first_name]", placeholder: 'First name', class: "form-control text-center", required: true %>
+        </div>
+      </div>
+      <br>
     <% end %>
-
-    <div class="row">
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-2">
-        <%= f.input :first_name, placeholder: 'First name', label: false %>
-      </div>
-
-      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-        <%= f.input :last_name, placeholder: 'Last name', label: false %>
-      </div>
-    </div>
 
     <div class="row">
       <div class="col-xs-4 col-xs-offset-4">
         <div class="wizard-buttons">
           <%= link_to 'back', previous_wizard_path, class: "back-button" %>
-          <%= f.submit 'Next', class: 'btn purple-button' %>
+          <%= submit_tag 'Next', class: 'btn purple-button' %>
         </div>
       </div>
     </div>

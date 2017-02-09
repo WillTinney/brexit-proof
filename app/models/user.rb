@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :proofs, dependent: :destroy
   has_many :notes, dependent: :destroy
 
+  accepts_nested_attributes_for :assignees
+
   def details_completed?
     true if first_name && last_name && profile_picture && citizenship && date_of_birth && email && phone_number && address_line_1 && address_line_2 && city && postcode && country
   end
