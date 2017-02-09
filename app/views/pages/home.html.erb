@@ -4,6 +4,7 @@
 
 <!-- Banner  -->
 <div class="home-banner">
+  <div class="banner-gradient"></div>
   <div id="slideshow">
     <%= image_tag('banner1.jpg', class: "home-banner-image", id: "banner1") %>
     <%= image_tag('banner2.jpg', class: "home-banner-image", id: "banner2") %>
@@ -288,11 +289,8 @@
         .appendTo('#slideshow');
     }, 6000);
 
-    // // Sign-up Modal
-    // $('#modal-button').on('click', function(e) {
-    //   e.preventDefault();
-    //   $('#user_mobile_number').val(prefix + ' ' + mobile);
-    // });
+    // Banner gradient resize
+    $(".banner-gradient").css({'height':($("#banner1").height()+'px')});
 
     // Home arrow scroll
     $('#home-arrow').click(function(e){
