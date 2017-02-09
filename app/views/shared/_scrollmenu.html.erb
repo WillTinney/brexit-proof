@@ -26,10 +26,11 @@
       <%= link_to user_path(current_user), class: 'scrollmenu-me' do %>
         <% if current_user.profile_picture %>
           <%= cl_image_tag(current_user.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) %>
+        <% elsif @user.title == "Mr" %>
+          <%= image_tag('male.png', class: "menu-icon") %>
         <% else %>
-          <div class="menu-icon placeholder">
-            <!-- <i class="fa fa-user-o" aria-hidden="true"></i> -->
-          </div>
+          <%= image_tag('female.png', class: "menu-icon") %>
+          <!-- <div class="menu-icon placeholder"></div> -->
         <% end %>
         <h4><%= @user.first_name %></h4>
       <% end %>
@@ -48,10 +49,10 @@
           <%= link_to user_recipient_path(current_user, recipient), class: 'scrollmenu-partner' do %>
             <% if recipient.profile_picture %>
               <%= cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) %>
+            <% elsif @user.title == "Mr" %>
+              <%= image_tag('female.png', class: "menu-icon") %>
             <% else %>
-              <div class="menu-icon placeholder">
-                <!-- <i class="fa fa-user-o" aria-hidden="true"></i> -->
-              </div>
+              <%= image_tag('male.png', class: "menu-icon") %>
             <% end %>
             <h4><%= recipient.first_name %></h4>
             <h6><%= recipient.id %></h6>
@@ -76,10 +77,10 @@
           <%= link_to user_recipient_path(current_user, recipient),class: 'scrollmenu-children' do %>
             <% if recipient.profile_picture %>
               <%= cl_image_tag(recipient.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) %>
+            <% elsif recipient.title == "Mrs" || recipient.title == "Ms" %>
+              <%= image_tag('girl.png', class: "menu-icon") %>
             <% else %>
-              <div class="menu-icon placeholder">
-                <!-- <i class="fa fa-user-o" aria-hidden="true"></i> -->
-              </div>
+              <%= image_tag('boy.png', class: "menu-icon") %>
             <% end %>
             <h4><%= recipient.first_name %></h4>
             <h6><%= recipient.id %></h6>
@@ -104,10 +105,10 @@
           <%= link_to user_guardian_path(current_user, guardian), class: 'scrollmenu-guardians' do %>
             <% if guardian.profile_picture %>
               <%= cl_image_tag(guardian.profile_picture.path, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill"}]) %>
+            <% elsif guardian.title == "Mrs" || guardian.title == "Ms" %>
+              <%= image_tag('guardian_female.png', class: "menu-icon") %>
             <% else %>
-              <div class="menu-icon placeholder">
-                <!-- <i class="fa fa-user-o" aria-hidden="true"></i> -->
-              </div>
+              <%= image_tag('guardian_male.png', class: "menu-icon") %>
             <% end %>
             <h4><%= guardian.first_name %></h4>
             <h6><%= guardian.id %></h6>

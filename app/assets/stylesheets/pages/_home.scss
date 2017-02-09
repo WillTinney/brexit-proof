@@ -51,7 +51,6 @@
   }
 }
 .banner-text {
-  margin: 8% 8% 1% 8%;
   color: $background-grey;
   align-self: flex-start;
   z-index: 10;
@@ -59,9 +58,14 @@
     font-size: 20px;
   }
 }
+#bt-1 {
+  margin: 9% 8% 1% 8%;
+}
+#bt-2 {
+  margin: 4% 8% 2% 8%;
+}
 .banner-button {
   z-index: 10;
-  margin-left: 8%;
   h4 {
     font-size: 18px;
     font-weight: 400;
@@ -234,7 +238,6 @@
   }
 }
 #registration {
-  padding: 60px 0;
   width: 100%;
   max-height: 400px;
   height: 50vh;
