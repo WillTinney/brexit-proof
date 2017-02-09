@@ -267,5 +267,25 @@
       $('html, body').animate({scrollTop : 750},800);
       return false;
     });
+
+    //// Footer Scrolls
+    // Home
+    $('#footer-home').click(function(e){
+      e.preventDefault();
+      $('html, body').animate({scrollTop : 0},1000);
+      return false;
+    });
+    // How
+    $("#footer-how").click(function() {
+      $('html, body').animate({
+        scrollTop: $("#instructions").offset().top
+      }, 1500);
+    });
+    // Pricing
+    $("#footer-price").click(function() {
+      $('html, body').animate({
+        scrollTop: $("#comparison").offset().top
+      }, 1500);
+    });
   </script>
 <% end %>
