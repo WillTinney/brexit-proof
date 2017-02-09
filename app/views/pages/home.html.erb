@@ -260,5 +260,12 @@
     //   e.preventDefault();
     //   $('#user_mobile_number').val(prefix + ' ' + mobile);
     // });
+
+    // Home arrow scroll
+    $('#home-arrow').click(function(e){
+      e.preventDefault();
+      $('html, body').animate({scrollTop : 750},800);
+      return false;
+    });
   </script>
 <% end %>
