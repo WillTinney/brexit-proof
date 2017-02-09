@@ -276,6 +276,7 @@
           $(".navbar-wagon").css({"background-color": "rgba(255, 255, 255, 0.2)", "box-shadow": "none"});
       });
     });
+
     // Banner image cycler
     $("#banner2").hide();
     $('#banner3').hide();
@@ -291,6 +292,10 @@
 
     // Banner gradient resize
     $(".banner-gradient").css({'height':($("#banner1").height()+'px')});
+
+    window.onresize = function() {
+      $(".banner-gradient").css({'height':($("#banner1").height()+'px')});
+    };
 
     // Home arrow scroll
     $('#home-arrow').click(function(e){
