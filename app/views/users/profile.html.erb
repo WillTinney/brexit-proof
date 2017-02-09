@@ -28,13 +28,13 @@
             <% if @user.citizenship %>
               <p><%= @user.citizenship + " Citizen" %></p>
             <% else %>
-              <p>Please enter your citizenship</p>
+              <p class="notice-text">Please enter your citizenship</p>
             <% end %>
 
             <% if @user.date_of_birth %>
               <p>Date of Birth: <%= @user.date_of_birth %></p>
             <% else %>
-              <p>Please enter your date of birth</p>
+              <p class="notice-text">Please enter your date of birth</p>
             <% end %>
 
             <p>Email: <%= @user.email %></p>
@@ -42,14 +42,14 @@
             <% if @user.phone_number != "" %>
               <p>Phone Number: <%= @user.phone_number %></p>
             <% else %>
-              <p>Please enter your phone number</p>
+              <p class="notice-text">Please enter your phone number</p>
             <% end %>
 
             <% if @user.address_line_1 != "" %>
               <p>Address: <%= @user.address_line_1 %><%= ", " + @user.address_line_2 if @user.address_line_2 %></p>
               <p><%= @user.try(:city) %><%= ", " + @user.postcode if @user.postcode %><%= ", " + @user.country if @user.country %></p>
             <% else %>
-              <p>Please enter your address</p>
+              <p class="notice-text">Please enter your address</p>
             <% end %>
 
             <br>
