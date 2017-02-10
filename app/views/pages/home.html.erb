@@ -266,6 +266,15 @@
     //     return alert('failure!');
     //   }
     // });
+      $('form#new_user').bind('ajax:success', function(e, data, status, xhr) {
+          console.log(data);
+          if(data.success) {
+            $('.modal-form').html(data.content);
+          } else {
+            $('.modal-form').prepend(data.errors.join('<br />'));
+          }
+      });
+
 
     // Navbar colour change on scroll
     $(document).ready(function(){

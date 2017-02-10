@@ -1,19 +1,29 @@
 class SessionsController < Devise::SessionsController
 
   def create
-    resource = User.find_for_database_authentication(email: params[:user][:email])
-    return invalid_login_attempt unless resource
-
-    if resource.valid_password?(params[:user][:password])
-      sign_in :user, resource
-      # return render nothing: true
-      return redirect_to user_profile_path(current_user)
-    end
-
+    resource = warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#failure")
+    sign_in(resource_name, resource)
     binding.pry
-
-    invalid_login_attempt
+    redirect_to user_profile_path(current_user)
+    return render :json => {:success => true, :content => render_to_string(:layout => false, :partial => 'pages/new_session')}
   end
+
+  def failure
+    return render :json => {:success => false, :errors => ["Login failed."]}
+  end
+    # resource = User.find_for_database_authentication(email: params[:user][:email])
+    # return invalid_login_attempt unless resource
+
+    # if resource.valid_password?(params[:user][:password])
+    #   sign_in :user, resource
+    #   # return render nothing: true
+    #   return redirect_to user_profile_path(current_user)
+    # end
+
+    # binding.pry
+
+    # invalid_login_attempt
+  # end
 
   protected
 
