@@ -10,6 +10,8 @@ class SessionsController < Devise::SessionsController
       return redirect_to user_profile_path(current_user)
     end
 
+    binding.pry
+
     invalid_login_attempt
   end
 

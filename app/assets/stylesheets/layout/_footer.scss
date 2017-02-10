@@ -21,6 +21,12 @@
   font-weight: bold;
   }
 }
+@media (max-width: 450px) {
+  .footer {
+    font-size: 14px;
+  }
+}
+
 .footer-item {
   max-width: 30%;
 }
@@ -37,6 +43,12 @@
 #disclaimer {
   margin-top: 25px;
 }
+@media (max-width: 800px) {
+  #disclaimer {
+    display: none;
+  }
+}
+
 // Dashboard footer
 .dashboard-footer {
   position: fixed;

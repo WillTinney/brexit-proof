@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get 'profile', to: 'users#profile'
     get 'digital', to: 'users#digital'
     get 'children', to: 'users#children'
+    get 'unlock', to: 'users#unlock'
     resources :notes
     resources :proofs
 

@@ -1,5 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  def new
+    redirect_to user_profile_path(current_user) if user_signed_in?
+    super
+  end
+
   def create
     build_resource(sign_up_params)
 

@@ -1,0 +1,26 @@
+<% content_for(:navbar) do %>
+  <%= render 'shared/navbar' %>
+<% end %>
+
+<div class="dashboard-box" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url('/assets/background.jpg')">
+  <div id="tab-content">
+    <div class="container">
+      <br>
+      <div class="side-margin white-text">
+        <h2>Unlocking your data</h2>
+      </div>
+
+      <div class="grey-box relative">
+        <i class="fa fa-question-circle question-circle" aria-hidden="true"><span class="question-tooltip">Unlocking your data is a...</span></i>
+        <div class="unlock-data">
+          <p>By unlocking your data you will...</p>
+
+          <div class="unlock-button">
+            <%= link_to 'Unlock data', '#', class: 'purple-button' %>
+            <h5 class="top-margin-small"><strong>*this is a permanent unlock of your data and cannot be undone</strong></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

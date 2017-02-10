@@ -42,6 +42,10 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def unlock
+    authorize @user
+  end
+
   private
 
   def set_user

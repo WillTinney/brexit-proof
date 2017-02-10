@@ -10,7 +10,7 @@
   <div id="tab-content">
     <br><br>
 
-    <div class="container-box profile-cards">
+    <div class="container profile-cards">
 
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="alt-card black-links">
@@ -63,17 +63,17 @@
           <div class="alt-card black-links">
             <% @user.assignees.where('relationship = ?', 'Partner').each do |partner| %>
               <% unless partner.details_completed? %>
-              <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">Details still to complete</span></i>
+                <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">Details still to complete</span></i>
+              <% end %>
+              <h4><%= link_to "My Partner", user_assignee_path(@user, partner) , class: "partner-link" %></h4>
+              <hr>
+              <div class="card-content card-overflow">
+                <p><strong><%= link_to partner.name_surname, user_assignee_path(@user, partner) %></strong></p>
+                <p><%= partner.phone_number %></p>
+                <br>
+              </div>
             <% end %>
-            <h4><%= link_to "My Partner", user_assignee_path(@user, partner) , class: "partner-link" %></h4>
-            <hr>
-            <div class="card-content card-overflow">
-              <p><strong><%= link_to partner.name_surname, user_assignee_path(@user, partner) %></strong></p>
-              <p><%= partner.phone_number %></p>
-              <br>
-            </div>
-          <% end %>
-        </div>
+          </div>
 
         <% else %>
 
