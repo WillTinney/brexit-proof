@@ -256,16 +256,16 @@
     //   });
     // });
 
-    $("#new_user").bind("ajax:success", function(e, data, status, xhr) {
-      console.log('hello');
-      if (data.success) {
-        $('#sign_up').modal('hide');
-        $('#sign_up_button').hide();
-        return $('#submit_comment').slideToggle(1000, "easeOutBack");
-      } else {
-        return alert('failure!');
-      }
-    });
+    // $("#new_user").bind("ajax:success", function(e, data, status, xhr) {
+    //   console.log('hello');
+    //   if (data.success) {
+    //     $('#sign_up').modal('hide');
+    //     $('#sign_up_button').hide();
+    //     return $('#submit_comment').slideToggle(1000, "easeOutBack");
+    //   } else {
+    //     return alert('failure!');
+    //   }
+    // });
 
     // Navbar colour change on scroll
     $(document).ready(function(){
