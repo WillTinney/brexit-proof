@@ -140,5 +140,13 @@
         <h4>My Notes</h4>
       <% end %>
     </div>
+    <div class="scrollitem digital-asset <%= 'active' if params[:action] == 'unlock' %>">
+      <%= link_to user_unlock_path(current_user), class: "margin-auto" do %>
+        <div class="menu-icon">
+          <i class="fa fa-unlock-alt" id="unlock-menu-icon" aria-hidden="true"></i>
+        </div>
+        <h4>Unlock Data</h4>
+      <% end %>
+    </div>
   </div>
 </div>

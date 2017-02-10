@@ -243,3 +243,16 @@
   align-items: center;
   justify-content: space-around;
 }
+// Data unlock
+.unlock-data {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.unlock-button {
+  text-align: center;
+  a {
+  color: white;
+  }
+}
