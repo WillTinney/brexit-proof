@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations', confirmations: 'confirmations' }
 
   root to: 'pages#home'
+  get 'confirm', to: 'pages#confirm'
 
   post '/subscribe', to: 'pages#subscribe'
 
