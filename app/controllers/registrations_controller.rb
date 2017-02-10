@@ -35,6 +35,10 @@ class RegistrationsController < Devise::RegistrationsController
     user_after_sign_up_path(@user, :basic_profile)
   end
 
+  def after_inactive_sign_up_path_for(resource)
+    user_after_sign_up_path(@user, :basic_profile)
+  end
+
   private
 
   def sign_up_params
