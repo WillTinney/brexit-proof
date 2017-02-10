@@ -1,16 +1,15 @@
 class SessionsController < Devise::SessionsController
 
-  def create
-    resource = warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#failure")
-    sign_in(resource_name, resource)
-    binding.pry
-    redirect_to user_profile_path(current_user)
-    return render :json => {:success => true, :content => render_to_string(:layout => false, :partial => 'pages/new_session')}
-  end
+  # def create
+  #   resource = warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#failure")
+  #   sign_in(resource_name, resource)
+  #   # redirect_to user_profile_path(current_user)
+  #   # return render :json => {:success => true, :content => render_to_string(:layout => false, :partial => 'pages/new_session')}
+  # end
 
-  def failure
-    return render :json => {:success => false, :errors => ["Login failed."]}
-  end
+  # def failure
+  #   return render :json => {:success => false, :errors => ["Login failed."]}
+  # end
     # resource = User.find_for_database_authentication(email: params[:user][:email])
     # return invalid_login_attempt unless resource
 
@@ -23,7 +22,7 @@ class SessionsController < Devise::SessionsController
     # binding.pry
 
     # invalid_login_attempt
-  # end
+   # end
 
   protected
 
