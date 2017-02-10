@@ -21,7 +21,7 @@
     </div>
 
     <div class="banner-button">
-      <%= link_to new_user_registration_path, class: "white-text", data: { toggle: "modal", target: ".signup-modal-sm" } do %>
+      <%= link_to new_user_registration_path, data: { toggle: "modal", target: ".signup-modal-sm" } do %>
         <button id="banner-button" class="btn btn-transparent">Protect your Resident Status</button>
       <% end %>
     </div>
@@ -39,7 +39,7 @@
 <div class="modal fade signup-modal-sm" id="sign_up" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <%= render file: 'devise/registrations/new', resource: User.new, resource_name: :user %>
+      <% render 'pages/new_registration', resource: User.new, resource_name: :user %>
     </div>
   </div>
 </div>
@@ -47,7 +47,8 @@
 <div class="modal fade signin-modal-sm" id="sign_in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <%= render file: 'devise/sessions/new', resource: User.new, resource_name: :user %>
+      <%= render 'pages/new_session', resource: User.new, resource_name: :user  %>
+      <%# render file: 'devise/sessions/new', resource: User.new, resource_name: :user %>
     </div>
   </div>
 </div>
@@ -266,6 +267,16 @@
     //     return alert('failure!');
     //   }
     // });
+    $('#new_user').bind('ajax:success', function(e, data, status, xhr){
+      console.log(data);
+      if(data.success){
+        $('.modal-form').prepend('<p>signed in<p>')
+      } else{
+        console.log('didnt work')
+        $('.modal-form').prepend('<p>login failed</p>')
+      }
+    })
+
 
     // Navbar colour change on scroll
     $(document).ready(function(){

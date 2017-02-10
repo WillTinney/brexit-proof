@@ -1,3 +1,15 @@
+<% content_for(:navbar) do %>
+  <%= render 'shared/navbars/navbar_sign_up' %>
+<% end %>
+
+<div class="navbar-box">
+  <div class="container">
+    <h3>Welcome to BrexitProof</h3>
+
+    <p>To resend confirmation please follow the instructions below.</p>
+  </div>
+</div>
+
 <h2>Resend confirmation instructions</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>

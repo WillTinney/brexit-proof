@@ -32,7 +32,11 @@ class RegistrationsController < Devise::RegistrationsController
 
   # Redirect to personal details page
   def after_sign_up_path_for(resource)
-    user_after_sign_up_path(@user, :basic_profile)
+    confirm_path
+  end
+
+  def after_inactive_sign_up_path_for(resource)
+    confirm_path
   end
 
   private

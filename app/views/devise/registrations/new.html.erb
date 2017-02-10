@@ -1,71 +1,55 @@
-<!-- <div class="navbar-box">
+<% content_for(:navbar) do %>
+  <%= render 'shared/navbars/navbar_sign_up' %>
+<% end %>
+
+<div class="navbar-box">
   <div class="container">
-    <h3>Welcome to BrexitHedge. Let's get started.</h3>
+    <h3>Welcome to BrexitProof. Let's get started.</h3>
 
     <p>First off you need to sign-up with your email address and set a password.</p>
   </div>
-</div> -->
+</div>
 
-<div class="container modal-form">
+<div class="container">
   <div class="row">
-    <div class="col-sm-5 col-md-4 col-lg-3 bg-grey">
+    <div class="col-sm-4 col-sm-offset-4">
       <br>
+      <br>
+
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
           <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
+            <div class="col-xs-3">
               <%= f.input :title, required: true, autofocus: true, collection: ["Mr", "Mrs", "Ms"] %>
+            </div>
+
+            <div class="col-xs-9">
+              <%= f.input :email, required: true, autofocus: true, placeholder: "example@gmail.com" %>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-              <%= f.input :first_name, required: true, autofocus: true %>
+            <div class="col-xs-6">
+              <%= f.input :first_name, required: true, autofocus: true, placeholder: "First name" %>
+            </div>
+
+            <div class="col-xs-6">
+              <%= f.input :last_name, required: true, autofocus: true, placeholder: "Last name" %>
             </div>
           </div>
-          <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-              <%= f.input :last_name, required: true, autofocus: true %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-              <%= f.input :email, required: true, autofocus: true %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-              <%= f.input :password_confirmation, required: true %>
-            </div>
-          </div>
+
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "********" %>
+          <%= f.input :password_confirmation, required: true, placeholder: "********" %>
         </div>
 
         <div class="form-actions text-center">
-          <%= f.button :submit, "Register" %>
+          <%= f.button :submit, "Sign up", class: 'purple-button' %>
         </div>
       <% end %>
 
-      <div class="link-buttons">
-        <%= link_to "Already a member?", new_session_path(resource_name), "data-backdrop": "false", "data-dismiss": "modal", id: "modal-login" %><br />
-      </div>
-
+      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
-
-<%= content_for(:after_js) do %>
-  <script>
-    $('#modal-login').on('click', function(e) {
-      console.log('hello')
-      e.preventDefault();
-      $('.signin-modal-sm').modal('toggle');
-    });
-  </script>
-<% end %>
