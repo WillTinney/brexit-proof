@@ -84,10 +84,10 @@
     color: $purple;
     margin-bottom: 30px;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 600;
   }
   p {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 18px;
   }
 }
@@ -120,7 +120,7 @@
   width: 100%;
   background-color: #EEE9E8;
   h4 {
-    font-weight: bold;
+    font-weight: 500;
   }
 }
 .feature {
@@ -133,19 +133,17 @@
   }
 }
 .feature-image-vault {
-  height: 100px;
-  margin-bottom: 10px;
-  color: $purple;
-}
-.feature-image-unlock {
-  height: 100px;
+  height: 120px;
   margin-top: 30px;
   margin-bottom: 20px;
-  font-size: 110px;
-  color: $purple;
+}
+.feature-image-guardian {
+  height: 120px;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 .feature-image-proof {
-  height: 100px;
+  height: 120px;
   margin-top: 30px;
   margin-bottom: 20px;
 }
@@ -207,10 +205,10 @@
   justify-content: center;
 }
 .comparison-icon.green, p.green {
-  color: $green;
+  color: $orange;
 }
 .my-will {
-  color: $green;
+  color: $orange;
 }
 .lawyer-will {
   color: rgb(140,140,140);

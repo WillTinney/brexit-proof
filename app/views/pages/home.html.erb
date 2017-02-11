@@ -99,68 +99,34 @@
         </div>
       </div>
     </div>
-
-<!--     <div class="mobile-quotes">
-      <div class="mobile-cloud9-item teal-border black-links">
-        <%= link_to "http://www.independent.co.uk/news/uk/home-news/immigration-eu-citizens-brexit-referendum-deportation-home-office-3-million-a7451476.html", target: "_blank" do %>
-          <p>“One million EU citizens in Britain 'at risk of deportation' amid surge in permanent residency applications since Brexit vote"</p>
-          <%= image_tag('Independent_logo.png', class: "mobile-carousel-image") %>
-        <% end %>
-      </div>
-
-      <div class="mobile-cloud9-item orange-border black-links">
-        <%= link_to "https://www.theguardian.com/politics/2016/dec/14/eu-citizens-collect-proof-of-living-in-uk-helena-kenney-qc-lords-brexit-reports", target: "_blank" do %>
-          <p>“EU citizens should collect proof of living in the UK"</p>
-          <%= image_tag('theguardian.png', class: "mobile-carousel-image") %>
-        <% end %>
-      </div>
-      <div class="mobile-cloud9-item purple-border black-links">
-        <%= link_to "https://www.gov.uk/eea-registration-certificate/overview", target: "_blank" do %>
-          <p>“Prove your right to live in the UK as an EU citizen"</p>
-          <%= image_tag('logo-govuk.png', class: "mobile-carousel-image") %>
-        <% end %>
-      </div>
-      <div class="mobile-cloud9-item brown-border black-links">
-        <%= link_to "http://www.independent.co.uk/news/uk/home-news/brexit-eu-citizens-nationals-europe-lords-committee-helena-kennedy-eu-documents-prove-uk-britain-a7475171.html", target: "_blank" do %>
-          <p>“EU citizens urged to collect evidence they lived in UK prior to Brexit vote"</p>
-          <%= image_tag('Independent_logo.png', class: "mobile-carousel-image") %>
-        <% end %>
-      </div>
-      <div class="mobile-cloud9-item green-border black-links">
-        <%= link_to "http://www.theweek.co.uk/brexit/73161/will-eu-citizens-be-allowed-to-stay-in-uk-after-brexit", target: "_blank" do %>
-          <p>“Will EU citizens be allowed to stay after brexit?"</p>
-          <%= image_tag('theweek.png', class: "mobile-carousel-image") %>
-        <% end %>
-      </div>
-    </div> -->
   </section>
 </div>
 
 <!-- What do we do for you? -->
 <section class="container text-center home-section" id="instructions">
   <h2>What does BrexitHedge do for me?</h2>
-  <p>BrexitHedge helps EU citizens living in the UK protect their residency right to stay post Brexit.<br>BrexitHedge provide a unique infrastructure of authenticity and trust, and give people the ability to unlock data.<br>BrexitHedge servers are based in Norway.</p>
+  <p>BrexitHedge helps EU citizens living in the UK protect their residency right to stay post Brexit.<br>BrexitHedge provide a unique infrastructure of authenticity and trust, and give people the ability to access their data anywhere they are.</p>
   <div class="col-xs-12 col-sm-4">
     <div class="flexbox-vertical feature">
       <%= image_tag('vault', class: "feature-image-vault") %>
       <h4>Collect and Save</h4>
-      <p class="text-justify">We help you to collect your proof of residency. We also securely save them to keep your personal data confidential. <strong>We never distribute or sell your data to anyone.</strong></p>
+      <p>We help you <strong>to collect your proofs of residency</strong>. We also securely save them to keep your personal data confidential. We never distribute or sell your data to anyone.</p>
     </div>
   </div>
 
   <div class="col-xs-12 col-sm-4">
     <div class="flexbox-vertical feature">
-      <i class="fa fa-unlock-alt feature-image-unlock" aria-hidden="true"></i>
-      <h4>Unlock</h4>
-      <p class="text-justify">We offer a unique and secure unlocking process of your data and send it <strong>only to who you designated. We can send your data to the Home Office on request.</strong> </p>
+       <%= image_tag('guardian', class: "feature-image-guardian") %>
+      <h4>Designate Guardians</h4>
+      <p>You designate <strong>UK Citizens who can testify you match the criteria</strong> defined by the government to stay in the UK.</p>
     </div>
   </div>
 
   <div class="col-xs-12 col-sm-4">
     <div class="flexbox-vertical feature">
       <%= image_tag('proof', class: "feature-image-proof") %>
-      <h4>Prove</h4>
-      <p class="text-justify">We ensure the authenticity of data thanks to blockchain technology. We also use <strong>UK Guardians to confirm your information.</strong></p>
+      <h4>Unlock and Prove</h4>
+      <p>You unlock your data from anywhere and send them to any institution, as the Home Office or an employer. BrexitHedge send <strong>a summary of your data asking guardians to confirm your situation</strong>.
     </div>
   </div>
 </section>
@@ -282,7 +248,7 @@
     $(document).ready(function(){
       $(window).scroll(function(){
         if($(window).scrollTop()>200)
-          $(".navbar-wagon").css({"background-color": "#6B648A", "box-shadow": "0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03)"});
+          $(".navbar-wagon").css({"background-color": "#4717F6", "box-shadow": "0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03)"});
         else
           $(".navbar-wagon").css({"background-color": "rgba(255, 255, 255, 0.2)", "box-shadow": "none"});
       });
