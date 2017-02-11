@@ -70,18 +70,33 @@
 }
 .teal-border{
   border-color: #8BC9BA;
+  strong {
+    color: #8BC9BA;
+  }
 }
 .orange-border{
   border-color: #FAA000;
+  strong {
+    color: #FAA000;
+  }
 }
 .purple-border{
   border-color: #6B648A;
+  strong {
+    color: #6B648A;
+  }
 }
 .brown-border{
   border-color: #B6A09D;
+  strong {
+    color: #B6A09D;
+  }
 }
 .green-border{
   border-color: #015148;
+  strong {
+    color: #015148;
+  }
 }
 
 // Mobile resposiveness
