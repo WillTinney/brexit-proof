@@ -26,9 +26,12 @@
           <button id="banner-button" class="btn btn-transparent">Protect your Resident Status</button>
         <% end %>
       <% else %>
-        <%= link_to new_user_registration_path, data: { toggle: "modal", target: ".signup-modal-sm" } do %>
+        <%= link_to new_user_registration_path do %>
           <button id="banner-button" class="btn btn-transparent">Protect your Resident Status</button>
         <% end %>
+        <%# link_to new_user_registration_path, data: { toggle: "modal", target: ".signup-modal-sm" } do %>
+         <!--  <button id="banner-button" class="btn btn-transparent">Protect your Resident Status</button> -->
+        <%# end %>
       <% end %>
     </div>
 
