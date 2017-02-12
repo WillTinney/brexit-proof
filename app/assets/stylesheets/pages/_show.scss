@@ -37,8 +37,8 @@
 .grey-box {
   width: 95%;
   padding: 8px 24px;
-  margin: 20px auto;
-  background-color: #F8F8F9;
+  margin: 20px 24px;
+  background-color: $background-grey;
   border-radius: 2px;
   box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
   abbr[title="required"] {
@@ -49,12 +49,12 @@
   color: $black;
 }
 .blue-box {
-  color: $black;
-  background: $background-grey;
-  // border: 1px solid #969696;
+  width: 95%;
+  padding: 8px 24px;
+  margin: 20px 15px;
+  background-color: $beige;
+  border-radius: 2px;
   box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
-  border-radius: 3px;
-  padding: 8px 10px;
 }
 .detail-box {
   display: flex;
@@ -95,11 +95,6 @@
 .push-right {
   margin-top: 0;
   margin-left: 10px;
-}
-// Buttons
-.button-height-default {
-  height: 36px;
-  margin-bottom: 10px;
 }
 // Navigation Icons
 .platform-box {
