@@ -52,7 +52,7 @@
   padding: 10px 40px;
 }
 .purple-button:hover {
-  background: #787294;
+  background: #F9D116;
   color: white;
   box-shadow: 0 2px 2px rgba(0,0,0,0.4);
 }
@@ -61,6 +61,11 @@
   color: $grey;
   border-radius: 50px;
   padding: 8px 35px;
+}
+.back-button:hover {
+  background: white;
+  color: black;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.4);
 }
 .grey-button {
   background: #CCCCCC;
