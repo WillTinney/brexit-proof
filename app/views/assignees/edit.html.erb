@@ -31,7 +31,7 @@
   <% end %>
 <% end %>
 
-<% if params[:format] == 'Guardian' %>
+<% if params[:format] == 'Guardian' || @assignee.type == 'Guardian' %>
   <h3 class="new-title padding-15">Guardian</h3>
 <% elsif params[:relationship] == 'Partner' || @assignee.relationship == 'Partner' %>
   <h3 class="new-title padding-15">Partner</h3>
