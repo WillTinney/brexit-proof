@@ -49,7 +49,11 @@ class UsersController < ApplicationController
   def unlock_data
     authorize @user
     User.send_unlock_email(@user)
-    redirect_to user_unlock_path(@user)
+    # if email is sent successfully
+      @user.data_unlocked = true
+      @user.save
+      redirect_to user_unlock_path(@user)
+
   end
 
   private
@@ -66,6 +70,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :title, :first_name, :middle_name, :last_name,
       :citizenship, :date_of_birth, :phone_number, :gender,
       :address_line_1, :address_line_2, :city, :country, :postcode,
-      :latitude, :longitude, :profile_picture)
+      :latitude, :longitude, :profile_picture, :data_unlocked)
   end
 end
