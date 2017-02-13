@@ -12,6 +12,10 @@ class User < ApplicationRecord
   has_many :proofs, dependent: :destroy
   has_many :notes, dependent: :destroy
 
+  validates :title, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
   accepts_nested_attributes_for :assignees
 
   def details_completed?
@@ -52,18 +56,11 @@ class User < ApplicationRecord
     recipients.where('relationship = ?', 'Friend')
   end
 
-  # Validations
-  attr_accessor :current_step
+  private
 
-  def current_step?(step_key)
-    current_step.blank? || current_step == step_key
+  # Data Unlock
+  def self.send_unlock_email(user)
+    UserMailer.unlock(user).deliver_now
   end
 
-  validates :first_name, presence: :true
-  validates :last_name, presence: :true
-
-  # validates :address_line_1, presence: :true, if: 'current_step?(:contact_info)'
-  # validates :city, presence: :true, if: 'current_step?(:contact_info)'
-  # validates :country, presence: :true, if: 'current_step?(:contact_info)'
-  # validates :postcode, presence: :true, if: 'current_step?(:contact_info)'
 end
