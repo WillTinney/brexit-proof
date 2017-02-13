@@ -53,6 +53,10 @@ class UserPolicy < ApplicationPolicy
     user_is_user?
   end
 
+  def unlock_data?
+    user_is_user?
+  end
+
   def children?
     user_is_user?
   end

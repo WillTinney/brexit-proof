@@ -43,6 +43,12 @@ gem 'faker'
 # Gibbon gem to wrap MailChimp API
 gem 'gibbon'
 
+# Sweet alerts
+gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
+gem 'sweet-alert2-rails'
+
+gem 'letter_opener', group: :development
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

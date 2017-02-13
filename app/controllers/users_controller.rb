@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :set_user_id, only: [:profile, :call_to_action, :digital, :proof, :notes, :admin, :photos, :videos]
+  before_action :set_user_id, only: [:profile, :call_to_action, :proof, :notes, :unlock, :unlock_data]
 
   def show
     authorize @user
@@ -46,6 +46,16 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def unlock_data
+    authorize @user
+    User.send_unlock_email(@user)
+    # if email is sent successfully
+      @user.data_unlocked = true
+      @user.save
+      redirect_to user_unlock_path(@user)
+
+  end
+
   private
 
   def set_user
@@ -60,6 +70,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :title, :first_name, :middle_name, :last_name,
       :citizenship, :date_of_birth, :phone_number, :gender,
       :address_line_1, :address_line_2, :city, :country, :postcode,
-      :latitude, :longitude, :profile_picture)
+      :latitude, :longitude, :profile_picture, :data_unlocked)
   end
 end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   post '/subscribe', to: 'pages#subscribe'
 
+
   # Routes for core user side
   resources :users, only: [ :show, :edit, :update ] do
 
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
     get 'digital', to: 'users#digital'
     get 'children', to: 'users#children'
     get 'unlock', to: 'users#unlock'
+    post 'unlock_data', to: 'users#unlock_data'
     resources :notes
     resources :proofs
 
