@@ -34,7 +34,14 @@
             <p>By unlocking your data you will...</p>
 
             <div class="unlock-button">
-              <%= link_to 'Unlock data', user_unlock_data_path(@user), method: :post, class: 'purple-button', data: { confirm: "Are you sure?" } %>
+              <%= link_to 'Unlock data', user_unlock_data_path(@user), method: :post, class: 'purple-button', id: "unlock-button", data: {
+                confirm: 'Are you sure?',
+                text: "This is a permanent unlocking of the data you have provided to official sources. You won't be able to revert this!",
+                'confirm-button-text': 'OK',
+                'cancel-button-text': 'Cancel',
+                'confirm-button-color': '#66CD00',
+                'sweet-alert-type': 'warning'
+                } %>
               <h5 class="top-margin-small"><strong>*this is a permanent unlock of your data and cannot be undone</strong></h5>
             </div>
           </div>
