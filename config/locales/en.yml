@@ -10,11 +10,16 @@
 en:
   # Buttons
   View: "View"
+  New: "New"
   Create: "Create"
   Edit: "Edit"
   Delete: "Delete"
+  Next: "Next"
   Back: "Back"
   Save: "Save"
+  Back to Profile: "Back to Profile"
+  No: "No"
+  Yes: "Yes"
 
   # Profile Page
   My Details: "My Details"
@@ -86,5 +91,59 @@ en:
   note description 2: "to explain your particular situation or anything you think either guardians or UK Authorities should know about your situation"
   note description 3: "(historical addresses, employment, etc...)."
   note description 4: "In this section, you write notes to explain your particular situation or anything you think either guardians or UK Authorities should know about your situation."
+  not added notes: "You have not yet added any notes."
+  Content: "Content"
 
+  # Unlock Data
+  Unlocking your data: "Unlocking your data"
+  unlock tooltip: "Unlocking your data allows..."
+  unlock description: "This means..."
+  successfully unlocked data: "You have successfully unlocked your data!"
+  Unlock data: "Unlock data"
+  unlock warning: "*this is a permanent unlock of your data and cannot be undone"
 
+  # Scrollmenu
+  Home: "Home"
+  Profile: "Profile"
+  Me: "Me"
+  Partner: "Partner"
+  Children: "Children"
+  Guardians: "Guardians"
+  Digital Assets: "Digital Assets"
+  My Notes: "My Notes"
+  Unlock Data: "Unlock Data"
+
+  # Navbar
+  Sign Up: "Sign Up"
+
+  # Footer
+  Site Map: "Site Map"
+  Home: "Home"
+  How it works: "How it works"
+  Pricing: "Pricing"
+  Contact: "Contact"
+  Careers: "Careers"
+  Terms & Conditions: "Terms & Conditions"
+  Find Us: "Find Us"
+  footer description: "BrexitHedge is an online service that provides digital storage services through a trusted infrastructure. We are not a law firm and are not a substitute for a lawyer's advice about complex UK residency right issues."
+
+  # Sign-Up Wizard
+  back: "back"
+  You: "You"
+  Partner: "Partner"
+  Children: "Children"
+  Guardians: "Guardians"
+  enter details about yourself: "Please enter some basic details about yourself."
+  this is important because: "This is important so we are able to identify you and set up your account."
+  what is your nationality: "What is your nationality?"
+  when were you born: "When were you born?"
+  what is your number: "What is your number?"
+  what is your address: "What is your primary UK address?"
+  Your Children: "Your Children"
+  details about your children: "Please enter some basic details about your children."
+  how many children: "How many children do you have?"
+  how many guardians: "How many guardians would you like to designate?"
+  guardian brief description: "Guardians are UK citizens who can testify of your presence in the UK before the referendum date."
+  guardian footnote: "*guardian details can be edited at any time"
+  do you have a partner: "Do you have a partner or spouse?"
+  what is your partners name: "What is your partner's name?"
