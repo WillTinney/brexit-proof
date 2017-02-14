@@ -34,7 +34,7 @@
             <p>By unlocking your data you will...</p>
 
             <div class="unlock-button">
-              <%= link_to 'Unlock data', user_unlock_data_path(@user), method: :post, class: 'purple-button', id: "unlock-button", data: {
+              <%= link_to 'Unlock data', user_unlock_data_path(@user, ["willtinney1@gmail.com", "williamhtinney@gmail.com"]), method: :post, class: 'purple-button', id: "unlock-button", data: {
                 confirm: 'Are you sure?',
                 text: "This is a permanent unlocking of the data you have provided to official sources. You won't be able to revert this!",
                 'confirm-button-text': 'OK',
@@ -46,7 +46,36 @@
             </div>
           </div>
         </div>
+
+        <!-- Email Preview -->
+        <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                <h4 class="modal-title" id="myModalLabel">Data Unlock email</h4>
+              </div>
+              <div class="modal-body">
+                <%= render file: 'user_mailer/unlock' %>
+              </div>
+              <div class="modal-footer">
+                 <%= link_to 'Unlock data', user_unlock_data_path(@user), method: :post, class: 'purple-button', id: "unlock-button", data: {
+                    confirm: 'Are you sure?',
+                    text: "This is a permanent unlocking of the data you have provided to official sources. You won't be able to revert this!",
+                    'confirm-button-text': 'OK',
+                    'cancel-button-text': 'Cancel',
+                    'confirm-button-color': '#66CD00',
+                    'sweet-alert-type': 'warning'
+                    }
+                  %>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       <% end %>
+
     </div>
   </div>
 </div>
