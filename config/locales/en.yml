@@ -1,15 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
 # To use a different locale, set it with `I18n.locale`:
 #
 #     I18n.locale = :es
@@ -20,4 +8,83 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  # Buttons
+  View: "View"
+  Create: "Create"
+  Edit: "Edit"
+  Delete: "Delete"
+  Back: "Back"
+  Save: "Save"
+
+  # Profile Page
+  My Details: "My Details"
+  Citizen: "Citizen"
+  citizenship required: "Please enter your citizenship"
+  DoB: "Date of Birth"
+  date of birth required: "Please enter your date of birth"
+  Email: "Email"
+  Phone Number: "Phone Number"
+  phone number required: "Please enter your phone number"
+  Address: "Address"
+  address required: "Please enter your address"
+  details incomplete tooltip: "Details still to complete"
+
+  My Partner: "My Partner"
+  assign a partner: "You have not assigned a partner. Click here to add a partner."
+  My Children: "My Children"
+  assign children: "You have not assigned any children. Click here to add a child."
+  My Guardians: "My Guardians"
+  assign guardians: "You have not assigned any guardians. Click here to add a guardian."
+  Proof of Residency: "Proof of Residency"
+  No proof of residency: 'No proof of residency'
+  assign proof: "You have not uploaded any proof of residency. Click here to go to our secure upload form."
+  Notes: "Notes"
+  assign notes: "You have not created any notes. Click here to go to open your notes library."
+
+  # My Details
+  details tooltip: "The more accurate and complete the information you provide, the easier it will to prove your residency"
+  Change Picture: "Change Picture"
+  Upload: "Upload"
+  Title: "Title"
+  Email: "Email"
+  First name: "First name"
+  Middle name: "Middle name"
+  Last name: "Last name"
+  Citizenship: "Citizenship"
+  Date of birth: "Date of birth"
+  Phone number: "Phone number"
+  Address line 1: "Address line 1"
+  Address line 2: "Address line 2"
+  City: "City"
+  Postcode: "Postcode"
+  Country: "Country"
+
+  # Children Index
+  Add Child: "Add Child"
+
+  # Guardian Index
+  Add New: "Add New"
+  guardian explanation: "Guardians are..."
+
+  # Proof of Residency
+  Your Proof of Residency: "Your Proof of Residency"
+  Add Document: "Add Document"
+  proof tooltip: "By including as much documentation as possible on your UK residency you give yourself the best chance of protection."
+  Are you sure: "Are you sure?"
+  proof description: "In this section, you save all <strong>evidence that you’ve been living in the UK</strong>, such as gas, electricity and council tax bills, and letters from government departments (HMRC, State School, NHS, etc...). It is also in your interest to show evidence that you’ve been working, studying, self-employed, self-sufficient or looking for work, such as payslips, P60 forms and bank statements.<br> You could be asked to send those documents to UK Authorities as the Home Office if you need to justify your residency historical and your social situation."
+  not uploaded residency: "You have not uploaded a proof of residency."
+  please use form below: "Please use the form below to do so:"
+  Submit Proof of Residency: "Submit Proof of Residency"
+  Document: "Document"
+  Comments: "Comments"
+  Update Proof: "Update Proof"
+
+  # Notes Library
+  Notes Library: "Notes Library"
+  Add Note: "Add Note"
+  note description 1: "In this section, you write notes"
+  note description 2: "to explain your particular situation or anything you think either guardians or UK Authorities should know about your situation"
+  note description 3: "(historical addresses, employment, etc...)."
+  note description 4: "In this section, you write notes to explain your particular situation or anything you think either guardians or UK Authorities should know about your situation."
+
+
