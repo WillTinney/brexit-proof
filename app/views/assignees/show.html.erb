@@ -2,16 +2,12 @@
   <%= render 'shared/navbar' %>
 <% end %>
 
-<% content_for(:sidebar) do %>
-  <%= render 'shared/sidebars/sidebar_assignee' %>
-<% end %>
-
 <div class="dashboard-box" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url('/assets/background.jpg')">
   <div id="tab-content">
     <div class="container">
       <br>
       <div class="grey-box relative">
-        <i class="fa fa-question-circle question-circle" aria-hidden="true"><span class="question-tooltip">The more accurate and complete the information you provide, the easier it will to prove your residency</span></i>
+        <i class="fa fa-question-circle question-circle" aria-hidden="true"><span class="question-tooltip"><%= t('details tooltip') %></span></i>
         <%= render file: 'assignees/edit' %>
       </div>
     </div>

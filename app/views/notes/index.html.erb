@@ -9,12 +9,12 @@
 
       <% if !@notes.empty? %>
         <div class="header-box padding-15">
-          <h2>Notes Library</h2>
-          <%= link_to "Add Note", new_user_note_path(current_user, @note), remote: true, class: "btn orange-button" %>
+          <h2><%= t('Notes Library') %></h2>
+          <%= link_to t("Add Note"), new_user_note_path([I18n.locale, current_user, @note]), remote: true, class: "btn orange-button" %>
         </div>
 
         <div class="blue-box detail-box">
-          <p>In this section, you write notes<strong> to explain your particular situation or anything you think either guardians or UK Authorities should know about your situation</strong> (historical addresses, employment, etc...).</p>
+          <p><%= t('note description html') %></p>
         </div>
 
         <div class="col-xs-12 col-md-6 invisible">
@@ -30,7 +30,7 @@
                 <%= link_to edit_user_note_path(current_user, note.id), remote: true do %>
                   <i class="fa fa-pencil" aria-hidden="true"> </i>
                 <% end %>
-                <%= link_to user_note_path(current_user, note.id), data: {confirm: 'Are you sure?'}, method: :delete do %>
+                <%= link_to user_note_path(current_user, note.id), data: {confirm: t('Are you sure')}, method: :delete do %>
                   <i class="fa fa-trash" aria-hidden="true"></i>
                 <% end %>
               </div>
@@ -55,18 +55,18 @@
           <h2>Notes</h2>
 
           <div class="blue-box">
-            <p>In this section, you write notes<strong> to explain your particular situation or anything you think either guardians or UK Authorities should know about your situation</strong>.</p>
+            <p>>%= t('note description 4') %></p>
           </div>
         </div>
 
         <div class="grey-box">
-          <h5><strong>You have not yet added any notes.</strong></h5>
-          <p>Please use the form below to do so:</p>
+          <h5><strong><%= t('not added notes') %></strong></h5>
+          <p><%= t('please use form below') %></p>
           <%= simple_form_for([@user, @note]) do |f| %>
-            <%= f.input :title %>
-            <%= f.input :content %>
+            <%= f.input :title, label: t('Title') %>
+            <%= f.input :content, label: t('Content') %>
             <div class="submit-button text-center">
-              <%= f.button :submit, "Create", class: "btn purple-button" %>
+              <%= f.button :submit, t("Create"), class: "btn purple-button" %>
             </div>
           <% end %>
         </div>

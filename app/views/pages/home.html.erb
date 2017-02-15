@@ -14,20 +14,20 @@
   <div class="banner-content">
 
     <div class="banner-text" id="bt-1">
-      <h5>"Under the Government’s Brexit bill, over 3 million EU citizens living in the UK now face an uncertain future."</h5><br/>
+      <h5><%= t('banner quote') %></h5><br/>
     </div>
     <div class="banner-text" id="bt-2">
-      <h4><strong>Protect your Residency Right.</strong><br/>Collect your Proofs. Designate Guardians.<br>Access them at Anytime, from Anywhere.</h4>
+      <h4><strong><%= t('Protect your residency right') %></strong><br/><%= t('collect proof, designate guardians') %><br><%= t('access anytime, anywhere') %></h4>
     </div>
 
     <div class="banner-button">
       <% if user_signed_in? %>
         <%= link_to user_profile_path(current_user) do %>
-          <button id="banner-button" class="btn btn-transparent">Protect your Resident Status</button>
+          <button id="banner-button" class="btn btn-transparent"><%= t(' protect your resident status') %></button>
         <% end %>
       <% else %>
         <%= link_to new_user_registration_path do %>
-          <button id="banner-button" class="btn btn-transparent">Protect your Resident Status</button>
+          <button id="banner-button" class="btn btn-transparent"><%= t(' protect your resident status') %></button>
         <% end %>
         <%# link_to new_user_registration_path, data: { toggle: "modal", target: ".signup-modal-sm" } do %>
          <!--  <button id="banner-button" class="btn btn-transparent">Protect your Resident Status</button> -->
@@ -68,8 +68,8 @@
 <!-- Caroussel - Medias -->
 <div class="wrapper overflow-hidden">
   <section id="media-quotes" class="container content-section text-center home-section">
-    <h2>Why BrexitHedge?</h2>
-    <p>Residency Rights that will apply to EU Citizens remain uncertain. BrexitHedge help you to build up<strong> a Trust Infrastructure for UK Authorities</strong>. History and recent political events remind us <strong>we need to be prepared to any situation</strong> and to protect our relatives.</p>
+    <h2><%= t('Why BrexitHedge') %></h2>
+    <p><%= t('why description html') %></p>
     <div class="progress-width">
       <div id="carousel-container">
         <div class="cloud9-carousel" id="cloud9-carousel">
@@ -113,29 +113,29 @@
 
 <!-- What do we do for you? -->
 <section class="container text-center home-section" id="instructions">
-  <h2>What does BrexitHedge do for me?</h2>
-  <p>BrexitHedge helps EU citizens living in the UK protect their residency right to stay post Brexit.<br>BrexitHedge provide a unique infrastructure of authenticity and trust, and give people the ability to access their data anywhere they are.</p>
+  <h2><%= t(' what does it do for me') %></h2>
+  <p><%= t('what description 1') %><br><%= t('what description 2') %></p>
   <div class="col-xs-12 col-sm-4">
     <div class="flexbox-vertical feature">
       <%= image_tag('vault', class: "feature-image-vault") %>
-      <h4>Collect and Save</h4>
-      <p>We help you <strong>to collect your proofs of residency</strong>. We also securely save them to keep your personal data confidential. We never distribute or sell your data to anyone.</p>
+      <h4><%= t('Collect and Save') %></h4>
+      <p><%= t('collect description html') %></p>
     </div>
   </div>
 
   <div class="col-xs-12 col-sm-4">
     <div class="flexbox-vertical feature">
        <%= image_tag('guardian', class: "feature-image-guardian") %>
-      <h4>Designate Guardians</h4>
-      <p>You designate <strong>UK Citizens who can testify you match the criteria</strong> defined by the government to stay in the UK.</p>
+      <h4><%= t('Designate Guardians') %></h4>
+      <p><%= t('designate description html') %></p>
     </div>
   </div>
 
   <div class="col-xs-12 col-sm-4">
     <div class="flexbox-vertical feature">
       <%= image_tag('proof', class: "feature-image-proof") %>
-      <h4>Unlock and Prove</h4>
-      <p>You unlock your data from anywhere and send them to any institution, as the Home Office or an employer. BrexitHedge send <strong>a summary of your data asking guardians to confirm your situation</strong>.
+      <h4><%= t('Unlock and Prove') %></h4>
+      <p><%= t('unlock description html') %></strong></p>
     </div>
   </div>
 </section>
@@ -143,19 +143,19 @@
 <!-- Feedback -->
 <section class="home-section" id="feedback" style="background-image: linear-gradient(-225deg, rgba(195,161,4,0.6) 20%, rgba(195,161,4,0.6) 80%), url(<%= image_path('door.jpg') %>);">
   <div class="container text-center" id="reviews">
-    <h2>Act now!</h2>
+    <h2><%= t('Act now') %></h2>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
         <div class="review-box">
-          <p>“I live in constant uncertainty and dread. Like many others, I feel like I’ve invested my entire adulthood into this country. If I have to I can leave, but many others can’t. I’ve lived in the UK for 11 years now and have been married to a British man for the last four years. Yet I am not eligible for the permanent residency card. That’s because I’ve not had comprehensive health insurance, and since I was a student and never earned enough money for a long enough time to count as “exercising my treaty rights” I can’t apply.“</p>
-          <p><strong>Sylvie, Polish, PhD student</strong></p>
+          <p><%= t('home quote 1') %></p>
+          <p><strong><%= t('quote owner 1') %></strong></p>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-6">
         <div class="review-box">
-          <p>“My worry is not so much about being kicked out but that my life is here. I have lived here for 18 years, been employed and paid taxes without a break. I also hold a UK driving licence, pay council tax in my name and am on the electoral register for local and European elections. So you’d think I’m fairly “official” and my address and residence status should be well known to the authorities. Council tax bills qualify but who would have thought you would need to keep them?“</p>
-          <p><strong>Monika, 46, German, senior director in customer service in large consumer company</strong></p>
+          <p><%= t('home quote 2') %></p>
+          <p><strong><%= t('quote owner 2') %></strong></p>
         </div>
       </div>
     </div>
@@ -166,30 +166,30 @@
 
 <section class="home-section" id="comparison">
   <div class="container text-center">
-    <h2>Do I need to pay to use BrexitHedge?</h2>
+    <h2><%= t('do I need to pay') %></h2>
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
           <div class="comparison-box my-will">
-            <h5>BrexitHedge is completely</h5>
-            <h3>Free.</h3>
-            <h5>Made by EU citizens for EU citizens.</h5>
+            <h5><%= t('is completely') %></h5>
+            <h3><%= t('Free') %></h3>
+            <h5><%= t('made EU for EU') %></h5>
             <hr>
             <ul>
               <li class="comparison-li text-left">
                 <%= icon('check', class: "comparison-icon green") %>
-                <p>  Trust infrastructure: storage and authenticity</p>
+                <p>  <%= t('trust infrastructure') %></p>
               </li>
               <li class="comparison-li text-left">
                 <%= icon('check', class: "comparison-icon green") %>
-                <p>  Designate your "guardians" </p>
+                <p>  <%= t('designate guardians') %></p>
               </li>
               <li class="comparison-li text-left">
                 <%= icon('check', class: "comparison-icon green") %>
-                <p>  Unlock your data access from anywhere</p>
+                <p>  <%= t('unlock anywhere') %></p>
               </li>
               <li class="comparison-li text-left">
                 <%= icon('check', class: "comparison-icon green") %>
-                <p>  Update any time </p>
+                <p>  <%= t('update anytime') %></p>
               </li>
             </ul>
           </div>
@@ -203,14 +203,14 @@
 <!-- Call to Registration -->
 
 <section class="container text-center home-section" id="registration">
-  <h2> Sign up now to prove your right to residency</h2>
+  <h2><%= t('sign up now to prove residency') %></h2>
   <span class="registration text">
   </span>
   <span class="call-to-action-text">
-    <p>In absence of future residency rules for EU citizens living in the UK, hedge your situation and be able to proove your right to stay anytime from anywhere.</p>
+    <p><%= t('call to sign up text') %></p>
   </span>
   <%= link_to new_user_registration_path, class: "white-text", data: { toggle: "modal", target: ".signup-modal-sm" } do %>
-    <button class="btn orange-button">Sign Up</button>
+    <button class="btn orange-button"><%= t('Sign Up') %></button>
   <% end %>
 </section>
 
