@@ -97,6 +97,7 @@ en:
   City: "City"
   Postcode: "Postcode"
   Country: "Country"
+
   # Unlock Data
   Unlocking your data: "Unlocking your data"
   unlock tooltip: "Unlocking your data allows..."
@@ -107,10 +108,13 @@ en:
 
   # Children Index
   Add Child: "Add Child"
+  New Child: "New Child"
 
   # Guardian Index
   Add New: "Add New"
   guardian explanation: "Guardians are..."
+  New Guardian: "New Guardian"
+  New Partner: "New Partner"
 
   # Proof of Residency
   Your Proof of Residency: "Your Proof of Residency"
