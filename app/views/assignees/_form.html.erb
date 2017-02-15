@@ -7,10 +7,10 @@
   <% else %>
     <%= image_tag('boy.png', class: "edit-icon") %>
   <% end %>
-  <p>Change Picture</p>
+  <p><%= t('Change Picture') %></p>
   <%= simple_form_for [current_user, @assignee], html: {class: 'form-inline edit-profile-picture invisible'} do |f| %>
     <%= f.input :profile_picture, as: :attachinary, label: false, input_html: { class: 'profile-upload'} %>
-    <%= f.submit "Upload", class: 'profile-upload'  %>
+    <%= f.submit t("Upload"), class: 'profile-upload'  %>
   <% end %>
 <% end %>
 
@@ -90,8 +90,8 @@
     <% end %>
 
     <div class="nav-buttons">
-      <%= link_to "Back", user_profile_path(current_user), class: "back-button" %>
-      <%= f.button :submit, "Save", class: "purple-button" %>
+      <%= link_to t("Back"), user_profile_path(current_user), class: "back-button" %>
+      <%= f.button :submit, t("Save"), class: "purple-button" %>
     </div>
   </div>
 <% end %>

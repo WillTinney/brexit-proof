@@ -10,11 +10,11 @@
       <% if !@notes.empty? %>
         <div class="header-box padding-15">
           <h2><%= t('Notes Library') %></h2>
-          <%= link_to t("Add Note"), new_user_note_path(current_user, @note), remote: true, class: "btn orange-button" %>
+          <%= link_to t("Add Note"), new_user_note_path([I18n.locale, current_user, @note]), remote: true, class: "btn orange-button" %>
         </div>
 
         <div class="blue-box detail-box">
-          <p><%= t('note description 1') + " " %><strong><%= t('note description 2') + " " %></strong><%= t('note description 3') %></p>
+          <p><%= t('note description html') %></p>
         </div>
 
         <div class="col-xs-12 col-md-6 invisible">

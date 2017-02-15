@@ -9,14 +9,14 @@
       <% if !@proofs.empty? %>
         <div class="header-box padding-15">
           <h2><%= t('Your Proof of Residency') %></h2>
-          <%= link_to t("Add Document"), new_user_proof_path(current_user, @proof), remote: true, class: "btn btn-transparent btn-default button-height-default" %>
+          <%= link_to t("Add Document"), new_user_proof_path([I18n.locale, current_user, @proof]), remote: true, class: "btn btn-transparent btn-default button-height-default" %>
         </div>
 
         <div class="blue-box side-margin-small">
           <p><%= t('proof tooltip') %></p>
         </div>
 
-        <div class="col-xs-12 col-md-6 invisible">
+        <div class="col-xs-12 col-lg-6 invisible">
           <div class="document-card">
             <div class="note-form" id="new-proof-form"></div>
           </div>

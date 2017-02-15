@@ -4,9 +4,9 @@
 
 <div class="navbar-box">
   <div class="container">
-    <h3>Your Children</h3>
+    <h3><%= t('Your Children') %></h3>
 
-    <p>Please enter some basic details about your children.</p>
+    <p><%= t('details about your children') %></p>
   </div>
 </div>
 
@@ -39,7 +39,7 @@
 </div>
 
 <div class="wizard-box text-center">
-  <p class="sign-up-title top-margin"><%= t('how mnay children') %></p>
+  <p class="sign-up-title top-margin"><%= t('how many children') %></p>
   <%= simple_form_for(@user, url: wizard_path, method: :put, class: "sign-up-form") do |f| %>
     <div class="row wizard-buttons">
       <div class="col-xs-12">
