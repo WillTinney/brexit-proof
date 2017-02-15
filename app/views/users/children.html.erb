@@ -8,7 +8,7 @@
       <br>
       <div class="header-box">
         <h2><%= t('My Children') %></h2>
-        <%= link_to t("Add Child"), new_user_assignee_path(current_user, @type), class: "btn orange-button" %>
+        <%= link_to t("Add Child"), new_user_assignee_path([ I18n.locale, current_user, @type]), class: "btn orange-button" %>
       </div>
 
       <div class="assignees">
