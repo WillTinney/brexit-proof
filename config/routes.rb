@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'confirm', to: 'pages#confirm'
 
     get 'about', to: 'pages#about'
+    get 'contact', to: 'pages#contact'
 
     post '/subscribe', to: 'pages#subscribe'
 
