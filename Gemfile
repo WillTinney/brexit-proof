@@ -47,6 +47,8 @@ gem 'gibbon'
 gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
 gem 'sweet-alert2-rails'
 
+gem 'rails-i18n', '~> 5.0.0'
+
 gem 'letter_opener', group: :development
 
 group :development, :test do

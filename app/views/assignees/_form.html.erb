@@ -2,20 +2,20 @@
 <%= link_to '#', class: 'profile-picture-inline' do %>
   <% if @assignee.profile_picture %>
     <%= cl_image_tag(@assignee.profile_picture.path, transformation: [{width: 100, height: 100, gravity: "face", radius: "max", crop: "fill"}], class: "avatar-edit") %>
-  <% elsif params[:format] == 'Guardian' || @assignee.type == 'Guardian' %>
+  <% elsif params[:type] == 'Guardian' || @assignee.type == 'Guardian' || params[:assignee] && params[:assignee]['type'] == 'Guardian' %>
     <%= image_tag('guardian_male.png', class: "edit-icon") %>
   <% else %>
     <%= image_tag('boy.png', class: "edit-icon") %>
   <% end %>
-  <p>Change Picture</p>
+  <p><%= t('Change Picture') %></p>
   <%= simple_form_for [current_user, @assignee], html: {class: 'form-inline edit-profile-picture invisible'} do |f| %>
     <%= f.input :profile_picture, as: :attachinary, label: false, input_html: { class: 'profile-upload'} %>
-    <%= f.submit "Upload", class: 'profile-upload'  %>
+    <%= f.submit t("Upload"), class: 'profile-upload'  %>
   <% end %>
 <% end %>
 
 <%= simple_form_for [current_user, @assignee] do |f| %>
-  <%= f.hidden_field :type, value: @type %>
+  <%= f.hidden_field :type, value: @type || params[:type] %>
   <div class="form-container">
 
     <div class="row">
@@ -43,7 +43,7 @@
       <div class="col-xs-12 col-sm-4">
         <%= f.input :citizenship, collection: Nationality::NATIONALITY, prompt: 'Citizenship' %>
       </div>
-      <% if params[:format] == 'Guardian' || @assignee.type == 'Guardian' %>
+      <% if params[:type] == 'Guardian' || @assignee.type == 'Guardian' || params[:assignee] && params[:assignee]['type'] == 'Guardian' %>
         <div class="col-xs-12 col-sm-4">
           <%= f.input :relationship %>
         </div>
@@ -79,7 +79,7 @@
       </div>
     </div>
 
-    <% if params[:format] == 'Guardian' || @assignee.type == 'Guardian' %>
+    <% if params[:type] == 'Guardian' || @assignee.type == 'Guardian' || params[:assignee] && params[:assignee]['type'] == 'Guardian' %>
       <%= f.hidden_field :type, value: 'Guardian' %>
     <% elsif params[:relationship] == 'Partner' %>
       <%= f.hidden_field :type, value: 'Recipient' %>
@@ -90,8 +90,8 @@
     <% end %>
 
     <div class="nav-buttons">
-      <%= link_to "Back", user_profile_path(current_user), class: "back-button" %>
-      <%= f.button :submit, "Save", class: "purple-button" %>
+      <%= link_to t("Back"), user_profile_path(current_user), class: "back-button" %>
+      <%= f.button :submit, t("Save"), class: "purple-button" %>
     </div>
   </div>
 <% end %>

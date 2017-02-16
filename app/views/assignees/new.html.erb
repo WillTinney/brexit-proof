@@ -7,12 +7,12 @@
     <div class="container">
       <br>
       <div class="grey-box relative">
-        <% if params[:format] == 'Guardian' %>
-          <h3 class="new-title">New Guardian</h3>
+        <% if params[:type] == 'Guardian' || params[:assignee] && params[:assignee]['type'] == 'Guardian' %>
+          <h3 class="new-title"><%= t('New Guardian') %></h3>
         <% elsif params[:relationship] == 'Partner' %>
-          <h3 class="new-title">New Partner</h3>
+          <h3 class="new-title"><%= t('New Partner') %></h3>
         <% else %>
-          <h3 class="new-title">New Child</h3>
+          <h3 class="new-title"><%= t('New Child') %></h3>
         <% end %>
         <%= render 'assignees/form' %>
       </div>

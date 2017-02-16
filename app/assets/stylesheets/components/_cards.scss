@@ -103,6 +103,10 @@
 .card-content {
   overflow-y: auto;
   width: 80%;
+  color: #5C6068;
+  a {
+    color: #5C6068
+  }
 }
 .orange-border {
   border: 4px solid $orange;
@@ -125,7 +129,6 @@
   top: 6px;
   right: 6px;
 }
-
 
 // Asset Cards
 .asset-card {

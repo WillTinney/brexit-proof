@@ -1,12 +1,12 @@
 <% content_for(:navbar) do %>
-  <%= render 'shared/navbars/navbar_sign_up' %>
+  <%= render 'shared/navbars/navbar_devise' %>
 <% end %>
 
 <div class="navbar-box">
   <div class="container">
-    <h3>Welcome to BrexitProof. Let's get started.</h3>
+    <h3><%= t('welcome to') %></h3>
 
-    <p>First off you need to sign-up with your email address and set a password.</p>
+    <p><%= t('first email and password') %></p>
   </div>
 </div>
 
@@ -22,21 +22,21 @@
         <div class="form-inputs">
           <div class="row">
             <div class="col-xs-3">
-              <%= f.input :title, required: true, autofocus: true, collection: ["Mr", "Mrs", "Ms"] %>
+              <%= f.input :title, required: true, autofocus: true, collection: ["Mr", "Mrs", "Ms"], label: t('Title') %>
             </div>
 
             <div class="col-xs-9">
-              <%= f.input :email, required: true, autofocus: true, placeholder: "example@gmail.com" %>
+              <%= f.input :email, required: true, autofocus: true, placeholder: "example@gmail.com", label: t('Email') %>
             </div>
           </div>
 
           <div class="row">
             <div class="col-xs-6">
-              <%= f.input :first_name, required: true, autofocus: true, placeholder: "First name" %>
+              <%= f.input :first_name, required: true, autofocus: true, placeholder: t("First name"), label: t('First name') %>
             </div>
 
             <div class="col-xs-6">
-              <%= f.input :last_name, required: true, autofocus: true, placeholder: "Last name" %>
+              <%= f.input :last_name, required: true, autofocus: true, placeholder: t("Last name"), label: t('Last name') %>
             </div>
           </div>
 
@@ -45,7 +45,7 @@
         </div>
 
         <div class="form-actions text-center">
-          <%= f.button :submit, "Sign up", class: 'purple-button' %>
+          <%= f.button :submit, t("Sign up"), class: 'purple-button' %>
         </div>
       <% end %>
 

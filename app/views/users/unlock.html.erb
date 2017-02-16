@@ -7,20 +7,20 @@
     <div class="container">
       <br>
       <div class="side-margin white-text">
-        <h2>Unlocking your data</h2>
+        <h2><%= ('Unlocking your data') %></h2>
       </div>
 
       <% if @user.data_unlocked? %>
 
         <div class="grey-box relative">
-          <i class="fa fa-question-circle question-circle" aria-hidden="true"><span class="question-tooltip">Unlocking your data is a...</span></i>
+          <i class="fa fa-question-circle question-circle" aria-hidden="true"><span class="question-tooltip"><%= t('unlock tooltip') %></span></i>
           <div class="unlock-data">
-            <h3>You have successfully unlocked your data!</h3>
+            <h3><%= t('successfully unlocked data') %></h3>
 
-            <p>This means...</p>
+            <p><%= t('unlock description') %></p>
 
             <div class="text-center">
-              <%= link_to "Back to Profile", user_profile_path(@user), class: "back-button" %>
+              <%= link_to t("Back to Profile"), user_profile_path(@user), class: "back-button" %>
             </div>
           </div>
           <br>
@@ -29,20 +29,19 @@
       <% else %>
 
         <div class="grey-box relative">
-          <i class="fa fa-question-circle question-circle" aria-hidden="true"><span class="question-tooltip">Unlocking your data is a...</span></i>
+          <i class="fa fa-question-circle question-circle" aria-hidden="true"><span class="question-tooltip"><%= t('unlock tooltip') %></span></i>
           <div class="unlock-data">
-            <p>By unlocking your data you will...</p>
+            <p><%= t('unlock description') %></p>
 
             <div class="unlock-button">
-              <%= link_to 'Unlock data', user_unlock_data_path(@user, ["willtinney1@gmail.com", "williamhtinney@gmail.com"]), method: :post, class: 'purple-button', id: "unlock-button", data: {
-                confirm: 'Are you sure?',
+              <%= link_to t('Unlock data'), user_unlock_data_path(@user, ["willtinney1@gmail.com", "williamhtinney@gmail.com"]), method: :post, class: 'purple-button', id: "unlock-button", data: { confirm: 'Are you sure?',
                 text: "This is a permanent unlocking of the data you have provided to official sources. You won't be able to revert this!",
                 'confirm-button-text': 'OK',
                 'cancel-button-text': 'Cancel',
                 'confirm-button-color': '#66CD00',
                 'sweet-alert-type': 'warning'
                 } %>
-              <h5 class="top-margin-small"><strong>*this is a permanent unlock of your data and cannot be undone</strong></h5>
+              <h5 class="top-margin-small"><strong><%= t('unlock warning') %></strong></h5>
             </div>
           </div>
         </div>

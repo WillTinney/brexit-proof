@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :set_user_id, only: [:profile, :call_to_action, :proof, :notes, :unlock, :unlock_data]
+  before_action :set_user_id, only: [:profile, :children, :unlock, :unlock_data]
 
   def show
     authorize @user
