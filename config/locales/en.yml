@@ -22,6 +22,10 @@ en:
   "No": "No"
   "Yes": "Yes"
 
+  # I18n
+  English: "English"
+  French: "French"
+
   # Home Page
   banner quote: "\"Under the Government’s Brexit bill, over 3 million EU citizens living in the UK now face an uncertain future.\""
   Protect your residency right: "Protect your Residency Right."

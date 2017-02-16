@@ -152,6 +152,10 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+.dropdown-menu-center {
+  display: flex;
+  justify-content: center;
+}
 
 // Navbar for landing page
 #navbar-home {
@@ -160,4 +164,10 @@
 }
 #sign-up-navbar {
   box-shadow: none;
+}
+
+.flag {
+  height: 14px;
+  max-width: 21.5px;
+  margin: 0 3px 3px 0;
 }

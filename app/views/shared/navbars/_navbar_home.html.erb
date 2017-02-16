@@ -7,11 +7,28 @@
   <!-- Central Links -->
   <div class="navbar-center hidden-xs">
     <%= link_to t('About'), about_path, class: "navbar-text top-margin-navbar" %>
-    <%= link_to root_path, class: "navbar-text i18n-button" do %>
-      <%= "English" %>
+    <%= link_to root_path, class: "navbar-text i18n-button", "data-toggle":"dropdown" do %>
+      <%= image_tag('gb', class: "flag") %>
+      <%= t("English") %>
+      <i class="fa fa-caret-down dropdown-toggle"></i>
     <% end %>
     <%= link_to t('Contact'), contact_path, class: "navbar-text top-margin-navbar" %>
+    <ul class="dropdown-menu navbar-wagon-dropdown-menu">
+      <li>
+        <%= link_to url_for( locale: nil ) do %>
+          <%= image_tag('gb', class: "flag") %>
+          <%= t("English") %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to url_for( locale: 'fr' ) do %>
+          <%= image_tag('fr', class: "flag") %>
+          <%= t("French") %>
+        <% end %>
+      </li>
+    </ul>
   </div>
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs">
