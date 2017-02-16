@@ -46,9 +46,9 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def unlock_data(users = [])
+  def unlock_data
     authorize @user
-    User.send_unlock_email(@user, users)
+    User.send_unlock_email(@user)
     # if email is sent successfully
     @user.data_unlocked = true
     @user.save
