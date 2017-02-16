@@ -1,0 +1,65 @@
+<% content_for(:navbar) do %>
+  <%= render 'shared/navbars/navbar_home' %>
+<% end %>
+
+<!-- Banner  -->
+<section class="about-section about-banner">
+  <h2>About Us</h2>
+  <p>BrexitHedge is a London based....</p>
+</section>
+
+<section class="about-section">
+  <h3>Our Vision</h3>
+  <p>We are looking to...</p>
+</section>
+
+<section class="about-section">
+  <h3>Our Team</h3>
+  <div class="team">
+    <div class="team-member">
+      <%= image_tag('julien.jpg') %>
+      <h4>Julien Pageaud</h4>
+      <p>description</p>
+    </div>
+    <div class="team-member">
+      <%= image_tag('will.jpg') %>
+      <h4>Will Tinney</h4>
+      <p>description</p>
+    </div>
+    <div class="team-member">
+      <%= image_tag('sandrine.jpg') %>
+      <h4>Sandrine....</h4>
+      <p>description</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Call to Registration -->
+
+<section class="container text-center home-section" id="registration">
+  <h2><%= t('sign up now to prove residency') %></h2>
+  <span class="registration text">
+  </span>
+  <span class="call-to-action-text">
+    <p><%= t('call to sign up text') %></p>
+  </span>
+  <%= link_to new_user_registration_path, class: "white-text", data: { toggle: "modal", target: ".signup-modal-sm" } do %>
+    <button class="btn orange-button"><%= t('Sign Up') %></button>
+  <% end %>
+</section>
+
+<%= content_for(:after_js) do %>
+  <script>
+    // Navbar colour change on scroll
+    $(document).ready(function(){
+      $(window).scroll(function(){
+        if($(window).scrollTop()>200)
+          $(".navbar-wagon").css({"background-color": "#4717F6", "box-shadow": "0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03)"});
+        else
+          $(".navbar-wagon").css({"background-color": "rgba(255, 255, 255, 0.2)", "box-shadow": "none"});
+      });
+    });
+  </script>
+<% end %>

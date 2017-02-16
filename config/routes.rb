@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     devise_for :users, controllers: { registrations: 'registrations', confirmations: 'confirmations' }
     get 'confirm', to: 'pages#confirm'
 
+    get 'about', to: 'pages#about'
+
     post '/subscribe', to: 'pages#subscribe'
 
 
