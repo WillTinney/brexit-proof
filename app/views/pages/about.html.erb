@@ -3,51 +3,41 @@
 <% end %>
 
 <!-- Banner  -->
-<section class="about-section about-banner">
-  <h2>About Us</h2>
-  <p>BrexitHedge is a London based....</p>
-</section>
+<div class="about-section about-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url(<%= image_path('london.jpg') %>);">
+  <div class="container about-banner-content">
+    <h2>About Us</h2>
+    <p>BrexitHedge is a London based....</p>
+  </div>
+</div>
 
-<section class="about-section">
-  <h3>Our Vision</h3>
-  <p>We are looking to...</p>
-</section>
-
-<section class="about-section">
-  <h3>Our Team</h3>
-  <div class="team">
-    <div class="team-member">
-      <%= image_tag('julien.jpg') %>
-      <h4>Julien Pageaud</h4>
-      <p>description</p>
-    </div>
-    <div class="team-member">
-      <%= image_tag('will.jpg') %>
-      <h4>Will Tinney</h4>
-      <p>description</p>
-    </div>
-    <div class="team-member">
-      <%= image_tag('sandrine.jpg') %>
-      <h4>Sandrine....</h4>
-      <p>description</p>
-    </div>
+<section class="about-section" style="background-color: #F1F1F1">
+  <div class="container">
+    <h3>Our Vision</h3>
+    <p>We are looking to...</p>
   </div>
 </section>
 
-
-
-<!-- Call to Registration -->
-
-<section class="container text-center home-section" id="registration">
-  <h2><%= t('sign up now to prove residency') %></h2>
-  <span class="registration text">
-  </span>
-  <span class="call-to-action-text">
-    <p><%= t('call to sign up text') %></p>
-  </span>
-  <%= link_to new_user_registration_path, class: "white-text", data: { toggle: "modal", target: ".signup-modal-sm" } do %>
-    <button class="btn orange-button"><%= t('Sign Up') %></button>
-  <% end %>
+<section class="about-section">
+  <div class="container">
+    <h3>Our Team</h3>
+    <div class="team">
+      <div class="team-member">
+        <%= image_tag('julien.jpg') %>
+        <h4>Julien Pageaud</h4>
+        <p>description</p>
+      </div>
+      <div class="team-member">
+        <%= image_tag('will.jpg') %>
+        <h4>Will Tinney</h4>
+        <p>description</p>
+      </div>
+      <div class="team-member">
+        <%= image_tag('sandrine.jpg') %>
+        <h4>Sandrine....</h4>
+        <p>description</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <%= content_for(:after_js) do %>
