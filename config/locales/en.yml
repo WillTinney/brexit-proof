@@ -21,6 +21,9 @@ en:
   Back to Profile: "Back to Profile"
   "No": "No"
   "Yes": "Yes"
+  OK: "OK"
+  Cancel: "Cancel"
+  Send: "Send"
 
   # I18n
   English: "English"
@@ -109,6 +112,8 @@ en:
   successfully unlocked data: "You have successfully unlocked your data!"
   Unlock data: "Unlock data"
   unlock warning: "*this is a permanent unlock of your data and cannot be undone"
+  Data unlock email: "Data unlock email:"
+  send data warning: "This is a permanent unlocking of the data you have provided to official sources. Continue?"
 
   # Children Index
   Add Child: "Add Child"

@@ -34,19 +34,40 @@
             <p><%= t('unlock description') %></p>
 
             <div class="unlock-button">
-              <%= link_to t('Unlock data'), user_unlock_data_path(@user), method: :post, class: 'purple-button', id: "unlock-button", data: {
-                confirm: 'Are you sure?',
-                text: "This is a permanent unlocking of the data you have provided to official sources. You won't be able to revert this!",
-                'confirm-button-text': 'OK',
-                'cancel-button-text': 'Cancel',
-                'confirm-button-color': '#66CD00',
-                'sweet-alert-type': 'warning'
-                } %>
+              <%= link_to t('Unlock data'), '#', class: 'purple-button', id: "unlock-button", data: { toggle: "modal", target: "#email-preview" } %>
               <h5 class="top-margin-small"><strong><%= t('unlock warning') %></strong></h5>
             </div>
           </div>
         </div>
+
+        <!-- Email Preview -->
+        <div class="modal fade" id="email-preview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="myModalLabel"><%= t('Data unlock email') %></h4>
+              </div>
+              <div class="modal-body">
+                <%= render file: 'user_mailer/unlock' %>
+              </div>
+              <div class="modal-footer">
+                 <%= link_to t('Send'), user_unlock_data_path(@user), method: :post, class: 'purple-button', id: "unlock-button", data: {
+                    confirm: t('Are you sure'),
+                    text: t('send data warning'),
+                    'confirm-button-text': t('OK'),
+                    'cancel-button-text': t('Cancel'),
+                    'confirm-button-color': '#66CD00',
+                    'sweet-alert-type': 'warning'
+                    }
+                  %>
+              </div>
+            </div>
+          </div>
+        </div>
+
       <% end %>
+
     </div>
   </div>
 </div>

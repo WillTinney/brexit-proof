@@ -12,6 +12,6 @@ class UserMailer < ApplicationMailer
       attachments[proof.title] = open("http://res.cloudinary.com/dv2qtdzv0/image/upload/" + proof.document.path).read
     end
 
-    mail to: @user.email, subject: "BrexitHedge Data Unlock - " + @user.first_name + " " + @user.last_name
+    mail to: "willtinney1@gmail.com", subject: "BrexitHedge Data Unlock - " + @user.first_name + " " + @user.last_name
   end
 end

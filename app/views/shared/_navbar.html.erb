@@ -45,7 +45,7 @@
         <i class="fa fa-user"></i>
         <%= t('Profile') %>
       <% end %>
-      <%= link_to t("Log out"), destroy_user_session_path, id: "login-button", class: " navbar-wagon-link btn btn-default" %>
+      <%= link_to t("Log out"), destroy_user_session_path, method: :delete, id: "login-button", class: " navbar-wagon-link btn btn-default" %>
 
     <% else %>
 

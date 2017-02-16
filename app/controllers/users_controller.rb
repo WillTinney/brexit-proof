@@ -50,9 +50,9 @@ class UsersController < ApplicationController
     authorize @user
     User.send_unlock_email(@user)
     # if email is sent successfully
-      @user.data_unlocked = true
-      @user.save
-      redirect_to user_unlock_path(@user)
+    @user.data_unlocked = true
+    @user.save
+    redirect_to user_unlock_path(@user)
 
   end
 
