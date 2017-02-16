@@ -1,0 +1,53 @@
+<div class="navbar-wagon navbar-wagon-fixed" id="sign-up-navbar">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= "BrexitHedge" %>
+  <% end %>
+
+  <!-- Central Links -->
+  <div class="navbar-center hidden-xs">
+    <%= link_to t('About'), about_path, class: "navbar-text top-margin-navbar" %>
+    <%= link_to root_path, class: "navbar-text i18n-button" do %>
+      <%= "English" %>
+    <% end %>
+    <%= link_to t('Contact'), contact_path, class: "navbar-text top-margin-navbar" %>
+  </div>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs">
+
+    <!-- Different navigation if login or not -->
+    <% if user_signed_in? %>
+
+      <!-- Profile picture and dropdown -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <i class="fa fa-bars dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to user_path(current_user) do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to root_path do %>
+                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    <% else %>
+
+      <%= link_to t("Sign Up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t("Login"), new_user_session_path, id: "login-button", class: " navbar-wagon-link btn btn-default" %>
+
+    <% end %>
+  </div>
+</div>
