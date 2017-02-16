@@ -13,6 +13,10 @@ fr:
   "No": "No"
   "Yes": "Yes"
 
+  # I18n
+  English: "English"
+  French: "French"
+
   # Home Page
   banner quote: "\"Under the Government’s Brexit bill, over 3 million EU citizens living in the UK now face an uncertain future.\""
   Protect your residency right: "Protect your Residency Right."
@@ -142,6 +146,10 @@ fr:
   # Navbar
   Sign Up: "Sign Up"
   Login: "Login"
+  Log Out: "Log Out"
+  Profile: "Profile"
+  About: "About"
+  Contact: "Contact"
 
   # Footer
   Site Map: "Site Map"
@@ -214,3 +222,18 @@ fr:
   Didn't receive unlock instructions: "Didn't receive unlock instructions?"
   Resend unlock instructions: "Resend unlock instructions"
 
+  # About Page
+  About Us: "About Us"
+  about description: "BrexitHedge is a London based...."
+  Our Vision: "Our Vision"
+  vision description: "We are looking to..."
+  Our Team: "Our Team"
+  julien description: "description"
+  will description: "description"
+  sandrine description: "description"
+
+  # Contact Page
+  Get in touch: "Get in touch"
+  Contact Us: "Contact Us"
+  Careers: "Careers"
+  careers description: "We are always looking for..."

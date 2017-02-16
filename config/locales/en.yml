@@ -155,6 +155,10 @@ en:
   # Navbar
   Sign Up: "Sign Up"
   Login: "Login"
+  Log Out: "Log Out"
+  Profile: "Profile"
+  About: "About"
+  Contact: "Contact"
 
   # Footer
   Site Map: "Site Map"
