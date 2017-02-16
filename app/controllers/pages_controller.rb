@@ -1,8 +1,11 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :confirm, :subscribe ]
+  skip_before_action :authenticate_user!, only: [ :home, :about, :confirm, :subscribe ]
 
   def home
     # redirect_to user_profile_path(current_user) if current_user
+  end
+
+  def about
   end
 
   def confirm

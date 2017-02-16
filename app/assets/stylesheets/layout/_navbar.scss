@@ -23,6 +23,9 @@
   border: 2px solid white;
   padding: 3px 5px;
 }
+.top-margin-navbar {
+  margin-top: 19px;
+}
 .navbar-wagon-fixed {
   position: fixed;
   left: 0px;
@@ -36,6 +39,11 @@
 /* Navbar logo */
 .navbar-wagon-brand img {
   width: 50px;
+}
+
+/* Navbar center section */
+.navbar-center {
+  margin-left: 5%;
 }
 
 /* Navbar right section (with form, links, button) */
