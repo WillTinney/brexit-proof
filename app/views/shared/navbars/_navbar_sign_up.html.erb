@@ -5,8 +5,7 @@
   <% end %>
 
   <!-- Central Links -->
-  <div class="navbar-center hidden-xs">
-    <%= link_to t('About'), '#', class: "navbar-text top-margin-navbar" %>
+  <div class="navbar-center sign-up-navbar-center hidden-xs">
     <%= link_to root_path, class: "navbar-text i18n-button", "data-toggle":"dropdown" do %>
       <% if params[:locale] == 'fr' %>
         <%= image_tag('fr', class: "flag") %>
@@ -17,7 +16,6 @@
       <% end %>
       <i class="fa fa-caret-down dropdown-toggle"></i>
     <% end %>
-    <%= link_to t('Contact'), '#', class: "navbar-text top-margin-navbar" %>
     <ul class="i18n dropdown-menu i18n-dropdown-menu">
       <li>
         <%= link_to url_for( locale: nil ) do %>
