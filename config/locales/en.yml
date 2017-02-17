@@ -121,6 +121,8 @@ en:
   unlock warning: "*this is a permanent unlock of your data and cannot be undone"
   Data unlock email: "Data unlock email:"
   send data warning: "This is a permanent unlocking of the data you have provided to official sources. Continue?"
+  To: "To" # Email
+  Add recipient: "Add Recipient"
 
   # Children Index
   Add Child: "Add Child"
@@ -166,7 +168,7 @@ en:
   # Navbar
   Sign Up: "Sign Up"
   Login: "Login"
-  Log Out: "Log Out"
+  Log out: "Log Out"
   Profile: "Profile"
   About: "About"
   Contact: "Contact"
