@@ -48,12 +48,12 @@ class UsersController < ApplicationController
 
   def unlock_data
     authorize @user
-    User.send_unlock_email(@user)
+    @recipients = params[:user][:recipients]
+    User.send_unlock_email(@user, @recipients)
     # if email is sent successfully
     @user.data_unlocked = true
     @user.save
     redirect_to user_unlock_path(@user)
-
   end
 
   private

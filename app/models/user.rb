@@ -59,8 +59,8 @@ class User < ApplicationRecord
   private
 
   # Data Unlock
-  def self.send_unlock_email(user)
-    UserMailer.unlock(user).deliver_now
+  def self.send_unlock_email(user, recipients)
+    UserMailer.unlock(user, recipients).deliver_now
   end
 
 end

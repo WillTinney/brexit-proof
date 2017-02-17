@@ -51,12 +51,17 @@
               <div class="modal-header relative">
                 <%= t('To') %>: public.enquiries@homeoffice.gsi.gov.uk
                 <a class="email-button"><i class="fa fa-plus" aria-hidden="true" href="#"></i> <%= t('Add recipient') %></a>
+                <%= simple_form_for @user, url: user_unlock_data_path(@user), method: :post do |f| %>
+                  <div id="extra-recipients"></div>
               </div>
               <div class="modal-body">
+                <p class="grey-text"><%= t('proof attached') %></p>
                 <%= render file: 'user_mailer/unlock' %>
               </div>
               <div class="modal-footer">
-                 <%= link_to t('Send'), user_unlock_data_path(@user), method: :post, class: 'purple-button', id: "unlock-button", data: {
+                  <%= f.submit t('Send'), class: 'purple-button', id: "unlock-button" %>
+                <% end %>
+                <%= link_to t('Send'), user_unlock_data_path(@user, recipients: ["test@gmail.com", "you@gmail.com"]), method: :post, data: {
                     confirm: t('Are you sure'),
                     text: t('send data warning'),
                     'confirm-button-text': t('OK'),
@@ -75,3 +80,16 @@
     </div>
   </div>
 </div>
+
+<%= content_for(:after_js) do %>
+  <script>
+    var x = 1;
+    $('.email-button').click(function(e) {
+      e.preventDefault();
+      if(x < 6) {
+        x++;
+        $('#extra-recipients').append("<div class='extra-recipient'><input multiple='multiple' required='required' value class='string optional' type='text' name='user[recipients][]' id='user_recipients'><a class='close-button' href='#'>x</a></div");
+      }
+    });
+  </script>
+<% end %>

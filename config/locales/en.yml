@@ -123,6 +123,7 @@ en:
   send data warning: "This is a permanent unlocking of the data you have provided to official sources. Continue?"
   To: "To" # Email
   Add recipient: "Add Recipient"
+  proof attached: "Proof(s) of Residency attached"
 
   # Children Index
   Add Child: "Add Child"
