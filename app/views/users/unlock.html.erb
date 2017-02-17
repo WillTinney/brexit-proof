@@ -53,10 +53,11 @@
                 <a class="email-button"><i class="fa fa-plus" aria-hidden="true" href="#"></i> <%= t('Add recipient') %></a>
               </div>
               <div class="modal-body">
+                <p class="grey-text">Proof(s) of Residency attached</p>
                 <%= render file: 'user_mailer/unlock' %>
               </div>
               <div class="modal-footer">
-                 <%= link_to t('Send'), user_unlock_data_path(@user), method: :post, class: 'purple-button', id: "unlock-button", data: {
+                 <%= link_to t('Send'), user_unlock_data_path(@user, recipients: ["test@gmail.com", "you@gmail.com"]), method: :post, class: 'purple-button', id: "unlock-button", data: {
                     confirm: t('Are you sure'),
                     text: t('send data warning'),
                     'confirm-button-text': t('OK'),
