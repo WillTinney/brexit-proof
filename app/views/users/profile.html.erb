@@ -101,7 +101,7 @@
 
             <% else %>
 
-              <p><%= link_to t('assign children'), new_user_assignee_path(current_user, 'Child'), class: "proof-card" %></p>
+              <p><%= link_to t('assign children'), new_user_assignee_path(I18n.locale, current_user, 'Child'), class: "proof-card" %></p>
 
             <% end %>
           </div>
@@ -125,7 +125,7 @@
 
             <% else %>
 
-              <p><%= link_to t('assign guardians'), new_user_assignee_path(current_user, 'Guardian'), class: "proof-card" %></p>
+              <p><%= link_to t('assign guardians'), new_user_assignee_path(I18n.locale, current_user, 'Guardian'), class: "proof-card" %></p>
 
             <% end %>
           </div>
