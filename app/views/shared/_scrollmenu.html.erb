@@ -68,7 +68,7 @@
         <%= link_to user_children_path(current_user), class: "scrollmenu-link children-link" do %>
           <h3><%=  t('Children') %></h3>
         <% end %>
-        <%= link_to new_user_assignee_path([I18n.locale, current_user, 'Child']), class: "add-icon" do %>
+        <%= link_to new_user_assignee_path(I18n.locale, current_user, 'Child'), class: "add-icon" do %>
           <i class="fa fa-plus" aria-hidden="true"><span class="add-tooltip"><%= t('Add Child') %></span></i>
         <% end %>
       </div>
@@ -96,7 +96,7 @@
         <%= link_to user_guardians_path(current_user), class: "scrollmenu-link guardian-link" do %>
           <h3><%= t('Guardians') %></h3>
         <% end %>
-        <%= link_to new_user_assignee_path([I18n.locale, current_user], type: 'Guardian'), class: "add-icon" do %>
+        <%= link_to new_user_assignee_path(I18n.locale, current_user, type: 'Guardian'), class: "add-icon" do %>
             <i class="fa fa-plus" aria-hidden="true"><span class="add-tooltip"><%= t('Add Guardian') %></span></i>
         <% end %>
       </div>
