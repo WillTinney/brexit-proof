@@ -87,6 +87,13 @@ en:
   Notes: "Notes"
   assign notes: "You have not created any notes. Click here to go to open your notes library."
 
+  my details tooltip: "Edit my details"
+  my partner tooltip: "Edit partner details"
+  my children tooltip: "View children"
+  my guardians tooltip: "View guardians"
+  my proof tooltip: "Edit proof of residency"
+  my notes tooltip: "Edit notes"
+
   # My Details
   details tooltip: "The more accurate and complete the information you provide, the easier it will to prove your residency"
   Change Picture: "Change Picture"
