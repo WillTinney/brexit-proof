@@ -14,7 +14,7 @@
             <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip"><%= t('details incomplete tooltip') %></span></i>
 
           <% end %>
-          <h4><%= link_to t('My Details'), user_path(current_user), class: "details-link" %></h4>
+          <h4 class="profile-card-link"><%= link_to t('My Details'), user_path(current_user), class: "details-link" %><span class="card-tooltip"><%= t('my details tooltip') %></span></h4>
           <hr>
           <div class="card-content card-overflow">
             <%= link_to user_path(current_user) do %>
@@ -61,7 +61,7 @@
               <% unless partner.details_completed? %>
                 <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip"><%= t('details incomplete tooltip') %></span></i>
               <% end %>
-              <h4><%= link_to t("My Partner"), user_assignee_path(@user, partner) , class: "partner-link" %></h4>
+              <h4 class="profile-card-link"><%= link_to t("My Partner"), user_assignee_path(@user, partner) , class: "partner-link" %><span class="card-tooltip"><%= t('my partner tooltip') %></span></h4>
               <hr>
               <div class="card-content card-overflow">
                 <p><strong><%= link_to partner.name_surname, user_assignee_path(@user, partner) %></strong></p>
@@ -77,7 +77,7 @@
             <h4><%= link_to t("My Partner"), "#" , class: "partner-link" %></h4>
             <hr>
             <div class="card-content card-overflow">
-              <p><%= link_to t("assign a partner"), new_user_assignee_path(current_user, 'Recipient', relationship: 'Partner'), class: "proof-card" %></p>
+              <p><%= link_to t("assign a partner"), new_user_assignee_path(I18n.locale, current_user, 'Recipient', relationship: 'Partner'), class: "proof-card" %></p>
             </div>
           </div>
 
@@ -86,7 +86,7 @@
 
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="alt-card black-links">
-          <h4><%= link_to t("My Children"),user_children_path(current_user), class: "children-link" %></h4>
+          <h4 class="profile-card-link"><%= link_to t("My Children"),user_children_path(current_user), class: "children-link" %><span class="card-tooltip"><%= t('my children tooltip') %></span></h4>
           <hr>
           <div class="card-content card-overflow">
             <% if !@user.children.empty? %>
@@ -101,7 +101,7 @@
 
             <% else %>
 
-              <p><%= link_to t('assign children'), new_user_assignee_path(current_user, 'Child'), class: "proof-card" %></p>
+              <p><%= link_to t('assign children'), new_user_assignee_path(I18n.locale, current_user, 'Child'), class: "proof-card" %></p>
 
             <% end %>
           </div>
@@ -110,7 +110,7 @@
 
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="alt-card black-links">
-          <h4><%= link_to t("My Guardians"), user_guardians_path(current_user), class: "guardian-link" %></h4>
+          <h4 class="profile-card-link"><%= link_to t("My Guardians"), user_guardians_path(current_user), class: "guardian-link" %><span class="card-tooltip"><%= t('my guardians tooltip') %></span></h4>
           <hr>
           <div class="card-content card-overflow">
             <% if !@user.guardians.empty? %>
@@ -125,7 +125,7 @@
 
             <% else %>
 
-              <p><%= link_to t('assign guardians'), new_user_assignee_path(current_user, 'Guardian'), class: "proof-card" %></p>
+              <p><%= link_to t('assign guardians'), new_user_assignee_path(I18n.locale, current_user, 'Guardian'), class: "proof-card" %></p>
 
             <% end %>
           </div>
@@ -135,9 +135,9 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="alt-card black-links">
           <% if @user.proofs.empty? %>
-            <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip">t('No proof of residency')</span></i>
+            <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip"><%= t('No proof of residency') %></span></i>
           <% end %>
-          <h4><%= link_to t("Proof of Residency"), user_proofs_path(current_user) %></h4>
+          <h4 class="profile-card-link"><%= link_to t("Proof of Residency"), user_proofs_path(current_user) %><span class="card-tooltip"><%= t('my proof tooltip') %></span></h4>
           <hr>
           <div class="card-content card-overflow">
             <% if !@user.proofs.empty? %>
@@ -157,7 +157,7 @@
 
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="alt-card black-links">
-          <h4><%= link_to t("Notes"), user_notes_path(current_user) %></h4>
+          <h4 class="profile-card-link"><%= link_to t("Notes"), user_notes_path(current_user) %><span class="card-tooltip"><%= t('my notes tooltip') %></span></h4>
           <hr>
           <div class="card-content card-overflow">
             <% if !@user.notes.empty? %>

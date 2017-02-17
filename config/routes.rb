@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   mount Attachinary::Engine => "/attachinary"
 
-  scope '(:locale)', locale: /fr/ do
+  # scope '(:locale)', locale: /fr/, default:  do
+  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/, defaults: {locale: "en"} do
     root to: 'pages#home'
 
     devise_for :users, controllers: { registrations: 'registrations', confirmations: 'confirmations' }

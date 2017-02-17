@@ -13,7 +13,7 @@
           <%= link_to t("Add Note"), new_user_note_path([I18n.locale, current_user, @note]), remote: true, class: "btn orange-button" %>
         </div>
 
-        <div class="blue-box detail-box">
+        <div class="blue-box detail-box side-margin-small top-margin">
           <p><%= t('note description html') %></p>
         </div>
 
@@ -55,7 +55,7 @@
           <h2>Notes</h2>
 
           <div class="blue-box">
-            <p>>%= t('note description 4') %></p>
+            <p><%= t('note description html') %></p>
           </div>
         </div>
 

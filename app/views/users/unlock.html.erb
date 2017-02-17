@@ -48,6 +48,10 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 <h4 class="modal-title" id="myModalLabel"><%= t('Data unlock email') %></h4>
               </div>
+              <div class="modal-header relative">
+                <%= t('To') %>: public.enquiries@homeoffice.gsi.gov.uk
+                <a class="email-button"><i class="fa fa-plus" aria-hidden="true" href="#"></i> <%= t('Add recipient') %></a>
+              </div>
               <div class="modal-body">
                 <%= render file: 'user_mailer/unlock' %>
               </div>
