@@ -90,6 +90,14 @@
         x++;
         $('#extra-recipients').append("<div class='extra-recipient'><input multiple='multiple' required='required' value class='string optional' type='text' name='user[recipients][]' id='user_recipients'><a class='close-button' href='#'>x</a></div");
       }
+      $('.close-button').click(function(e) {
+      e.preventDefault();
+      console.log(this);
+      $(this).parent('div').remove();
+      x--;
     });
+    });
+
+
   </script>
 <% end %>
