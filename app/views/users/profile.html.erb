@@ -27,7 +27,7 @@
               <p class="notice-text"><%= t('citizenship required') %></p>
             <% end %>
 
-            <% if @user.date_of_birth %>
+            <% if @user.date_of_birth || @user.phone_number != "" %>
               <p><%= t('DoB') + ": " + @user.date_of_birth %></p>
             <% else %>
               <p class="notice-text"><%= t('date of birth required') %></p>
@@ -35,13 +35,13 @@
 
             <p><%= t('Email') + ": " + @user.email %></p>
 
-            <% if @user.phone_number != "" %>
+            <% if @user.phone_number != "" || @user.phone_number != nil %>
               <p><%= t('Phone Number') + ": " + @user.phone_number %></p>
             <% else %>
               <p class="notice-text"><%= t('phone number required') %></p>
             <% end %>
 
-            <% if @user.address_line_1 != "" %>
+            <% if @user.address_line_1 != "" || @user.address_line_1 != nil %>
               <p><%= t('Address') + ": " + @user.address_line_1 %><%= ", " + @user.address_line_2 if @user.address_line_2 %></p>
               <p><%= @user.try(:city) %><%= ", " + @user.postcode if @user.postcode %><%= ", " + @user.country if @user.country %></p>
             <% else %>
