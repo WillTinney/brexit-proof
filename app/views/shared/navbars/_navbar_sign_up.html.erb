@@ -8,10 +8,10 @@
   <div class="navbar-center sign-up-navbar-center hidden-xs">
     <%= link_to root_path, class: "navbar-text i18n-button", "data-toggle":"dropdown" do %>
       <% if params[:locale] == 'fr' %>
-        <%= image_tag('fr', class: "flag") %>
+        <%= image_tag('fr.png', class: "flag") %>
         <%= t("French") %>
       <% else %>
-        <%= image_tag('gb', class: "flag") %>
+        <%= image_tag('gb.png', class: "flag") %>
         <%= t("English") %>
       <% end %>
       <i class="fa fa-caret-down dropdown-toggle"></i>
