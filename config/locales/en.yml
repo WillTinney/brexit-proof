@@ -39,12 +39,12 @@ en:
   Unlock and Prove: "Unlock and Prove"
   unlock description html: "You unlock your data from anywhere and send them to any institution, as the Home Office or an employer. BrexitHedge send a summary of your data asking guardians to confirm your situation."
   Act now: "Act now!"
-  home quote 1: "\"I live in constant uncertainty and dread. Like many others, I feel like I’ve invested my entire adulthood into this country. If I have to I can leave, but many others can’t. \""
+  home quote 1: "\"I live in constant uncertainty and dread. Like many others, I feel like I’ve invested my entire adulthood into this country. If I have to I can leave, but many others can’t.\""
   quote owner 1: "Sylvie, Polish, PhD student"
   home quote 2: "\"My worry is not so much about being kicked out but that my life is here. I have lived here for 18 years, been employed and paid taxes without a break. I also hold a UK driving licence, pay council tax in my name and am on the electoral register for local and European elections.\""
   quote owner 2: "Monika, 46, German, senior director in customer service in large consumer company"
   do I need to pay: "Do I need to pay to use BrexitHedge?"
-  is completely: " BrexitHedge is"
+  is completely: "BrexitHedge is"
   Free: "Free."
   made EU for EU: "Made by EU citizens for EU citizens."
   trust infrastructure: "Trust infrastructure: storage and authenticity"
@@ -83,7 +83,7 @@ en:
   details tooltip: "The more accurate and complete the information you provide, the easier it will to prove your residency"
   Change Picture: "Change Picture"
   Upload: "Upload"
-  Title: "Title" (ex: Mr or Mrs)
+  Title: "Title"
   Email: "Email"
   First name: "First name"
   Middle name: "Middle name"
@@ -187,7 +187,7 @@ en:
   how many children: "How many children do you have?"
   ask child name:
     one: "What is the name of your first child?"
-    other: "What is the name of your next child?" (next on the list)
+    other: "What is the name of your next child?"
   how many guardians: "How many guardians would you like to designate?"
   ask guardian name:
     one: "What is the name of your first guardian?"
@@ -242,3 +242,4 @@ en:
   Contact Us: "Contact Us"
   Careers: "Careers"
   careers description: "We are always looking for talented people with an entrepreneurial spirit and generating bright ideas for our users. Please contact us by email in sending your Curriculum Vitae and a smart introduction to contact@brexithedge.com."
+
