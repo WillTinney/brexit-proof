@@ -18,6 +18,9 @@
 .side-margin-small {
   margin: 0 15px;
 }
+.top-margin-large {
+  margin-top: 50px;
+}
 .top-margin {
   margin-top: 30px;
 }
@@ -74,6 +77,11 @@
 // Other text classes
 .lighter {
   font-weight: lighter;
+}
+@media (max-width: 400px) {
+  .hidden-xxs {
+    display: none;
+  }
 }
 
 // Variable Container Sizes

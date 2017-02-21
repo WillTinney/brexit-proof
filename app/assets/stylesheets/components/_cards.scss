@@ -74,7 +74,7 @@
 }
 .alt-card {
   position: relative;
-  min-height: 270px;
+  min-height: 260px;
   height: 25vh;
   margin: 20px 0;
   box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.1);
@@ -91,15 +91,12 @@
   }
   h4 {
     font-weight: bold;
+    margin-bottom: 6px;
   }
   p {
     margin: 3px;
-    font-size: 16px;
-    // color: #666666;
+    font-size: 15px;
   }
-  // a {
-  //   color: #666666;
-  // }
 }
 .card-content {
   overflow-y: auto;
@@ -170,6 +167,11 @@
     margin-top: 6px;
   }
 }
+@media (max-width: 500px) {
+  .note-title {
+    margin-top: 10px;
+  }
+}
 .note-spacing {
   min-height: 30px;
   padding: 0 20px;
@@ -219,6 +221,18 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+}
+@media (max-width: 500px) {
+  .proof-spacing {
+    flex-direction: column;
+    justify-content: center;
+    margin: 60px 0;
+  }
+}
+@media (max-width: 500px) {
+  .details-box {
+    margin-left: 0 !important;
+  }
 }
 .submit-button {
   margin: 10px auto;

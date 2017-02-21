@@ -53,6 +53,11 @@
     min-width: 800px;
   }
 }
+@media (max-width: 550px) {
+  .wizard-box form {
+    min-width: 350px;
+  }
+}
 .wizard-buttons {
   margin-top: 20px;
   display: flex;
@@ -86,4 +91,9 @@
 }
 .question-width {
   width: 450px;
+}
+@media (max-width: 450px) {
+  .question-width {
+    width: auto;
+  }
 }
