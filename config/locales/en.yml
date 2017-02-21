@@ -230,16 +230,17 @@ en:
 
   # About Page
   About Us: "About Us"
-  about description: "IglooWorld Ltd is a London based Tech StartUp willing to provide trust infrastructure solutions to citizens for a better management of their future."
+  about description: "IglooWorld Ltd is a London based Tech StartUp that provides a trust infrastructure solutions to citizens for a better management of their future."
   Our Vision: "Our vision."
   vision description: "We are looking to help everyone, no matter what their circumstances, go through challenging time and obtain as much as possible support. We've started this journey by giving everybody access to free service and to hold that as long as possible. By combining a brand which people trust, a product which is beautiful to use and amazing technology, we deliver a unique experience that helps people take control of their residence status."
   Our Team: "Our Team"
   sandrine description: "Co-Founder and CEO. With Brexit, Sandrine has been thinking about data, privacy, citizenship and residency rights. It all comes together in BrexitHedge."
   will description: "Will is the full stack Dev Guru. By keeping our users at the centre of everything we build, he makes sure that BrexitHedge is always a pleasure to use."
+  julien description: "Co-Founder. Julien has a strong background in financial services and tech. He helps us realise product vision and to deliver the right product features."
 
   # Contact Page
   Get in touch: "Get in touch"
   Contact Us: "Contact Us"
   Careers: "Careers"
-  careers description: "We are always looking for talented people with an entrepreneurial spirit and generating bright ideas for our users. Please contact us by email in sending your Curriculum Vitae and a smart introduction to contact@brexithedge.com."
+  careers description: "In our IglooWorld we are always looking for talented people with an entrepreneurial spirit and generating bright ideas for our users. Please contact us by email in sending your Curriculum Vitae and a smart introduction to contact@brexithedge.com."
 
