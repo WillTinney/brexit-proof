@@ -318,6 +318,13 @@
   background-color: #40BA45;
 }
 
+.home-flashes {
+  position: absolute;
+  top: 65px;
+  z-index: 11;
+  width: 100%;
+}
+
 // Banner slideshow
 #slideshow {
   position: relative;
