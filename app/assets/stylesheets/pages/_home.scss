@@ -131,7 +131,7 @@
   background: rgba(240, 240, 240, 0.8);
   margin-top: 30px;
   padding: 20px 10px 10px 10px;
-  height: 300px;
+  height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,7 +176,7 @@
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 90vh;
+  height: 70vh;
 }
 @media (max-width: 767px) {
   #feedback {
@@ -193,7 +193,7 @@
   background: #F8F8F9;
   border-radius: 5px;
   border: 3px solid rgb(230,230,230);
-  padding: 20px;
+  padding: 1  0px;
   position: relative;
   p {
     font-size: 16px;
@@ -239,6 +239,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 5px;
 }
 .comparison-icon.green, p.green {
   color: $orange;
