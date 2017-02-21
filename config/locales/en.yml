@@ -113,7 +113,7 @@ en:
 
   # Guardian Index
   Add New: "Add New"
-  guardian explanation: "Guardians are UK Citizens who can testify you match the residency criterias defined by the government"
+  guardian explanation: "Guardians are UK Citizens who can testify you match the residency criteria defined by the government"
   New Guardian: "New Guardian"
   New Partner: "New Partner"
 
@@ -192,7 +192,7 @@ en:
   ask guardian name:
     one: "What is the name of your first guardian?"
     other: "What is the name of your next guardian?"
-  guardian brief description: "Guardians are UK Citizens who can testify you match the residency criterias defined by the government."
+  guardian brief description: "Guardians are UK Citizens who can testify you match the residency criteria defined by the government."
   guardian footnote: "*guardian details can be edited at any time"
   Partner information: "Partner information"
   partner description: "Please enter some basic details about your partner."
