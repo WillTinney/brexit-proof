@@ -18,6 +18,13 @@
   font-weight: bold;
   margin-top: 30%;
 }
+@media (max-width: 600px) {
+  #banner-button {
+    font-size: 18px;
+    padding: 8px 30px;
+    margin-top: 60px;
+  }
+}
 #banner-button:hover {
   box-shadow: 0 5px 5px rgba(0,0,0,0.6);
 }
