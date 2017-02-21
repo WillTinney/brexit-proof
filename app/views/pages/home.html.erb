@@ -23,11 +23,11 @@
     <div class="banner-button">
       <% if user_signed_in? %>
         <%= link_to user_profile_path(current_user) do %>
-          <button id="banner-button" class="btn btn-transparent"><%= t(' protect your resident status') %></button>
+          <button id="banner-button" class="btn btn-transparent"><%= t('protect your resident status') %></button>
         <% end %>
       <% else %>
         <%= link_to new_user_registration_path do %>
-          <button id="banner-button" class="btn btn-transparent"><%= t(' protect your resident status') %></button>
+          <button id="banner-button" class="btn btn-transparent"><%= t('protect your resident status') %></button>
         <% end %>
         <%# link_to new_user_registration_path, data: { toggle: "modal", target: ".signup-modal-sm" } do %>
          <!--  <button id="banner-button" class="btn btn-transparent">Protect your Resident Status</button> -->

@@ -168,6 +168,11 @@
 .sign-up-navbar-center {
   margin-right: 45%;
 }
+@media (max-width: 500px) {
+  .sign-up-navbar-center {
+    margin-right: 0;
+  }
+}
 
 /* I18n dropdown menu */
 
