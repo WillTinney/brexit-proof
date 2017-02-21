@@ -100,7 +100,7 @@ en:
   # Unlock Data
   Unlocking your data: "Unlocking your data"
   unlock tooltip: "Unlocking your data allows you to share your proofs of residency and your guardian’s details."
-  unlock description: "Unlocking your data consists in sending an email to designated recipients in order to provide tangible proofs of your historical residency."
+  unlock description: "Unlocking your data involves sending an email to designated recipients in order to provide tangible proofs of your historical residency."
   successfully unlocked data: "You have successfully unlocked your data!"
   Unlock data: "Unlock data"
   unlock warning: "*This is a permanent unlock of your data and cannot be undone"
