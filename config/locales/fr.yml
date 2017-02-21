@@ -1,3 +1,4 @@
+
 fr:
  # Buttons
   View: "Voir"
@@ -105,13 +106,13 @@ fr:
 
   # Unlock Data
   Unlocking your data: "Debloquer vos donnees"
-  unlock tooltip: "Debloquer vos donnees vous permet de partager vos preuves de residence et les informations concernant vos gardiens."
-  unlock description: "Unlocking your data consists in sending an email to designated recipients in order to provide tangible proofs of your historical residency."
-  successfully unlocked data: "You have successfully unlocked your data!"
-  Unlock data: "Unlock data"
-  unlock warning: "*This is a permanent unlock of your data and cannot be undone"
-  Data unlock email: "Data unlock email:"
-  send data warning: "This is a permanent unlocking of the data you have provided to official sources. Continue?"
+  unlock tooltip: "Debloquer vos donnees vous permet de partager vos preuves de residence et les informations concernant vos gardiens."
+  unlock description: "Unlocking your data consists in sending an email to designated recipients in order to provide tangible proofs of your historical residency."
+  successfully unlocked data: "You have successfully unlocked your data!"
+  Unlock data: "Unlock data"
+  unlock warning: "*This is a permanent unlock of your data and cannot be undone"
+  Data unlock email: "Data unlock email:"
+  send data warning: "This is a permanent unlocking of the data you have provided to official sources. Continue?"
 
   To: "Destinataire" # Email
   Add recipient: "Ajouter un destinataire"
