@@ -12,14 +12,14 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
+    <div class="col-sm-6 col-sm-offset-3">
       <br>
       <br>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-inputs">
+        <div class="form-inputs remove-asterisk">
           <div class="row">
             <div class="col-xs-3">
               <%= f.input :title, required: true, autofocus: true, collection: ["Mr", "Mrs", "Ms"], label: t('Title') %>

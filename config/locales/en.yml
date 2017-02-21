@@ -1,14 +1,4 @@
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  # Buttons
   View: "View"
   New: "New"
   Create: "Create"
@@ -27,37 +17,38 @@ en:
 
   # I18n
   English: "English"
-  French: "French"
+  French: "Francais"
+  Spanish: “Espanol”
+  Polish: “XXX”
 
   # Home Page
   banner quote: "\"Under the Government’s Brexit bill, over 3 million EU citizens living in the UK now face an uncertain future.\""
-  Protect your residency right: "Protect your residency right."
-  Dont let the Border Force make your life impossible: "Don't let the Border Force make your life impossible."
-  collect proof, designate guardians: "Collect proof. Designate guardians."
+  Protect your residency right: "Protect your Residency Right. Don’t let Border Forces make your life impossible."
+  collect proof, designate guardians: "Collect proof. Designate Guardians."
   access anytime, anywhere: "Access them at anytime, from anywhere."
   protect your resident status: "Protect your Resident Status"
   Why BrexitHedge: "Why BrexitHedge?"
-  why description html: "Residency Rights that will apply to EU Citizens remain uncertain. BrexitHedge help you to build up <strong>a trust infrastructure for UK authorities</strong>. History and recent political events remind us <strong>we need to be prepared to any situation</strong> and to protect our relatives."
+  why description html: "Residency Rights that will apply to EU Citizens remain uncertain. BrexitHedge help you to build up <strong>a Trust Infrastructure for UK Authorities</strong>. History and recent political events remind us <strong>we need to be prepared to any situation</strong> and to protect our relatives."
   what does it do for me: "What does BrexitHedge do for me?"
   what description 1: "BrexitHedge helps EU citizens living in the UK protect their residency right to stay post Brexit."
-  what description 2: "BrexitHedge provides a unique infrastructure of authenticity and trust, and give people the ability to access their data anywhere they are."
+  what description 2: "BrexitHedge provide a unique infrastructure of authenticity and trust, and give people the ability to access their data anywhere they are."
   Collect and Save: "Collect and Save"
-  collect description html: "We help you <strong>to collect your proofs of residency</strong>. We also securely save them to keep your personal data confidential. We never distribute or sell your data to anyone."
+  collect description html: "We help you to collect your proofs of residency. We also securely save them to keep your personal data confidential. We never distribute or sell your data to anyone."
   Designate Guardians: "Designate Guardians"
-  designate description html: "You designate <strong>UK Citizens who can testify you match the criteria</strong> defined by the government to stay in the UK."
+  designate description html: "You designate UK Citizens who can testify you match the criteria defined by the government to stay in the UK."
   Unlock and Prove: "Unlock and Prove"
-  unlock description html: "You unlock your data from anywhere and send them to any institution, as the Home Office or an employer. BrexitHedge send <strong>a summary of your data asking guardians to confirm your situation</strong>."
+  unlock description html: "You unlock your data from anywhere and send them to any institution, as the Home Office or an employer. BrexitHedge send a summary of your data asking guardians to confirm your situation."
   Act now: "Act now!"
   home quote 1: "\"I live in constant uncertainty and dread. Like many others, I feel like I’ve invested my entire adulthood into this country. If I have to I can leave, but many others can’t.\""
   quote owner 1: "Sylvie, Polish, PhD student"
-  home quote 2: "\"My worry is not so much about being kicked out but that my life is here. I have lived here for 18 years, been employed and paid taxes without a break.\""
+  home quote 2: "\"My worry is not so much about being kicked out but that my life is here. I have lived here for 18 years, been employed and paid taxes without a break. I also hold a UK driving licence, pay council tax in my name and am on the electoral register for local and European elections.\""
   quote owner 2: "Monika, 46, German, senior director in customer service in large consumer company"
   do I need to pay: "Do I need to pay to use BrexitHedge?"
   is completely: "BrexitHedge is"
   Free: "Free."
   made EU for EU: "Made by EU citizens for EU citizens."
   trust infrastructure: "Trust infrastructure: storage and authenticity"
-  designate guardians: "Designate your \"guardians\""
+  designate guardians: "Designate your guardians"
   unlock anywhere: "Unlock your data access from anywhere"
   update anytime: "Update anytime"
   sign up now to prove residency: "Sign up now to prove your right to residency"
@@ -88,13 +79,6 @@ en:
   Notes: "Notes"
   assign notes: "You have not created any notes. Click here to go to open your notes library."
 
-  my details tooltip: "Edit my details"
-  my partner tooltip: "Edit partner details"
-  my children tooltip: "View children"
-  my guardians tooltip: "View guardians"
-  my proof tooltip: "Edit proof of residency"
-  my notes tooltip: "Edit notes"
-
   # My Details
   details tooltip: "The more accurate and complete the information you provide, the easier it will to prove your residency"
   Change Picture: "Change Picture"
@@ -115,16 +99,13 @@ en:
 
   # Unlock Data
   Unlocking your data: "Unlocking your data"
-  unlock tooltip: "Unlocking your data allows..."
-  unlock description: "This means..."
+  unlock tooltip: "Unlocking your data allows you to share your proofs of residency and your guardian’s details."
+  unlock description: "Unlocking your data consists in sending an email to designated recipients in order to provide tangible proofs of your historical residency."
   successfully unlocked data: "You have successfully unlocked your data!"
   Unlock data: "Unlock data"
-  unlock warning: "*this is a permanent unlock of your data and cannot be undone"
+  unlock warning: "*This is a permanent unlock of your data and cannot be undone"
   Data unlock email: "Data unlock email:"
   send data warning: "This is a permanent unlocking of the data you have provided to official sources. Continue?"
-  To: "To" # Email
-  Add recipient: "Add Recipient"
-  proof attached: "Proof(s) of Residency attached"
 
   # Children Index
   Add Child: "Add Child"
@@ -132,7 +113,7 @@ en:
 
   # Guardian Index
   Add New: "Add New"
-  guardian explanation: "Guardians are..."
+  guardian explanation: "Guardians are UK Citizens who can testify you match the criteria defined by the government to stay in the UK"
   New Guardian: "New Guardian"
   New Partner: "New Partner"
 
@@ -141,7 +122,7 @@ en:
   Add Document: "Add Document"
   proof tooltip: "By including as much documentation as possible on your UK residency you give yourself the best chance of protection."
   Are you sure: "Are you sure?"
-  proof description html: "In this section, you save all <strong>evidence that you’ve been living in the UK</strong>, such as gas, electricity and council tax bills, and letters from government departments (HMRC, State School, NHS, etc...). It is also in your interest to show evidence that you’ve been working, studying, self-employed, self-sufficient or looking for work, such as payslips, P60 forms and bank statements.<br> You could be asked to send those documents to UK Authorities as the Home Office if you need to justify your residency historical and your social situation."
+  proof description: "In this section, you save all evidence that you’ve been living in the UK, such as gas or electricity bills, council tax receipt, and letters from government departments (HMRC, State School, NHS, etc...). It is also in your interest to show evidence that you’ve been working, studying, self-employed, self-sufficient or looking for work, such as payslips, P60 forms and bank statements.  You could be asked to send those documents to UK authorities as the Home Office if you need to justify your residency historical and your social situation."
   not uploaded residency: "You have not uploaded a proof of residency."
   please use form below: "Please use the form below to do so:"
   Submit Proof of Residency: "Submit Proof of Residency"
@@ -152,7 +133,8 @@ en:
   # Notes Library
   Notes Library: "Notes Library"
   Add Note: "Add Note"
-  note description html: "In this section, you write notes <strong>to explain your particular situation or anything you think either guardians or UK Authorities should know about your situation</strong> (historical addresses, employment, etc...)."
+  note description html: "In this section, you write notes to explain your particular situation or anything you think either guardians or UK Authorities should know about your situation (historical addresses, employment, etc...)."
+  note description 2: "In this section, you write notes to explain your particular situation or anything you think either guardians or UK Authorities should know about your situation."
   not added notes: "You have not yet added any notes."
   Content: "Content"
 
@@ -170,9 +152,9 @@ en:
   # Navbar
   Sign Up: "Sign Up"
   Login: "Login"
-  Log out: "Log Out"
+  Log Out: "Log Out"
   Profile: "Profile"
-  About: "About"
+  About: "About us"
   Contact: "Contact"
 
   # Footer
@@ -248,18 +230,16 @@ en:
 
   # About Page
   About Us: "About Us"
-  about description: "BrexitHedge is a London based...."
-  Our Vision: "Our Vision"
-  vision description: "We are looking to..."
+  about description: "Anchored is a London based tech start up willing to provide trust infrastructure solutions to citizens for a better management of their future."
+  Our Vision: "Our vision."
+  vision description: "We are looking to help everyone, no matter what their circumstances, go through challenging time and obtain as much as possible support. We've started this journey by giving everybody access to free service and to hold that as long as possible. By combining a brand which people trust, a product which is beautiful to use and amazing technology, we deliver a unique experience that helps people take control of their residence status.."
   Our Team: "Our Team"
-  julien description: "description"
-  will description: "description"
-  sandrine description: "description"
+  sandrine description: "Co-Founder and CEO. With Brexit, Sandrine has been thinking about data, privacy, citizenship and residency rights. It all comes together in BrexitHedge."
+  will description: "Will is the full stack Dev Guru. By keeping our users at the centre of everything we build, he makes sure that BrexitHedge is always a pleasure to use."
 
   # Contact Page
   Get in touch: "Get in touch"
   Contact Us: "Contact Us"
   Careers: "Careers"
-  careers description: "We are always looking for..."
-
+  careers description: "We are always looking for talented people with an entrepreneurial spirit and generating bright ideas for our users. Please contact us by email in sending your Curriculum Vitae and a smart introduction to contact@brexithedge.com."
 

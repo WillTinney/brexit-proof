@@ -2,7 +2,7 @@
   <%= render 'shared/navbar' %>
 <% end %>
 
-<div class="dashboard-box" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url('/assets/background.jpg')">
+<div class="dashboard-box" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url(<%= asset_path('background.jpg') %>)">
   <div id="tab-content">
     <br><br>
 
@@ -27,7 +27,7 @@
               <p class="notice-text"><%= t('citizenship required') %></p>
             <% end %>
 
-            <% if @user.date_of_birth %>
+            <% if @user.date_of_birth && @user.date_of_birth != "" %>
               <p><%= t('DoB') + ": " + @user.date_of_birth %></p>
             <% else %>
               <p class="notice-text"><%= t('date of birth required') %></p>
@@ -35,13 +35,13 @@
 
             <p><%= t('Email') + ": " + @user.email %></p>
 
-            <% if @user.phone_number != "" %>
+            <% if @user.phone_number && @user.phone_number != "" %>
               <p><%= t('Phone Number') + ": " + @user.phone_number %></p>
             <% else %>
               <p class="notice-text"><%= t('phone number required') %></p>
             <% end %>
 
-            <% if @user.address_line_1 != "" %>
+            <% if @user.address_line_1 && @user.address_line_1 != "" %>
               <p><%= t('Address') + ": " + @user.address_line_1 %><%= ", " + @user.address_line_2 if @user.address_line_2 %></p>
               <p><%= @user.try(:city) %><%= ", " + @user.postcode if @user.postcode %><%= ", " + @user.country if @user.country %></p>
             <% else %>

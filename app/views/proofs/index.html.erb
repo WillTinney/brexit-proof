@@ -2,7 +2,7 @@
   <%= render 'shared/navbar' %>
 <% end %>
 
-<div class="dashboard-box" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url('/assets/background.jpg')">
+<div class="dashboard-box" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url(<%= asset_path('background.jpg') %>)">
   <div id="tab-content">
     <div class="container">
       <br>
@@ -54,7 +54,7 @@
           <h2><%= t('Proof of Residency') %></h2>
 
           <div class="blue-box">
-            <p><%= t('proof description html') %></p>
+            <p><%= t('proof description') %></p>
           </div>
         </div>
 
