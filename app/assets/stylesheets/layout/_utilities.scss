@@ -75,6 +75,11 @@
 .lighter {
   font-weight: lighter;
 }
+@media (max-width: 400px) {
+  .hidden-xxs {
+    display: none;
+  }
+}
 
 // Variable Container Sizes
 .container-small, .container-large {

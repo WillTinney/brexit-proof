@@ -9,10 +9,10 @@
     <%= link_to t('About'), about_path, class: "navbar-text top-margin-navbar hidden-xs" %>
     <%= link_to root_path, class: "navbar-text i18n-button", "data-toggle":"dropdown" do %>
       <% if params[:locale] == 'fr' %>
-        <%= image_tag('fr.png', class: "flag") %>
+        <%= image_tag('fr.png', class: "flag hidden-xxs") %>
         <%= t("French") %>
       <% else %>
-        <%= image_tag('gb.png', class: "flag") %>
+        <%= image_tag('gb.png', class: "flag hidden-xxs") %>
         <%= t("English") %>
       <% end %>
       <i class="fa fa-caret-down dropdown-toggle"></i>

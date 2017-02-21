@@ -222,6 +222,18 @@
   align-items: center;
   justify-content: space-around;
 }
+@media (max-width: 500px) {
+  .proof-spacing {
+    flex-direction: column;
+    justify-content: center;
+    margin: 60px 0;
+  }
+}
+@media (max-width: 500px) {
+  .details-box {
+    margin-left: 0 !important;
+  }
+}
 .submit-button {
   margin: 10px auto;
 }
