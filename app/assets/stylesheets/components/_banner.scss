@@ -73,17 +73,17 @@
   margin: 40px auto;
   z-index: 11;
 }
+@media (max-width: 1200px) {
+  #home-arrow {
+    display: none;
+  }
+}
 @media (min-width: 1200px) {
   #home-arrow {
-    margin-top: 140px;
+    margin-top: 80px;
   }
 }
 .fa-chevron-down{
   font-size: 30px;
   color: $background-grey;
-}
-@media (max-width: 720px) {
-  #home-arrow {
-    display: none;
-  }
 }
