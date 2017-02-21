@@ -25,6 +25,16 @@
     margin-top: 60px;
   }
 }
+@media (max-width: 1000px) {
+  #banner-button {
+    margin-top: 20%;
+  }
+}
+@media (max-width: 1200px) {
+  #banner-button {
+    margin-bottom: 20%;
+  }
+}
 #banner-button:hover {
   box-shadow: 0 5px 5px rgba(0,0,0,0.6);
 }
