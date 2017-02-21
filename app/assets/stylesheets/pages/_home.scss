@@ -90,6 +90,11 @@
     margin: 18% 8% 1% 8%;
   }
 }
+@media (max-width: 500px) {
+  #bt-1 {
+    margin: 20% 8% 0 8%;
+  }
+}
 #bt-2 {
   margin: 4% 8% 2% 8%;
 }
@@ -291,6 +296,11 @@
     padding: 0 15%;
     margin-top: 10px;
     margin-bottom: 30px;
+  }
+}
+@media (max-width: 500px) {
+  #registration {
+    height: 55vh;
   }
 }
 .email-notice {

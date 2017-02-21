@@ -167,6 +167,11 @@
     margin-top: 6px;
   }
 }
+@media (max-width: 500px) {
+  .note-title {
+    margin-top: 10px;
+  }
+}
 .note-spacing {
   min-height: 30px;
   padding: 0 20px;

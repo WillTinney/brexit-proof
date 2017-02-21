@@ -29,7 +29,7 @@
 .banner-gradient {
   background-size: cover;
   background: linear-gradient(120deg, rgba(5,0,88,0.8) 20%, rgba(222,230,50,0.1) 90%);
-  min-height: 100px;
+  min-height: 500px;
   max-height: 800px;
   width: 100%;
   position: absolute;
@@ -68,6 +68,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: #F8F8F8;
 }
 #home-arrow {
   margin: 40px auto;
