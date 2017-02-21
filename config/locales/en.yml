@@ -23,17 +23,17 @@ en:
 
   # Home Page
   banner quote: "\"Under the Government’s Brexit bill, over 3 million EU citizens living in the UK now face an uncertain future.\""
-  Protect your residency right: "Protect your Residency Right. Don’t let Border Forces make your life impossible."
+  Protect your residency right: "Protect your Residency Right. Don’t let the Border Forces make your life impossible."
   collect proof, designate guardians: "Collect proof. Designate Guardians."
   access anytime, anywhere: "Access them at anytime, from anywhere."
   protect your resident status: "Protect your Resident Status"
   Why BrexitHedge: "Why BrexitHedge?"
-  why description html: "Residency Rights that will apply to EU Citizens remain uncertain. BrexitHedge help you to build up <strong>a Trust Infrastructure for UK Authorities</strong>. History and recent political events remind us <strong>we need to be prepared to any situation</strong> and to protect our relatives."
+  why description html: "Residency Rights that will apply to EU Citizens remain uncertain. BrexitHedge help you to build up <strong>a Trust Infrastructure for UK Authorities</strong>. History and recent political events remind us <strong>we need to be prepared for any situation</strong> and to protect our relatives."
   what does it do for me: "What does BrexitHedge do for me?"
   what description 1: "BrexitHedge helps EU citizens living in the UK protect their residency right to stay post Brexit."
   what description 2: "BrexitHedge provide a unique infrastructure of authenticity and trust, and give people the ability to access their data anywhere they are."
   Collect and Save: "Collect and Save"
-  collect description html: "We help you to collect your proofs of residency. We also securely save them to keep your personal data confidential. We never distribute or sell your data to anyone."
+  collect description html: "We help you to collect your proofs of residency. We also securely save them to keep your personal data confidential. <strong>We never distribute or sell your data to anyone</strong>."
   Designate Guardians: "Designate Guardians"
   designate description html: "You designate UK Citizens who can testify you match the criteria defined by the government to stay in the UK."
   Unlock and Prove: "Unlock and Prove"
@@ -41,7 +41,7 @@ en:
   Act now: "Act now!"
   home quote 1: "\"I live in constant uncertainty and dread. Like many others, I feel like I’ve invested my entire adulthood into this country. If I have to I can leave, but many others can’t.\""
   quote owner 1: "Sylvie, Polish, PhD student"
-  home quote 2: "\"My worry is not so much about being kicked out but that my life is here. I have lived here for 18 years, been employed and paid taxes without a break. I also hold a UK driving licence, pay council tax in my name and am on the electoral register for local and European elections.\""
+  home quote 2: "\"My worry is not so much about being kicked out but that my life is here. I have lived here for 18 years, been employed and paid taxes without a break.\""
   quote owner 2: "Monika, 46, German, senior director in customer service in large consumer company"
   do I need to pay: "Do I need to pay to use BrexitHedge?"
   is completely: "BrexitHedge is"
@@ -100,7 +100,7 @@ en:
   # Unlock Data
   Unlocking your data: "Unlocking your data"
   unlock tooltip: "Unlocking your data allows you to share your proofs of residency and your guardian’s details."
-  unlock description: "Unlocking your data consists in sending an email to designated recipients in order to provide tangible proofs of your historical residency."
+  unlock description: "Unlocking your data involves sending an email to designated recipients in order to provide tangible proofs of your historical residency."
   successfully unlocked data: "You have successfully unlocked your data!"
   Unlock data: "Unlock data"
   unlock warning: "*This is a permanent unlock of your data and cannot be undone"
@@ -113,7 +113,7 @@ en:
 
   # Guardian Index
   Add New: "Add New"
-  guardian explanation: "Guardians are UK Citizens who can testify you match the criteria defined by the government to stay in the UK"
+  guardian explanation: "Guardians are UK Citizens who can testify you match the residency criteria defined by the government"
   New Guardian: "New Guardian"
   New Partner: "New Partner"
 
@@ -192,7 +192,7 @@ en:
   ask guardian name:
     one: "What is the name of your first guardian?"
     other: "What is the name of your next guardian?"
-  guardian brief description: "Guardians are UK citizens who can testify of your presence in the UK before the referendum date."
+  guardian brief description: "Guardians are UK Citizens who can testify you match the residency criteria defined by the government."
   guardian footnote: "*guardian details can be edited at any time"
   Partner information: "Partner information"
   partner description: "Please enter some basic details about your partner."
@@ -230,9 +230,9 @@ en:
 
   # About Page
   About Us: "About Us"
-  about description: "IglooWorld is a London based tech start up willing to provide trust infrastructure solutions to citizens for a better management of their future."
+  about description: "IglooWorld Ltd is a London based Tech StartUp that provides a trust infrastructure solutions to citizens for a better management of their future."
   Our Vision: "Our vision."
-  vision description: "We are looking to help everyone, no matter what their circumstances, go through challenging time and obtain as much as possible support. We've started this journey by giving everybody access to free service and to hold that as long as possible. By combining a brand which people trust, a product which is beautiful to use and amazing technology, we deliver a unique experience that helps people take control of their residence status.."
+  vision description: "We are looking to help everyone, no matter what their circumstances, go through challenging time and obtain as much as possible support. We've started this journey by giving everybody access to free service and to hold that as long as possible. By combining a brand which people trust, a product which is beautiful to use and amazing technology, we deliver a unique experience that helps people take control of their residence status."
   Our Team: "Our Team"
   sandrine description: "Co-Founder and CEO. With Brexit, Sandrine has been thinking about data, privacy, citizenship and residency rights. It all comes together in BrexitHedge."
   will description: "Will is the full stack Dev Guru. By keeping our users at the centre of everything we build, he makes sure that BrexitHedge is always a pleasure to use."

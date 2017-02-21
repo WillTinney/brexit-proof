@@ -49,7 +49,7 @@
                 <h4 class="modal-title" id="myModalLabel"><%= t('Data unlock email') %></h4>
               </div>
               <div class="modal-header relative">
-                <%= t('To') %>: public.enquiries@homeoffice.gsi.gov.uk
+                <%= t('To') %>: unlock@brexithedge.co.uk
                 <a class="email-button"><i class="fa fa-plus" aria-hidden="true" href="#"></i> <%= t('Add recipient') %></a>
                 <%= simple_form_for @user, url: user_unlock_data_path(@user), method: :post do |f| %>
                   <div id="extra-recipients"></div>
@@ -59,17 +59,15 @@
                 <%= render file: 'user_mailer/unlock' %>
               </div>
               <div class="modal-footer">
-                  <%= f.submit t('Send'), class: 'purple-button', id: "unlock-button" %>
-                <% end %>
-                <%= link_to t('Send'), user_unlock_data_path(@user, recipients: ["test@gmail.com", "you@gmail.com"]), method: :post, data: {
+                  <%= f.submit t('Send'), class: 'purple-button', id: "unlock-button", data: {
                     confirm: t('Are you sure'),
                     text: t('send data warning'),
                     'confirm-button-text': t('OK'),
                     'cancel-button-text': t('Cancel'),
                     'confirm-button-color': '#66CD00',
                     'sweet-alert-type': 'warning'
-                    }
-                  %>
+                    } %>
+                <% end %>
               </div>
             </div>
           </div>

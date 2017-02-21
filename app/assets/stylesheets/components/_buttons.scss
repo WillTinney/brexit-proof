@@ -18,6 +18,23 @@
   font-weight: bold;
   margin-top: 30%;
 }
+@media (max-width: 600px) {
+  #banner-button {
+    font-size: 18px;
+    padding: 8px 30px;
+    margin-top: 60px;
+  }
+}
+@media (max-width: 1000px) {
+  #banner-button {
+    margin-top: 20%;
+  }
+}
+@media (max-width: 1200px) {
+  #banner-button {
+    margin-bottom: 20%;
+  }
+}
 #banner-button:hover {
   box-shadow: 0 5px 5px rgba(0,0,0,0.6);
 }
@@ -193,4 +210,21 @@ a.choice-button-green:hover {
   background-color: #54AC95;
   background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,0));
   box-shadow: inset 0 0 2px rgba(0,0,0,.2), inset 0 2px 5px rgba(0,0,0,.2), 0 1px rgba(255,255,255,.2);
+}
+
+// Add responsivness
+@media (max-width: 440px) {
+  #add-note {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .shorten-button {
+    padding: 10px;
+  }
+  #unlock-button {
+    padding: 12px 20px;
+    margin-bottom: 8px;
+  }
+
 }

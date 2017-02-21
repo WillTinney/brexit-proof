@@ -17,17 +17,17 @@
       <h5><%= t('banner quote') %></h5><br/>
     </div>
     <div class="banner-text" id="bt-2">
-      <h4><strong><%= t('Protect your residency right') %><br><%= t('Dont let the Border Force make your life impossible') %></strong><br><br><%= t('collect proof, designate guardians') %><br><%= t('access anytime, anywhere') %></h4>
+      <h4><strong><%= t('Protect your residency right') %></strong><br><br><%= t('collect proof, designate guardians') %><br><%= t('access anytime, anywhere') %></h4>
     </div>
 
     <div class="banner-button">
       <% if user_signed_in? %>
         <%= link_to user_profile_path(current_user) do %>
-          <button id="banner-button" class="btn btn-transparent"><%= t(' protect your resident status') %></button>
+          <button id="banner-button" class="btn btn-transparent"><%= t('protect your resident status') %></button>
         <% end %>
       <% else %>
         <%= link_to new_user_registration_path do %>
-          <button id="banner-button" class="btn btn-transparent"><%= t(' protect your resident status') %></button>
+          <button id="banner-button" class="btn btn-transparent"><%= t('protect your resident status') %></button>
         <% end %>
         <%# link_to new_user_registration_path, data: { toggle: "modal", target: ".signup-modal-sm" } do %>
          <!--  <button id="banner-button" class="btn btn-transparent">Protect your Resident Status</button> -->
@@ -118,7 +118,7 @@
   <div class="col-xs-12 col-sm-4">
     <div class="flexbox-vertical feature">
       <%= image_tag('vault.png', class: "feature-image-vault") %>
-      <h4><%= t('Collect and Save') %></h4>
+      <h4><strong><%= t('Collect and Save') %></strong></h4>
       <p><%= t('collect description html') %></p>
     </div>
   </div>
@@ -126,7 +126,7 @@
   <div class="col-xs-12 col-sm-4">
     <div class="flexbox-vertical feature">
        <%= image_tag('guardian.png', class: "feature-image-guardian") %>
-      <h4><%= t('Designate Guardians') %></h4>
+      <h4><strong><%= t('Designate Guardians') %></strong></h4>
       <p><%= t('designate description html') %></p>
     </div>
   </div>
@@ -134,7 +134,7 @@
   <div class="col-xs-12 col-sm-4">
     <div class="flexbox-vertical feature">
       <%= image_tag('proof.png', class: "feature-image-proof") %>
-      <h4><%= t('Unlock and Prove') %></h4>
+      <h4><strong><%= t('Unlock and Prove') %></strong></h4>
       <p><%= t('unlock description html') %></strong></p>
     </div>
   </div>
@@ -209,7 +209,7 @@
   <span class="call-to-action-text">
     <p><%= t('call to sign up text') %></p>
   </span>
-  <%= link_to new_user_registration_path, class: "white-text", data: { toggle: "modal", target: ".signup-modal-sm" } do %>
+  <%= link_to new_user_registration_path, class: "white-text" do %>
     <button class="btn orange-button"><%= t('Sign Up') %></button>
   <% end %>
 </section>

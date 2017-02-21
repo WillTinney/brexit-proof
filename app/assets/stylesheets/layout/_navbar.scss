@@ -38,7 +38,7 @@
 }
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 50px;
+  width: 70px;
 }
 
 /* Navbar center section */
@@ -167,6 +167,11 @@
 }
 .sign-up-navbar-center {
   margin-right: 45%;
+}
+@media (max-width: 500px) {
+  .sign-up-navbar-center {
+    margin-right: 0;
+  }
 }
 
 /* I18n dropdown menu */

@@ -18,7 +18,7 @@
           <hr>
           <div class="card-content card-overflow">
             <%= link_to user_path(current_user) do %>
-              <p><strong><%= @user.try(:name_surname) %></strong></p>
+              <p class="name-tag"><strong><%= @user.try(:name_surname) %></strong></p>
             <% end %>
 
             <% if @user.citizenship %>
@@ -28,21 +28,21 @@
             <% end %>
 
             <% if @user.date_of_birth && @user.date_of_birth != "" %>
-              <p><%= t('DoB') + ": " + @user.date_of_birth %></p>
+              <p><span class="category-tag"><%= t('DoB') %></span><%= ": " + @user.date_of_birth %></p>
             <% else %>
               <p class="notice-text"><%= t('date of birth required') %></p>
             <% end %>
 
-            <p><%= t('Email') + ": " + @user.email %></p>
+            <p><span class="category-tag"><%= t('Email')%></span><%= ": " + @user.email %></p>
 
             <% if @user.phone_number && @user.phone_number != "" %>
-              <p><%= t('Phone Number') + ": " + @user.phone_number %></p>
+              <p><span class="category-tag"><%= t('Phone Number') %></span><%= ": " + @user.phone_number %></p>
             <% else %>
               <p class="notice-text"><%= t('phone number required') %></p>
             <% end %>
 
             <% if @user.address_line_1 && @user.address_line_1 != "" %>
-              <p><%= t('Address') + ": " + @user.address_line_1 %><%= ", " + @user.address_line_2 if @user.address_line_2 %></p>
+              <p><span class="category-tag"><%= t('Address') %></span><%= ": " + @user.address_line_1 %><%= ", " + @user.address_line_2 if @user.address_line_2 %></p>
               <p><%= @user.try(:city) %><%= ", " + @user.postcode if @user.postcode %><%= ", " + @user.country if @user.country %></p>
             <% else %>
               <p class="notice-text"><%= t('address required') %></p>
@@ -64,7 +64,7 @@
               <h4 class="profile-card-link"><%= link_to t("My Partner"), user_assignee_path(@user, partner) , class: "partner-link" %><span class="card-tooltip"><%= t('my partner tooltip') %></span></h4>
               <hr>
               <div class="card-content card-overflow">
-                <p><strong><%= link_to partner.name_surname, user_assignee_path(@user, partner) %></strong></p>
+                <p class="name-tag"><strong><%= link_to partner.name_surname, user_assignee_path(@user, partner) %></strong></p>
                 <p><%= partner.phone_number %></p>
                 <br>
               </div>
@@ -95,7 +95,7 @@
                 <% unless child.details_completed? %>
                   <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip"><%= t('details incomplete tooltip') %></span></i>
                 <% end %>
-                <p><strong><%= link_to child.try(:name_surname), user_assignee_path(@user, child) %></strong></p>
+                <p class="name-tag"><strong><%= link_to child.try(:name_surname), user_assignee_path(@user, child) %></strong></p>
                 <p><%= child.try(:phone_number) %></p>
               <% end %>
 
@@ -119,7 +119,7 @@
                 <% unless guardian.details_completed? %>
                   <i class="fa fa-exclamation-circle warning-circle" aria-hidden="true"><span class="warning-tooltip"><%= t('details incomplete tooltip') %></span></i>
                 <% end %>
-                <p><strong><%= link_to guardian.name_surname, user_assignee_path(@user, guardian) %></strong></p>
+                <p class="name-tag"><strong><%= link_to guardian.name_surname, user_assignee_path(@user, guardian) %></strong></p>
                 <p><%= guardian.try(:phone_number) %></p>
               <% end %>
 

@@ -27,7 +27,7 @@
   margin: 0 auto;
 }
 .sign-up-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: lighter;
   margin-bottom: 25px;
 }
@@ -43,7 +43,7 @@
   flex-direction: column;
   label {
     margin: 10px 0 20px 0;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: lighter;
   }
   h3 {
@@ -51,6 +51,11 @@
   }
   form {
     min-width: 800px;
+  }
+}
+@media (max-width: 550px) {
+  .wizard-box form {
+    min-width: 350px;
   }
 }
 .wizard-buttons {
@@ -86,4 +91,9 @@
 }
 .question-width {
   width: 450px;
+}
+@media (max-width: 450px) {
+  .question-width {
+    width: auto;
+  }
 }

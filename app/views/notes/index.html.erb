@@ -10,7 +10,7 @@
       <% if !@notes.empty? %>
         <div class="header-box padding-15">
           <h2><%= t('Notes Library') %></h2>
-          <%= link_to t("Add Note"), new_user_note_path([I18n.locale, current_user, @note]), remote: true, class: "btn orange-button" %>
+          <%= link_to t("Add Note"), new_user_note_path([I18n.locale, current_user, @note]), remote: true, class: "btn orange-button", id: "add-note" %>
         </div>
 
         <div class="blue-box detail-box side-margin-small top-margin">
