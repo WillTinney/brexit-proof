@@ -1,9 +1,10 @@
 require 'faker'
 require 'nationality'
 
+relationship_array = [ 'Friend', 'Family' ]
+
 FactoryGirl.define do
-  factory :recipient do |f|
-    f.type { 'Recipient' }
+  factory :assignees do |f|
     f.title { ['Mr', 'Mrs', 'Ms'].sample }
     f.first_name { Faker::Name.first_name }
     f.last_name { Faker::Name.last_name }
@@ -16,12 +17,20 @@ FactoryGirl.define do
     f.country { Faker::Address.country_code }
     f.postcode { Faker::Address.postcode }
 
+    trait :guardian do
+      type { 'Guardian' }
+      relationship { relationship_array[rand(0..1)] }
+      date_of_birth { Faker::Date.between(25.years.ago, 50.years.ago) }
+    end
+
     trait :child do
-      relationship { 'Child ' }
+      type { 'Recipient' }
+      relationship { 'Child '}
       date_of_birth { Faker::Date.between(1.years.ago, 20.years.ago) }
     end
 
     trait :partner do
+      type { 'Recipient' }
       relationship { 'Partner' }
       date_of_birth { Faker::Date.between(25.years.ago, 50.years.ago) }
     end

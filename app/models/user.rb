@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :proofs, dependent: :destroy
   has_many :notes, dependent: :destroy
 
+  # validates :email, uniqueness: true
   validates :title, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
