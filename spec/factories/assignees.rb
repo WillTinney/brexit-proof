@@ -4,7 +4,8 @@ require 'nationality'
 relationship_array = [ 'Friend', 'Family' ]
 
 FactoryGirl.define do
-  factory :assignees do |f|
+  factory :assignee do |f|
+    f.association :user
     f.title { ['Mr', 'Mrs', 'Ms'].sample }
     f.first_name { Faker::Name.first_name }
     f.last_name { Faker::Name.last_name }
@@ -25,7 +26,7 @@ FactoryGirl.define do
 
     trait :child do
       type { 'Recipient' }
-      relationship { 'Child '}
+      relationship { 'Child' }
       date_of_birth { Faker::Date.between(1.years.ago, 20.years.ago) }
     end
 

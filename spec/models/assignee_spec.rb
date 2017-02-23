@@ -1,9 +1,13 @@
 require 'rails_helper'
 
-describe User do
+describe Assignee do
 
   it "has a valid factory" do
     expect(FactoryGirl.build(:assignee)).to be_valid
+  end
+
+  it "belongs to a user" do
+    expect(Assignee.reflect_on_association(:user).macro).to eql(:belongs_to)
   end
 
   context "a new assignee" do
@@ -17,6 +21,11 @@ describe User do
     it "is invalid without a last name" do
       subject.last_name = nil
       expect(subject).to_not be_valid
+    end
+
+    it "has a user" do
+      subject.user = nil
+      expect(subject).not_to be_valid
     end
   end
 
@@ -58,24 +67,8 @@ describe User do
     end
   end
 
-  it "has many guardians" do
-    expect(User.reflect_on_association(:guardians).macro).to eql(:has_many)
-  end
-
-  it "has many recipients" do
-    expect(User.reflect_on_association(:recipients).macro).to eql(:has_many)
-  end
-
-  it "has many proofs" do
-    expect(User.reflect_on_association(:proofs).macro).to eql(:has_many)
-  end
-
-  it "has many notes" do
-    expect(User.reflect_on_association(:notes).macro).to eql(:has_many)
-  end
-
   describe '#full_name ' do
-    it "returns a user's full name" do
+    it "returns an assignees's full name" do
       subject.first_name = 'John'
       subject.last_name = 'Smith'
       expect(subject.full_name).to eql("John Smith")

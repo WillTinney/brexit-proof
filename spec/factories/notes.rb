@@ -1,9 +1,10 @@
 require 'faker'
 
 FactoryGirl.define do
-  factory :note do |p|
-    p.user_id { FactoryGirl.build(:user).id }
-    p.title { "document" }
-    p.content { Faker::Lorem.word }
+  factory :note do |f|
+    f.association :user
+    f.user_id { FactoryGirl.build(:user).id }
+    f.title { "document" }
+    f.content { Faker::Lorem.word }
   end
 end
