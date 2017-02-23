@@ -16,12 +16,12 @@ feature 'User Edit Page', js: false do
     expect(page).to have_field('user_profile_picture', type: 'file')
   end
 
-  it 'has an e-mail field' do
-    expect(page).to have_field('user_email', type: 'email')
-  end
+  # it 'has an e-mail field' do
+  #   expect(page).to have_field('user_email')
+  # end
 
   it 'has a title field' do
-    expect(page).to have_field('user[title]')
+    expect(page).to have_field('user_title')
   end
 
   it 'has a first name field' do
@@ -37,19 +37,19 @@ feature 'User Edit Page', js: false do
   end
 
   it 'has a citizenship field' do
-    expect(page).to have_field('user_citizenship', type: 'text')
+    expect(page).to have_field('user_citizenship')
   end
 
   it 'has a date of birth field' do
-    expect(page).to have_field('user_date_of_birth', type: 'text')
+    expect(page).to have_field('user_date_of_birth', type: 'date')
   end
 
   it 'has a phone number field' do
-    expect(page).to have_field('user_phone_number', type: 'text')
+    expect(page).to have_field('user_phone_number', type: 'tel')
   end
 
   it 'has an address field' do
-    expect(page).to have_field('user_address_line_1', type: 'text')
+    expect(page).to have_field('user_address', type: 'text')
     expect(page).to have_field('user_address_line_2', type: 'text')
   end
 
@@ -65,7 +65,7 @@ feature 'User Edit Page', js: false do
     user_fills_in_details
     click_on 'Save'
     # expect(page).to be('users/user_id/profile')
-    expect(page).to have_content('Ask for a loan')
+    expect(page).to have_content('My Details')
   end
 
   scenario 'user can upload a profile picture' do
@@ -95,13 +95,13 @@ feature 'User Edit Page', js: false do
   private
 
   def user_fills_in_details
-    choose('Mr')
+    select "Mr", from: "user_title"
     fill_in 'user_first_name', with: 'John'
     fill_in 'user_last_name', with: 'Smith'
-    fill_in 'user_citizenship', with: 'French'
+    select "French", from: "user_citizenship"
     fill_in 'user_date_of_birth', with: '31/07/1980'
     fill_in 'user_phone_number', with: '07123 123123'
-    fill_in 'user_address_line_1', with: '12 Example Road'
+    fill_in 'user_address', with: '12 Example Road'
     fill_in 'user_address_line_2', with: 'New Example'
     fill_in 'user_city', with: 'Exampleville'
     fill_in 'user_postcode', with: 'EX14 MPL'

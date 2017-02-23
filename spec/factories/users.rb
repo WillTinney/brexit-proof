@@ -5,9 +5,10 @@ FactoryGirl.define do
   factory :user do |f|
     f.email { Faker::Internet.free_email }
     f.password { "password" }
-    title { ['Mr', 'Mrs', 'Ms'].sample }
-    first_name { Faker::Name.first_name }
-    last_name { Faker::Name.last_name }
+    f.title { ['Mr', 'Mrs', 'Ms'].sample }
+    f.first_name { Faker::Name.first_name }
+    f.last_name { Faker::Name.last_name }
+    f.confirmed_at Time.now
 
     trait :with_details do
       citizenship { Nationality::NATIONALITY }
