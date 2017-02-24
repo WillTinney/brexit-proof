@@ -72,7 +72,7 @@ feature 'User Edit Page', js: false do
     user_uploads_profile_picture
     click_on 'Save'
     # expect(page).to be('users/user_id/profile')
-    expect(page).to have_content('Ask for a loan')
+    expect(page).to have_content('My Details')
   end
 
   # scenario 'user wants to change his password' do
@@ -110,6 +110,6 @@ feature 'User Edit Page', js: false do
 
   def user_uploads_profile_picture
     click_on 'Change Picture'
-    attach_file 'user_profile_picture', 'spec/files/testpassport.jpg'
+    attach_file 'user_profile_picture', 'spec/files/eu.png'
   end
 end
