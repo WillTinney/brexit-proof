@@ -49,44 +49,6 @@ describe User do
     end
   end
 
-  context "a user completing their details" do
-    subject { FactoryGirl.build_stubbed(:user, :with_details)}
-
-    it "has a valid factory" do
-      expect(subject).to be_valid
-    end
-
-    it "must enter a citizenship" do
-      subject.citizenship = nil
-      expect(subject).to_not be_valid
-    end
-
-    it "must enter a date of birth" do
-      subject.date_of_birth = nil
-      expect(subject).to_not be_valid
-    end
-
-    it "must enter a phone number" do
-      subject.phone_number = nil
-      expect(subject).to_not be_valid
-    end
-
-    it "must enter an address" do
-      subject.address_line_1 = nil
-      expect(subject).to_not be_valid
-    end
-
-    it "must enter a city" do
-      subject.city = nil
-      expect(subject).to_not be_valid
-    end
-
-    it "must enter a postcode" do
-      subject.postcode = nil
-      expect(subject).to_not be_valid
-    end
-  end
-
   it "has many guardians" do
     expect(User.reflect_on_association(:guardians).macro).to eql(:has_many)
   end

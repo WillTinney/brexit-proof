@@ -24,48 +24,18 @@ feature 'Guardian Create Page', js: false do
     expect(find('#assignee_relationship', :visible => false).value).not_to eq('Partner' || 'Child')
   end
 
-  it 'has an e-mail field' do
+  it 'has relevant fields' do
     expect(page).to have_field('assignee_email')
-  end
-
-  it 'has a title field' do
     expect(page).to have_field('assignee_title')
-  end
-
-  it 'has a first name field' do
     expect(page).to have_field('assignee_first_name', type: 'text')
-  end
-
-  it 'has a middle name field' do
     expect(page).to have_field('assignee_middle_name', type: 'text')
-  end
-
-  it 'has a last name field' do
     expect(page).to have_field('assignee_last_name', type: 'text')
-  end
-
-  it 'has a citizenship field' do
     expect(page).to have_field('assignee_citizenship')
-  end
-
-  it 'has a relationship field' do
     expect(page).to have_field('assignee_relationship', type: 'text')
-  end
-
-  it 'has a phone number field' do
     expect(page).to have_field('assignee_phone_number', type: 'tel')
-  end
-
-  it 'has an address field' do
     expect(page).to have_field('user_address', type: 'text')
     expect(page).to have_field('assignee_address_line_2', type: 'text')
-  end
-
-  it 'has a city field' do
     expect(page).to have_field('assignee_city', type: 'text')
-  end
-
-  it 'has a postcode field' do
     expect(page).to have_field('assignee_postcode', type: 'text')
   end
 

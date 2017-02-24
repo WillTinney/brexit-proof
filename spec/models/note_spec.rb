@@ -11,7 +11,7 @@ describe Note do
   end
 
   context "a new note" do
-    subject { FactoryGirl.build(:note) }
+    subject { FactoryGirl.build(:note, user: FactoryGirl.create(:user)) }
 
     it "has a title" do
       subject.title = nil
@@ -20,11 +20,6 @@ describe Note do
 
     it "has content" do
       subject.content = nil
-      expect(subject).not_to be_valid
-    end
-
-    it "has a user" do
-      subject.user = nil
       expect(subject).not_to be_valid
     end
   end

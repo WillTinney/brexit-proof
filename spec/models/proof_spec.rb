@@ -11,7 +11,7 @@ describe Proof do
   end
 
   context "a new proof" do
-    subject { FactoryGirl.build(:proof) }
+    subject { FactoryGirl.build(:proof, user: FactoryGirl.create(:user)) }
 
     it "has a document" do
       subject.document = nil
@@ -25,11 +25,6 @@ describe Proof do
 
     it "has comments" do
       subject.comments = nil
-      expect(subject).not_to be_valid
-    end
-
-    it "has a user" do
-      subject.user = nil
       expect(subject).not_to be_valid
     end
   end

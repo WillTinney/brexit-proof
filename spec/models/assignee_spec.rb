@@ -11,7 +11,7 @@ describe Assignee do
   end
 
   context "a new assignee" do
-    subject { FactoryGirl.build(:assignee) }
+    subject { FactoryGirl.build(:assignee, user: FactoryGirl.create(:user)) }
 
     it "is invalid without a first name" do
       subject.first_name = nil
@@ -20,49 +20,6 @@ describe Assignee do
 
     it "is invalid without a last name" do
       subject.last_name = nil
-      expect(subject).to_not be_valid
-    end
-
-    it "has a user" do
-      subject.user = nil
-      expect(subject).not_to be_valid
-    end
-  end
-
-  context "a user completing their details" do
-    subject { FactoryGirl.build_stubbed(:user, :with_details)}
-
-    it "has a valid factory" do
-      expect(subject).to be_valid
-    end
-
-    it "must enter a citizenship" do
-      subject.citizenship = nil
-      expect(subject).to_not be_valid
-    end
-
-    it "must enter a date of birth" do
-      subject.date_of_birth = nil
-      expect(subject).to_not be_valid
-    end
-
-    it "must enter a phone number" do
-      subject.phone_number = nil
-      expect(subject).to_not be_valid
-    end
-
-    it "must enter an address" do
-      subject.address_line_1 = nil
-      expect(subject).to_not be_valid
-    end
-
-    it "must enter a city" do
-      subject.city = nil
-      expect(subject).to_not be_valid
-    end
-
-    it "must enter a postcode" do
-      subject.postcode = nil
       expect(subject).to_not be_valid
     end
   end

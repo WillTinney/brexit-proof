@@ -22,48 +22,18 @@ feature 'Guardian Edit Page', js: false do
     expect(find('#set_assignee_type', :visible => false).value).to eq('Guardian')
   end
 
-  it 'has an e-mail field' do
+  it 'has relevant fields' do
     expect(page).to have_field('guardian_email')
-  end
-
-  it 'has a title field' do
     expect(page).to have_field('guardian_title')
-  end
-
-  it 'has a first name field' do
     expect(page).to have_field('guardian_first_name', type: 'text')
-  end
-
-  it 'has a middle name field' do
     expect(page).to have_field('guardian_middle_name', type: 'text')
-  end
-
-  it 'has a last name field' do
     expect(page).to have_field('guardian_last_name', type: 'text')
-  end
-
-  it 'has a citizenship field' do
     expect(page).to have_field('guardian_citizenship')
-  end
-
-  it 'has a relationship field' do
     expect(page).to have_field('guardian_relationship', type: 'text')
-  end
-
-  it 'has a phone number field' do
     expect(page).to have_field('guardian_phone_number', type: 'tel')
-  end
-
-  it 'has an address field' do
     expect(page).to have_field('user_address', type: 'text')
     expect(page).to have_field('guardian_address_line_2', type: 'text')
-  end
-
-  it 'has a city field' do
     expect(page).to have_field('guardian_city', type: 'text')
-  end
-
-  it 'has a postcode field' do
     expect(page).to have_field('guardian_postcode', type: 'text')
   end
 

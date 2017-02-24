@@ -27,48 +27,18 @@ feature 'Partner Edit Page', js: false do
     expect(find('#recipient_relationship', :visible => false).value).to eq('Partner')
   end
 
-  it 'has an e-mail field' do
+  it 'has relevant fields' do
     expect(page).to have_field('recipient_email')
-  end
-
-  it 'has a title field' do
     expect(page).to have_field('recipient_title')
-  end
-
-  it 'has a first name field' do
     expect(page).to have_field('recipient_first_name', type: 'text')
-  end
-
-  it 'has a middle name field' do
     expect(page).to have_field('recipient_middle_name', type: 'text')
-  end
-
-  it 'has a last name field' do
     expect(page).to have_field('recipient_last_name', type: 'text')
-  end
-
-  it 'has a citizenship field' do
     expect(page).to have_field('recipient_citizenship')
-  end
-
-  it 'has a date of birth field' do
     expect(page).to have_field('recipient_date_of_birth', type: 'date')
-  end
-
-  it 'has a phone number field' do
     expect(page).to have_field('recipient_phone_number', type: 'tel')
-  end
-
-  it 'has an address field' do
     expect(page).to have_field('user_address', type: 'text')
     expect(page).to have_field('recipient_address_line_2', type: 'text')
-  end
-
-  it 'has a city field' do
     expect(page).to have_field('recipient_city', type: 'text')
-  end
-
-  it 'has a postcode field' do
     expect(page).to have_field('recipient_postcode', type: 'text')
   end
 

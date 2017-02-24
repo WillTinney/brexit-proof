@@ -9,7 +9,7 @@ FactoryGirl.define do
     f.title { ['Mr', 'Mrs', 'Ms'].sample }
     f.first_name { Faker::Name.first_name }
     f.last_name { Faker::Name.last_name }
-    f.citizenship { Nationality::NATIONALITY }
+    f.citizenship { Nationality::NATIONALITY[rand(0..160)] }
     f.email { Faker::Internet.free_email }
     f.phone_number { '07' + ('%09d' % rand(10 ** 9)).to_s }
     f.address_line_1 { Faker::Address.street_address }
