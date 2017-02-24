@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Partner Create Page', js: false do
+feature 'Guardian Create Page', js: false do
   let(:user) { FactoryGirl.create(:user) }
 
   before do
