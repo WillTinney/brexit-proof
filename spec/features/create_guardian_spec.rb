@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-feature 'Child Create Page', js: false do
+feature 'Partner Create Page', js: false do
   let(:user) { FactoryGirl.create(:user) }
 
   before do
     login_as(user, :scope => :user)
-    visit "/users/#{user.id}/assignees/new.Child"
+    visit "/users/#{user.id}/assignees/new.Guardian"
   end
 
   it 'can be reached' do
@@ -16,12 +16,12 @@ feature 'Child Create Page', js: false do
   #   expect(page).to have_field('assignee_profile_picture', type: 'file')
   # end
 
-  it 'type is recipient' do
-    expect(find('#set_assignee_type', :visible => false).value).to eq('Recipient')
+  it 'type is guardian' do
+    expect(find('#set_assignee_type', :visible => false).value).to eq('Guardian')
   end
 
-  it 'relationship is child' do
-    expect(find('#assignee_relationship', :visible => false).value).to eq('Child')
+  it 'relationship is not partner or child' do
+    expect(find('#assignee_relationship', :visible => false).value).not_to eq('Partner' || 'Child')
   end
 
   it 'has an e-mail field' do
@@ -48,8 +48,8 @@ feature 'Child Create Page', js: false do
     expect(page).to have_field('assignee_citizenship')
   end
 
-  it 'has a date of birth field' do
-    expect(page).to have_field('assignee_date_of_birth', type: 'date')
+  it 'has a relationship field' do
+    expect(page).to have_field('assignee_relationship', type: 'text')
   end
 
   it 'has a phone number field' do
@@ -73,7 +73,7 @@ feature 'Child Create Page', js: false do
     assignee_fills_in_details
     click_on 'Save'
     # expect(page).to be('users/assignee_id/profile')
-    expect(page).to have_content('My Children')
+    expect(page).to have_content('My Guardians')
   end
 
   # scenario 'user can upload a profile picture' do
@@ -91,13 +91,12 @@ feature 'Child Create Page', js: false do
     fill_in 'assignee_first_name', with: 'John'
     fill_in 'assignee_last_name', with: 'Smith'
     select "French", from: "assignee_citizenship"
-    fill_in 'assignee_date_of_birth', with: '31/07/1980'
+    fill_in 'assignee_relationship', with: 'Friend'
     fill_in 'assignee_phone_number', with: '07123 123123'
     fill_in 'user_address', with: '12 Example Road'
     fill_in 'assignee_address_line_2', with: 'New Example'
     fill_in 'assignee_city', with: 'Exampleville'
     fill_in 'assignee_postcode', with: 'EX14 MPL'
-    fill_in 'assignee_date_of_birth', with: '31/07/1980'
   end
 
   # def assignee_uploads_profile_picture

@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-feature 'Child Create Page', js: false do
+feature 'Partner Create Page', js: false do
   let(:user) { FactoryGirl.create(:user) }
 
   before do
     login_as(user, :scope => :user)
-    visit "/users/#{user.id}/assignees/new.Child"
+    visit "/users/#{user.id}/assignees/new.Partner"
   end
 
   it 'can be reached' do
@@ -20,8 +20,8 @@ feature 'Child Create Page', js: false do
     expect(find('#set_assignee_type', :visible => false).value).to eq('Recipient')
   end
 
-  it 'relationship is child' do
-    expect(find('#assignee_relationship', :visible => false).value).to eq('Child')
+  it 'relationship is partner' do
+    expect(find('#assignee_relationship', :visible => false).value).to eq('Partner')
   end
 
   it 'has an e-mail field' do

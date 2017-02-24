@@ -80,12 +80,12 @@
     </div>
 
     <% if params[:format] == 'Guardian' || params[:type] == 'Guardian' || @assignee.type == 'Guardian' || params[:assignee] && params[:assignee]['type'] == 'Guardian' %>
-      <%= f.hidden_field :type, value: 'Guardian' %>
-    <% elsif params[:relationship] == 'Partner' %>
-      <%= f.hidden_field :type, value: 'Recipient' %>
+      <%= f.hidden_field :type, value: 'Guardian', id: 'set_assignee_type' %>
+    <% elsif params[:format] == 'Partner' || params[:relationship] == 'Partner' %>
+      <%= f.hidden_field :type, value: 'Recipient', id: 'set_assignee_type' %>
       <%= f.hidden_field :relationship, value: 'Partner' %>
     <% else %>
-      <%= f.hidden_field :type, value: 'Recipient' %>
+      <%= f.hidden_field :type, value: 'Recipient', id: 'set_assignee_type' %>
       <%= f.hidden_field :relationship, value: 'Child' %>
     <% end %>
 
