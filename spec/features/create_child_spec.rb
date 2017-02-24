@@ -69,7 +69,7 @@ feature 'Child Create Page', js: false do
     expect(page).to have_field('assignee_postcode', type: 'text')
   end
 
-  scenario 'user can fill in all their details' do
+  scenario 'user can add child details' do
     assignee_fills_in_details
     click_on 'Save'
     # expect(page).to be('users/assignee_id/profile')
