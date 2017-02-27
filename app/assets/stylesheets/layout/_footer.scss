@@ -41,6 +41,12 @@
 }
 .site-column {
   margin: 0 10px;
+  p:hover {
+    font-weight: bold;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
 #disclaimer {
   margin-top: 25px;
