@@ -4,7 +4,6 @@ feature 'Partner Edit Page', js: false do
   let(:user) { FactoryGirl.create(:user) }
   # let(:partner) { FactoryGirl.create(:assignee, :partner, association(:user)) }
 
-
   before do
     login_as(user, :scope => :user)
     @partner = FactoryGirl.create(:assignee, :partner, user: user)

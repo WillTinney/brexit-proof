@@ -30,7 +30,7 @@ FactoryGirl.define do
     end
 
     trait :data_unlocked do
-      data_unlocked { false }
+      data_unlocked { true }
     end
   end
 end
