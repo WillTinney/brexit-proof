@@ -347,3 +347,36 @@
     padding-top: 70px;
   }
 }
+
+// IE compatability
+@media (min-width: 769px) {
+  .carousel-text {
+    max-width: 332px;
+  }
+}
+@media (max-width: 769px) {
+  .carousel-text {
+    max-width: 222px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .review-box p {
+    max-width: 535px;
+  }
+}
+@media (max-width: 1200px) {
+  .review-box p {
+    max-width: 455px;
+  }
+}
+@media (max-width: 969px) {
+  .review-box p {
+    max-width: 355px;
+  }
+}
+@media (max-width: 767px) {
+  .review-box p {
+    max-width: 85%;
+  }
+}

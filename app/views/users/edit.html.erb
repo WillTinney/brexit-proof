@@ -1,3 +1,5 @@
+<br>
+
 <div>
   <%= link_to '#', class: 'profile-picture-inline' do %>
     <% if @user.profile_picture %>
@@ -14,6 +16,8 @@
     <% end %>
   <% end %>
 </div>
+
+<h3 class="new-title padding-15">You</h3>
 
 <%= simple_form_for(@user) do |f| %>
   <div class="form-container">
